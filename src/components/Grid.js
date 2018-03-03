@@ -7,6 +7,9 @@ function ReactRpg(props) {
     const imagesArray = props.imagesArray
     const padding = props.padding || 3
     const columns = props.columns || [3, 2, 1]
+    const paddingBottom= props.paddingBottom || '100%'
+    const imgFitting= props.imgFitting || 'cover'
+
 
     const cssBreakpoints = {
       Main: '' + Math.floor(100 / columns[0]) + '%;',
@@ -15,7 +18,7 @@ function ReactRpg(props) {
     }
 
     const imageNodes = imagesArray.map( (img, index) => {
-      return (<ReactRpgPhoto key={index} url={img.url} columns={columns} padding={padding} clickHandler={img.clickHandler}/> )
+      return (<ReactRpgPhoto  imgFitting={imgFitting} paddingBottom={paddingBottom} key={index} url={img.url} columns={columns} padding={padding} clickHandler={img.clickHandler}/> )
     })
 
     return (
@@ -56,9 +59,9 @@ class ReactRpgPhoto extends Component {
   //   })
   // }
 
-
-
   render () {
+  const imgFitting= this.props.imgFitting || 'cover'
+  const paddingBottom= this.props.paddingBottom || '100%'
   const url = this.props.url
   const padding = this.props.padding
   const clickHandler = this.props.clickHandler || null
@@ -74,9 +77,9 @@ class ReactRpgPhoto extends Component {
     imageWrapper: {
       position: 'relative',
       width: '100%',
-      paddingBottom: '100%',
+      paddingBottom: `${paddingBottom}`,
       backgroundImage: 'url(' + url + ')',
-      backgroundSize: 'cover',
+      backgroundSize: `${imgFitting}`,
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
       cursor: pointer

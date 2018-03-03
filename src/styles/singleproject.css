@@ -1,0 +1,50 @@
+.gallery {
+	width: 100%;
+}
+
+.clipping {
+/*  clip-path: rect(10px, 20px, 30px, 40px)
+  clip: rect(0px,60px,200px,0px);*/
+
+  /*background-clip: border-box;*/
+  /*border-color: blue;
+  border-top: 80px;
+  border-bottom: 80px;*/
+/*  background-clip: border-box;
+  background-clip: border-box;*/
+}
+
+.imageWrapper {
+/*clip-path: rect(10px, 20px, 30px, 40px)*/
+  /*clip: rect(0px,60px,200px,0px);*/
+
+  background-clip: border-box;
+
+/*  border-top: 80px;
+  border-bottom: 80px;*/
+/* background-clip: border-box;
+  background-clip: border-box;*/
+}
+
+
+
+
+@media (min-width: 768px) {
+	.gallery {
+		width: 75%;
+		height: 100%;
+		float: right;
+	}
+}
+.b-lazy {
+    -webkit-transition: opacity 500ms ease-in-out;
+       -moz-transition: opacity 500ms ease-in-out;
+         -o-transition: opacity 500ms ease-in-out;
+            transition: opacity 500ms ease-in-out;
+             max-width: 100%;
+               opacity: 0;
+}
+.b-lazy.b-loaded {
+               opacity: 1;
+}
+

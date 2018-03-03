@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import PreLoader from '../components/PreLoader'
-require('../styles/gallery.css')
+require('../styles/singleproject.css')
 
 import ReactRpg from '../components/Grid.js'
 import Lightbox from 'react-images'
@@ -60,13 +60,13 @@ export default class AllProjects extends Component {
 
 // for thums for GRID
 		for(let i = 0; i < names.length; i++) {
-			allProjectsThumbs.push( {url:`../../images/allprojects/${names[i]}.jpg` } )
+			allProjectsThumbs.push( {url:`../../images/allprojects/${names[i]}.jpg`, imgFitting:'contain' } )
 		}
 
-// for LIGHTBOX:
-		for(let i = 0; i < names.length; i++) {
-			allProjectsThumbs.push({src: `../../images/allprojects/${names[i]}.jpg`})
-		}
+// // for LIGHTBOX:
+// 		for(let i = 0; i < names.length; i++) {
+// 			allProjectsThumbs.push({src: `../../images/allprojects/${names[i]}.jpg`})
+// 		}
 
 		console.log(allProjectsThumbs)
 
@@ -76,8 +76,9 @@ export default class AllProjects extends Component {
 
 				<div style={{width: '80%', margin: '6em auto 100px'}}>
 					<p>text in gallery</p>
-					 <ReactRpg imagesArray={allProjectsThumbs}/>
+					 <ReactRpg className="clipping" paddingBottom="30%" imgFitting="cover" columns={[1,1,1]} imagesArray={allProjectsThumbs}/>
 				</div>
+
 
 				<Lightbox
 				 	isOpen={this.state.isOpen}
