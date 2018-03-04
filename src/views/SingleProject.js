@@ -49,7 +49,7 @@ export default class AllProjects extends Component {
 
 	render() {
 		let allProjectsThumbs = []
-
+		let lightboxImages = []
 
 		let names = ["aged_man", "anime", "bridge", "gun", "knightfall", "knights_armor", "mech_suit", "pilot", "skanderbeg", "skull_sermon", "tunnel", "x-men"]
 
@@ -60,29 +60,28 @@ export default class AllProjects extends Component {
 
 // for thums for GRID
 		for(let i = 0; i < names.length; i++) {
-			allProjectsThumbs.push( {url:`../../images/allprojects/${names[i]}.jpg`, imgFitting:'contain' } )
+			allProjectsThumbs.push( {url:`../../images/allprojects/${names[i]}.jpg`} )
 		}
 
-// // for LIGHTBOX:
-// 		for(let i = 0; i < names.length; i++) {
-// 			allProjectsThumbs.push({src: `../../images/allprojects/${names[i]}.jpg`})
-// 		}
+// for LIGHTBOX:
+		for(let i = 0; i < names.length; i++) {
+			lightboxImages.push({src: `../../images/allprojects/${names[i]}.jpg`})
+		}
 
-		console.log(allProjectsThumbs)
+		// console.log(allProjectsThumbs)
 
 		return (
 
 			<div className="gallery">
 
-				<div style={{width: '80%', margin: '6em auto 100px'}}>
+				<div style={{width: '80%', margin: '6em auto 100px'}} >
 					<p>text in gallery</p>
-					 <ReactRpg className="clipping" paddingBottom="30%" imgFitting="cover" columns={[1,1,1]} imagesArray={allProjectsThumbs}/>
+					 <ReactRpg  paddingBottom="30%" imgFitting="cover" columns={[1,1,1]} imagesArray={allProjectsThumbs}/>
 				</div>
-
 
 				<Lightbox
 				 	isOpen={this.state.isOpen}
-					images={allProjectsThumbs}
+					images={lightboxImages}
 			    onClickPrev={this.gotoPrevious}
 	        onClickNext={this.gotoNext}
 		    	onClose={this.closeLightbox}
@@ -94,3 +93,6 @@ export default class AllProjects extends Component {
 		)
 	}
 }
+
+
+// clickHandler={this.openLightbox.bind(this, index)}

@@ -9,6 +9,7 @@ function ReactRpg(props) {
     const columns = props.columns || [3, 2, 1]
     const paddingBottom= props.paddingBottom || '100%'
     const imgFitting= props.imgFitting || 'cover'
+    const clickHandler = props.clickHandler || null
 
 
     const cssBreakpoints = {
@@ -39,7 +40,6 @@ function ReactRpg(props) {
               width: ${cssBreakpoints.width992}
             }
         `}}/>
-
       </div>
     )
 }

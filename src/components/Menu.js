@@ -31,7 +31,7 @@ export default class Menu extends Component {
 										<h1 className="hide">Alex Ballo - 3D Artist</h1>
 									</div>
 									<div className="items">
-										<p onClick={this.clicked}><Link to="/">all projects</Link></p>
+										<p onClick={this.clicked}><Link to="/">portfolio</Link></p>
 										{
 											this.state.isProjectsClicked
 											?
@@ -56,6 +56,22 @@ export default class Menu extends Component {
 										<p><Link to="about">about</Link></p>
 									</div>
 								</div>
+
+                  <div className="social">
+                      <a href="https://aballo.artstation.com/">
+                        <img src="../artsTiny.png" className="fa" id="artstationIco"></img>
+                      </a>
+                      <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/">
+                        <i className="fa fa-linkedin"></i>
+                      </a>
+                      <a href="https://aleksander.ballo/cv">
+                        <img src="../cv.svg" className="fa" id="cvIco"></img>
+                      </a>
+                      <a href="mailto:aleksander.ballo@gmail.com">
+                        <i className="fa fa-envelope-o"></i>
+                      </a>
+                  </div>
+
 
 							</div>
 						</div>

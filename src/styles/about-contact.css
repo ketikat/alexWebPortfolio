@@ -1,0 +1,34 @@
+/*.contact-wrapper: {
+    display: inline-flex;
+    width: 75%;
+    float: right;
+    height: 100%;
+}
+*/
+#icons-container p{
+  font-family: Lato;
+}
+
+/*p {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+*/
+
+#icons-container{
+  display: flex;
+}
+
+#icons-container a{
+  justify-content: flex-start;
+  margin: 3em 4em 3em 0em;
+  cursor: pointer;
+}
+
+#cvlink {
+   top: -35px;
+   position: relative;
+}
+
+#cvIco {
+  /*padding:-30px;*/
+}

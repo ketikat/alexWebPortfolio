@@ -14,7 +14,7 @@ import AllProjects from '../views/AllProjects'
 import SingleProject from '../views/SingleProject'
 
 const RenderFadeInComponent = Component => (
-  <CSSTransition timeout={300} classNames="fade" in={true}>
+  <CSSTransition timeout={400} classNames="fade" in={true}>
     <Component />
   </CSSTransition>
 )
@@ -37,6 +37,7 @@ class App extends Component {
               <Route exact path="/about" component={() => RenderFadeInComponent(About)} />
               <Route exact path="/contact" component={() => RenderFadeInComponent(Contact)} />
               <Route exact path="/:title" component={() => RenderFadeInComponent(SingleProject)} />
+              <Route exact path="/cv" component={() => RenderFadeInComponent(SingleProject)} />
             </Switch>
           </TransitionGroup>
       </div>

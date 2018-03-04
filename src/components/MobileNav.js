@@ -32,7 +32,7 @@ export default class MobileMenu extends Component {
 									</Link>
 									<h1 className="hide">Alex Ballo - 3D Artist</h1>
 								</div>
-								<p onClick={this.clicked}><Link to="/">all projects</Link></p>
+								<p onClick={this.clicked}><Link to="/">portfolio</Link></p>
 							{
 								this.state.isProjectsClicked
 								?
