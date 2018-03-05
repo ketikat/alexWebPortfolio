@@ -22,7 +22,7 @@ class AllProjects extends Component {
 	render(){
 		let allProjectsThumbs = []
 
-		let names = ["aged_man", "anime", "bridge", "gun", "knightfall", "knights_armor", "mech_suit", "pilot", "skanderbeg", "skull_sermon", "tunnel", "x-men"]
+		let names = ["aged_man", "anime", "bridge", "vulcan_gun", "knightfall", "knights_armor", "mech_suit", "pilot", "skanderbeg", "skull_sermon", "tunnel", "x-men"]
 
 		for(let i = 0; i < names.length; i++) {
 				allProjectsThumbs.push({

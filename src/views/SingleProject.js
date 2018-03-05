@@ -11,6 +11,7 @@ export default class SingleProject extends Component {
 		this.state = {
 			ligthboxIsOpen: false,
 			currentImage: 1,
+			projectName: ""
 		}
 
 		this.closeLightbox = this.closeLightbox.bind(this)
@@ -45,14 +46,15 @@ export default class SingleProject extends Component {
 	}
 
 	render() {
-		let allProjectsThumbs = []
-		let lightboxImages = []
 
-		let folder = "pilot"
+		const folder = this.props.title
+
+		let projectThumbs = []
+		let lightboxImages = []
 
 		// for thums for GRID
 		for(let i = 1; i < 6; i++) {
-			allProjectsThumbs.push( {url:`../../images/${folder}/thumbs/${folder}${i}.jpg`} )
+			projectThumbs.push( {url:`../../images/${folder}/thumbs/${folder}${i}.jpg`} )
 		}
 
 		// for LIGHTBOX:
@@ -71,7 +73,7 @@ export default class SingleProject extends Component {
 						paddingBottom="40%"
 						imgFitting="cover"
 						columns={[1,1,1]}
-						imagesArray={allProjectsThumbs}
+						imagesArray={projectThumbs}
 					/>
 				</div>
 

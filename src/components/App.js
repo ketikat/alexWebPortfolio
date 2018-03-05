@@ -5,7 +5,6 @@ require('../styles/app.css')
 
 import {TransitionGroup, CSSTransition} from 'react-transition-group'
 
-
 import Menu from './Menu'
 import MobileNav from './MobileNav'
 import About from '../views/About'
@@ -13,11 +12,15 @@ import Contact from '../views/Contact'
 import AllProjects from '../views/AllProjects'
 import SingleProject from '../views/SingleProject'
 
-const RenderFadeInComponent = Component => (
-  <CSSTransition timeout={400} classNames="fade" in={true}>
-    <Component />
-  </CSSTransition>
-)
+function RenderFadeInComponent (Component, props) {
+  const title = props.match.params.title
+
+  return (
+        <CSSTransition timeout={400} classNames="fade" in={true}>
+          <Component props={props} title={title} />
+        </CSSTransition>
+  )
+}
 
 
 class App extends Component {
@@ -28,16 +31,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="bigContainer" style={{height: '100%', width: '100%'}}>
+      <div style={{height: '100%', width: '100%'}}>
           <Menu />
           <MobileNav />
           <TransitionGroup>
             <Switch>
-              <Route exact path="/" component={() => RenderFadeInComponent(AllProjects)} />
-              <Route exact path="/about" component={() => RenderFadeInComponent(About)} />
-              <Route exact path="/contact" component={() => RenderFadeInComponent(Contact)} />
-              <Route exact path="/:title" component={() => RenderFadeInComponent(SingleProject)} />
-              <Route exact path="/cv" component={() => RenderFadeInComponent(SingleProject)} />
+              <Route exact path="/" component={(props) => RenderFadeInComponent(AllProjects, props)} />
+              <Route exact path="/about" component={(props) => RenderFadeInComponent(About, props)} />
+              <Route exact path="/contact" component={(props) => RenderFadeInComponent(Contact, props)} />
+              <Route exact path="/:title" component={(props) => RenderFadeInComponent(SingleProject, props )} />
+              <Route exact path="/cv" component={ Contact } />
             </Switch>
           </TransitionGroup>
       </div>

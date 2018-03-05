@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
 
 // couldn't find suitable npm library to use as a grid component... so had to used 'reactrpg' npm module as template & modified it...
 function Grid(props) {
@@ -91,4 +92,5 @@ function GridImage (props) {
 
 }
 
-export default Grid
+// export default Grid
+export default withRouter(Grid)

@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import {Link, Redirect, withRouter} from 'react-router-dom'
+// import {withRouter} from 'react-router-dom'
 require('../styles/menu.css')
 
 
-export default class Menu extends Component {
+class Menu extends Component {
 
 	constructor(props){
     super(props)
@@ -77,6 +78,6 @@ export default class Menu extends Component {
   	)
   }
 }
-
+export default withRouter(Menu)
 
       // <p><Redirect to="project/knightfall" >knightfall</Redirect></p>
