@@ -29,8 +29,8 @@ export default ({}) => (
 
 			<div id="icons-container">
           <a href="https://aballo.artstation.com/">
-            <img src="../artsTiny.png" className="fa" id="artstationIco"></img>
-            <p>Artstation</p>
+            <img width="25" height="50" src="../artstation.svg" className="fa" id="artstationIcon"></img>
+            <p id="artstationLink">Artstation</p>
           </a>
           <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/">
             <i className="fa fa-linkedin"></i>

@@ -29,6 +29,14 @@
    position: relative;
 }
 
-#cvIco {
-  /*padding:-30px;*/
+#artstationIcon {
+  position: relative;
+  top: -15px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+#artstationLink {
+   position: relative;
+   top: -30px;
 }

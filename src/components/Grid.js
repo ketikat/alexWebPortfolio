@@ -84,7 +84,7 @@ function GridImage (props) {
   return(
         <div className='imageGridItem' style={styles.imageGridItem}>
           <a  onClick={()=>clickHandler(clickType)}>
-            <div  href={'/about'}  className='imageWrapper' style={styles.imageWrapper}>
+            <div  className='imageWrapper' style={styles.imageWrapper}>
             </div>
           </a>
         </div>

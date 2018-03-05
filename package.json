@@ -5,24 +5,21 @@
   "license": "ISC",
   "main": "server.js",
   "scripts": {
+    "build": "webpack",
     "start": "node server.js",
     "start-dev": "webpack -w & nodemon server.js"
   },
+  "homepage": "https://www.aleksanderballo.com",
   "dependencies": {
-    "blazy": "^1.5.2",
     "css-loader": "^0.28.9",
     "express": "^4.16.2",
-    "grid-styled": "^3.2.1",
-    "gx": "^1.0.0-rc3",
     "morgan": "^1.9.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
-    "react-component-gallery": "^1.2.1",
     "react-dom": "^16.2.0",
     "react-images": "^0.5.17",
     "react-router-dom": "^4.2.2",
     "react-spinkit": "^3.0.0",
-    "react-stylish-gallery": "^1.0.10",
     "react-transition-group": "^2.2.1",
     "style-loader": "^0.20.2"
   },
