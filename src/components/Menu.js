@@ -14,7 +14,6 @@ export default class Menu extends Component {
   }
 
  	clicked(e){
- 		// e.preventDefault()
  		this.setState({isProjectsClicked: !this.state.isProjectsClicked})
  	}
 
@@ -23,12 +22,11 @@ export default class Menu extends Component {
   	        <div className="menu">
 							<div className="menu-container">
 								<div className="main-menu">
-
 									<div className="logo">
 										<Link to="/">
-										 	<img src="../images/alexballoname.svg" />
-										</Link>
-										<h1 className="hide">Alex Ballo - 3D Artist</h1>
+                    <h1>Alex Ballo</h1>
+                    <h5>3D Artist</h5>
+                    </Link>
 									</div>
 									<div className="items">
 										<p onClick={this.clicked}><Link to="/">portfolio</Link></p>
@@ -59,7 +57,7 @@ export default class Menu extends Component {
 
                   <div className="social">
                       <a href="https://aballo.artstation.com/">
-                        <img src="../artsTiny.png" className="fa" id="artstationIco"></img>
+                       <img width="25" height="50" className="fa" id="artstationIco" src="../artstation.svg" ></img>
                       </a>
                       <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/">
                         <i className="fa fa-linkedin"></i>

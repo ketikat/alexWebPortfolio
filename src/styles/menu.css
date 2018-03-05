@@ -15,7 +15,8 @@ a {
 }
 .menu {
 	display: none;
-	background-color: #ebedee;
+	/*background-color: #ebedee;*/
+	background-color: #DC851F;
 	/*background-color: #5f6e78;*/
 }
 .menu a {
@@ -23,13 +24,11 @@ a {
 	/*color: white;*/
 }
 
-
-
 @media (min-width: 768px) {
 	.menu {
 		display: block;
 		position: fixed;
-		width: 25%;
+		width: 20%;
 		height: 100%;
 		font-weight: 300;
 		float: left;
@@ -50,7 +49,7 @@ a {
 }
 .menu-container {
 	height: 100%;
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 }
 .main-menu {
@@ -66,12 +65,12 @@ a {
 .social, .main-menu:after {
   height: 50px;
 }
+
 .logo {
+	font-family: Lato;
 	padding: 75px 0px 40px 0px;
 }
-.logo img {
-	max-width: 100%;
-}
+
 .items {
 	text-transform: uppercase;
 	padding-left: 30px;
@@ -99,18 +98,20 @@ a {
 	opacity: 1;
 }
 .social {
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	font-size: 18px;
 	display: flex;
 	justify-content: space-around;
 }
+
 #artstationIco {
-	padding-top: 3px;
+	position: relative;
+	top: -12px;
 	box-sizing: border-box;
 	display: flex;
-	justify-content: space-around;
 }
+
 #cvIco {
 	width: 25px;
 	height: 55px;

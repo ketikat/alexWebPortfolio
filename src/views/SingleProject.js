@@ -1,18 +1,16 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import PreLoader from '../components/PreLoader'
+import Grid from '../components/Grid.js'
+import Lightbox from 'react-images'
 require('../styles/singleproject.css')
 
-import ReactRpg from '../components/Grid.js'
-import Lightbox from 'react-images'
-// import { Gallery, Image, Overlay } from 'react-stylish-gallery'
-
-export default class AllProjects extends Component {
+export default class SingleProject extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			lightboxIsOpen: false,
-			currentImage: 5,
+			ligthboxIsOpen: false,
+			currentImage: 1,
 		}
 
 		this.closeLightbox = this.closeLightbox.bind(this)
@@ -35,15 +33,14 @@ export default class AllProjects extends Component {
 
 	openLightbox(index) {
 		this.setState({
-			lightboxIsOpen: true,
+			ligthboxIsOpen: true,
 			currentImage: index
 		})
-
 	}
 
 	closeLightbox() {
 		this.setState({
-			lightboxIsOpen: false
+			ligthboxIsOpen: false
 		})
 	}
 
@@ -51,24 +48,17 @@ export default class AllProjects extends Component {
 		let allProjectsThumbs = []
 		let lightboxImages = []
 
-		let names = ["aged_man", "anime", "bridge", "gun", "knightfall", "knights_armor", "mech_suit", "pilot", "skanderbeg", "skull_sermon", "tunnel", "x-men"]
+		let folder = "pilot"
 
-// HOW TO LINK EXAMPLE:
-		// for(let i = 0; i < names.length; i++) {
-		// 	allProjectsThumbs.push(	<Link to={`${names[i]}`}><img className="imageWrapper" width={"33%"} src={`images/allprojects/${names[i]}.jpg`} /></Link>)
-		// }
-
-// for thums for GRID
-		for(let i = 0; i < names.length; i++) {
-			allProjectsThumbs.push( {url:`../../images/allprojects/${names[i]}.jpg`} )
+		// for thums for GRID
+		for(let i = 1; i < 6; i++) {
+			allProjectsThumbs.push( {url:`../../images/${folder}/thumbs/${folder}${i}.jpg`} )
 		}
 
-// for LIGHTBOX:
-		for(let i = 0; i < names.length; i++) {
-			lightboxImages.push({src: `../../images/allprojects/${names[i]}.jpg`})
+		// for LIGHTBOX:
+		for(let i = 1; i < 6; i++) {
+			lightboxImages.push({src: `../../images/${folder}/${folder}${i}.jpg`})
 		}
-
-		// console.log(allProjectsThumbs)
 
 		return (
 
@@ -76,16 +66,24 @@ export default class AllProjects extends Component {
 
 				<div style={{width: '80%', margin: '6em auto 100px'}} >
 					<p>text in gallery</p>
-					 <ReactRpg  paddingBottom="30%" imgFitting="cover" columns={[1,1,1]} imagesArray={allProjectsThumbs}/>
+					<Grid
+						clickHandler={this.openLightbox}
+						paddingBottom="40%"
+						imgFitting="cover"
+						columns={[1,1,1]}
+						imagesArray={allProjectsThumbs}
+					/>
 				</div>
 
 				<Lightbox
-				 	isOpen={this.state.isOpen}
+				 	isOpen={this.state.ligthboxIsOpen}
 					images={lightboxImages}
 			    onClickPrev={this.gotoPrevious}
 	        onClickNext={this.gotoNext}
 		    	onClose={this.closeLightbox}
 		    	currentImage={this.state.currentImage}
+		    	backdropClosesModal={true}
+		    	showImageCount={false}
 				/>
 
 			</div>
@@ -93,6 +91,3 @@ export default class AllProjects extends Component {
 		)
 	}
 }
-
-
-// clickHandler={this.openLightbox.bind(this, index)}

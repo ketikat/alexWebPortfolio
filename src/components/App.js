@@ -28,7 +28,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{height: '100%', width: '100%'}}>
+      <div className="bigContainer" style={{height: '100%', width: '100%'}}>
           <Menu />
           <MobileNav />
           <TransitionGroup>
