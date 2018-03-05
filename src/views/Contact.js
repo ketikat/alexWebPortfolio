@@ -4,15 +4,15 @@ require('../styles/about-contact.css')
 
 const styles = {
 	wrapper: {
-		display: 'inline-flex',
-		width: '75%',
+		// display: 'inline-flex',
+		width: '70%',
 		float: 'right',
-		height: '100%'
+		// height: '100%'
 	},
 	text: {
-		width: '60%',
-		float: 'left',
-		padding: '100px 50px'
+		width: '80%',
+		// float: 'left',
+		padding: '100px 5px 5px 5px '
 	}
 }
 
@@ -26,18 +26,17 @@ export default ({}) => (
 			Available for contract work & commisions, please get in touch:
 			</p>
 
-
 			<div id="icons-container">
-          <a href="https://aballo.artstation.com/">
-            <img width="25" height="50" src="../artstation.svg" className="fa" id="artstationIcon"></img>
+          <a href="https://www.artstation.com/aballo">
+            <img width="25" height="50" src="../../public/artstation.svg" className="fa" id="artstationIcon"></img>
             <p id="artstationLink">Artstation</p>
           </a>
           <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/">
             <i className="fa fa-linkedin"></i>
             <p>LinkedIn</p>
           </a>
-          <a href="https://aleksander.ballo/cv">
-            <img src="../cv.svg" className="fa" id="cvIco"></img>
+          <a href="../../public/AlexBalloCV.pdf" download="AlexBalloCV.pdf" >
+            <img src="../../public/cv.svg" className="fa" id="cvIco"></img>
             <p id="cvlink">CV Link</p>
           </a>
           <a href="mailto:aleksander.ballo@gmail.com">

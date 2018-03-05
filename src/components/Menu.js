@@ -25,7 +25,7 @@ class Menu extends Component {
 								<div className="main-menu">
 									<div className="logo">
 										<Link to="/">
-                    <h1>Alex Ballo</h1>
+                    <h1>Alex W. Ballo</h1>
                     <h5>3D Artist</h5>
                     </Link>
 									</div>
@@ -57,20 +57,19 @@ class Menu extends Component {
 								</div>
 
                   <div className="social">
-                      <a href="https://aballo.artstation.com/">
-                       <img width="25" height="50" className="fa" id="artstationIco" src="../artstation.svg" ></img>
+                      <a href="https://www.artstation.com/aballo">
+                       <img width="25" height="50" className="fa" id="artstationIco" src="../../public/artstation.svg" ></img>
                       </a>
                       <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/">
                         <i className="fa fa-linkedin"></i>
                       </a>
-                      <a href="https://aleksander.ballo/cv">
-                        <img src="../cv.svg" className="fa" id="cvIco"></img>
+                      <a href="../../public/AlexBalloCV.pdf" download="AlexBalloCV.pdf" >
+                        <img src="../../public/cv.svg" className="fa" id="cvIco"></img>
                       </a>
                       <a href="mailto:aleksander.ballo@gmail.com">
                         <i className="fa fa-envelope-o"></i>
                       </a>
                   </div>
-
 
 							</div>
 						</div>

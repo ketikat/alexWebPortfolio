@@ -8,9 +8,10 @@
   max-width: 100%;
   margin-left: 30px;
 }
-.mobile-logo img {
-  margin: 25px auto;
-  width: 175px;
+.mobile-logo {
+  font-family: Lato;
+  /*margin: 25px auto;*/
+  width: 100%;
 }
 
 .offsetItem {
@@ -116,14 +117,16 @@
 #menu
 {
   position: absolute;
-  color: #dee1e3;
-  width: 200px;
-  height:100%;
+  /*color: #dee1e3;*/
+  /*opacity: 50%;*/
+  width: 28vw;
+  max-width: 200px;
+  height:100vh;
   margin: -50px 0 0 -50px;
   padding: 30px;
   padding-top: 50px;
-  /*height: 400px;*/
-  background: #ededed;
+  background: #DC851F;
+
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */

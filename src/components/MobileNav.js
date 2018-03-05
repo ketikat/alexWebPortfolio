@@ -28,9 +28,9 @@ export default class MobileMenu extends Component {
 
 						    <div className="mobile-logo">
 									<Link to="/">
-									 	<img src="images/alexballoname.svg" />
-									</Link>
-									<h1 className="hide">Alex Ballo - 3D Artist</h1>
+                    <h3>Alex W. Ballo</h3>
+                    <h5>3D Artist</h5>
+                    </Link>
 								</div>
 								<p onClick={this.clicked}><Link to="/">portfolio</Link></p>
 							{
@@ -62,3 +62,11 @@ export default class MobileMenu extends Component {
 		)
 	}
 }
+
+
+  						// 	<div className="mobile-logo">
+								// 	<Link to="/">
+								// 	 	<img src="images/alexballoname.svg" />
+								// 	</Link>
+								// 	<h1 className="hide">Alex Ballo - 3D Artist</h1>
+								// </div>

@@ -5,13 +5,14 @@ const styles = {
 	wrapper: {
 		width: '75%',
 		float: 'right',
-		height: '100%'
+		// height: '100%'
 	},
 	text: {
 		fontFamily: 'Lato',
 		width: '60%',
 		float: 'left',
 		padding: '100px 50px'
+		// padding: '100px 5px 5px 5px '
 	},
 	pic: {
 		height: '40%',
@@ -39,6 +40,9 @@ export default ({}) => (
         </p>
 
 		</div>
-			<img style={styles.pic} src="../images/alexphoto.jpg" />
+
 	</div>
 )
+
+
+			// <img style={styles.pic} src="../../public/images/alexphoto.jpg" />

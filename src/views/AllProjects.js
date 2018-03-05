@@ -26,7 +26,7 @@ class AllProjects extends Component {
 
 		for(let i = 0; i < names.length; i++) {
 				allProjectsThumbs.push({
-							url:`../../images/allprojects/${names[i]}.jpg`,
+							url:`../../public/images/allprojects/${names[i]}.jpg`,
 				      link:`/${names[i]}`
 				})
 		}

@@ -54,12 +54,12 @@ export default class SingleProject extends Component {
 
 		// for thums for GRID
 		for(let i = 1; i < 6; i++) {
-			projectThumbs.push( {url:`../../images/${folder}/thumbs/${folder}${i}.jpg`} )
+			projectThumbs.push( {url:`../../public/images/${folder}/thumbs/${folder}${i}.jpg`} )
 		}
 
 		// for LIGHTBOX:
 		for(let i = 1; i < 6; i++) {
-			lightboxImages.push({src: `../../images/${folder}/${folder}${i}.jpg`})
+			lightboxImages.push({src: `../../public/images/${folder}/${folder}${i}.png`})
 		}
 
 		return (
@@ -67,7 +67,7 @@ export default class SingleProject extends Component {
 			<div className="gallery">
 
 				<div style={{width: '80%', margin: '6em auto 100px'}} >
-					<p>text in gallery</p>
+					<p>gallery under construction! </p>
 					<Grid
 						clickHandler={this.openLightbox}
 						paddingBottom="40%"
@@ -86,6 +86,7 @@ export default class SingleProject extends Component {
 		    	currentImage={this.state.currentImage}
 		    	backdropClosesModal={true}
 		    	showImageCount={false}
+		    	width="5000"
 				/>
 
 			</div>

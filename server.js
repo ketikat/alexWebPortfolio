@@ -15,11 +15,12 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 // static middleware so your browser can request things like your 'bundle.js'
 app.use(express.static(path.join(__dirname, './public')))
+app.use(express.static(path.join(__dirname)))
 
 
 // Send index.html for any other requests
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'))
+  res.sendFile(path.join(__dirname, './index.html'))
 })
 
 //error handling middleware
