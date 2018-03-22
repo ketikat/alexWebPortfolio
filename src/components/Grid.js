@@ -10,6 +10,7 @@ function Grid(props) {
     const paddingBottom= props.paddingBottom || '100%'
     const imgFitting= props.imgFitting || 'cover'
     const link= props.link
+    const radius= props.radius || 0
 
     // styles helper
     const cssBreakpoints = {
@@ -31,6 +32,7 @@ function Grid(props) {
                 clickHandler={clickHandler}
                 imgFitting={imgFitting}
                 paddingBottom={paddingBottom}
+                radius={radius}
               />
       )
     })
@@ -58,7 +60,7 @@ function Grid(props) {
 
 function GridImage (props) {
 
-  const {  link, url, index, padding, imgFitting, paddingBottom, clickHandler, clickParam } = props
+  const { radius, link, url, index, padding, imgFitting, paddingBottom, clickHandler, clickParam } = props
 
 // styles
   const styles = {
@@ -76,6 +78,7 @@ function GridImage (props) {
       backgroundSize: `${imgFitting}`,
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
+      borderRadius: `${radius}px`,
       cursor: 'pointer'
     }
   }

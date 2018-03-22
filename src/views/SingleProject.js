@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import PreLoader from '../components/PreLoader'
 import Grid from '../components/Grid.js'
 import Lightbox from 'react-images'
-require('../styles/singleproject.css')
+require('../styles/gallery.css')
 
 export default class SingleProject extends Component {
 	constructor(props){
@@ -64,16 +63,17 @@ export default class SingleProject extends Component {
 
 		return (
 
-			<div className="gallery">
+			<div className="gallery-container">
 
-				<div style={{width: '80%', margin: '6em auto 100px'}} >
-					<p>gallery under construction! </p>
+				<div id="single-gallery">
+					<p> </p>
 					<Grid
 						clickHandler={this.openLightbox}
 						paddingBottom="40%"
 						imgFitting="cover"
 						columns={[1,1,1]}
 						imagesArray={projectThumbs}
+						radius={5}
 					/>
 				</div>
 
@@ -86,7 +86,7 @@ export default class SingleProject extends Component {
 		    	currentImage={this.state.currentImage}
 		    	backdropClosesModal={true}
 		    	showImageCount={false}
-		    	width="5000"
+		    	width={5000}
 				/>
 
 			</div>

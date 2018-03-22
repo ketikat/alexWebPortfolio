@@ -1,29 +1,18 @@
-.gallery {
-	width: 100%;
-}
+/*#gallery-container {
+  position: fixed;
+  height:100%;
+  overflow: scroll;
+	width: 75vw;
+  padding: 2em;
+}*/
 
-.imageWrapper {
+/*#gallery {
+  position: fixed;
+  width: 90%;
+}*/
+
+/*.imageWrapper {
   background-clip: border-box;
 }
 
-@media (min-width: 768px) {
-	.gallery {
-		width: 75%;
-		height: 100%;
-		float: right;
-	}
-}
-
-.b-lazy {
-    -webkit-transition: opacity 500ms ease-in-out;
-       -moz-transition: opacity 500ms ease-in-out;
-         -o-transition: opacity 500ms ease-in-out;
-            transition: opacity 500ms ease-in-out;
-             max-width: 100%;
-               opacity: 0;
-}
-
-.b-lazy.b-loaded {
-               opacity: 1;
-}
-
+*/

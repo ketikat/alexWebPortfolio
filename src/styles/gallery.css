@@ -1,27 +1,37 @@
-.gallery {
-	width: 100%;
-  /*background-color: #3C3B37;*/
-
-  /*#7f8a93 - grey bluish*/
-
+.gallery-container{
+  display:block;
+  height:100%;
+  width: 72vw;
+  float:right;
+  margin-top: 2em;
+  padding: .5em;
+  padding-right: 1em;
+  text-align: center;
 }
-@media (min-width: 768px) {
-	.gallery {
-		width: 100%;
-		height: 100%;
-		float: right;
-    /*background-color: #3C3B37;*/
+
+@media (max-width: 768px) {
+	.gallery-container {
+
+  display:block;
+  height:100%;
+  width: 90vw;
+  float:right;
+  margin-top: 2em;
+  padding: .5em;
+  padding-right: 0em;
+  text-align: center;
+
 	}
+  #all-gallery, #single-gallery {
+      margin-right: 2em;
+  }
 }
-/*.b-lazy {
-    -webkit-transition: opacity 500ms ease-in-out;
-       -moz-transition: opacity 500ms ease-in-out;
-         -o-transition: opacity 500ms ease-in-out;
-            transition: opacity 500ms ease-in-out;
-             max-width: 100%;
-               opacity: 0;
+
+div.imageGridItem:hover{
+  opacity: .8;
+   -webkit-transition: opacity .35s ease-in-out;
+      -moz-transition: opacity .35s ease-in-out;
+       -ms-transition: opacity .35s ease-in-out;
+        -o-transition: opacity .35s ease-in-out;
+           transition: opacity .35s ease-in-out;
 }
-.b-lazy.b-loaded {
-               opacity: 1;
-}
-*/

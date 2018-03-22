@@ -3956,35 +3956,7 @@ var classNamesShape = exports.classNamesShape = _propTypes2.default.oneOfType([_
 })]);
 
 /***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactSpinkit = __webpack_require__(117);
-
-var _reactSpinkit2 = _interopRequireDefault(_reactSpinkit);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
-exports.default = function (_ref) {
-	_objectDestructuringEmpty(_ref);
-
-	return _react2.default.createElement(_reactSpinkit2.default, { spinnerName: 'ball-beat' });
-};
-
-/***/ }),
+/* 49 */,
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4037,6 +4009,7 @@ function Grid(props) {
   var paddingBottom = props.paddingBottom || '100%';
   var imgFitting = props.imgFitting || 'cover';
   var link = props.link;
+  var radius = props.radius || 0;
 
   // styles helper
   var cssBreakpoints = {
@@ -4055,7 +4028,8 @@ function Grid(props) {
       padding: padding,
       clickHandler: clickHandler,
       imgFitting: imgFitting,
-      paddingBottom: paddingBottom
+      paddingBottom: paddingBottom,
+      radius: radius
     });
   });
 
@@ -4068,7 +4042,8 @@ function Grid(props) {
 }
 
 function GridImage(props) {
-  var link = props.link,
+  var radius = props.radius,
+      link = props.link,
       url = props.url,
       index = props.index,
       padding = props.padding,
@@ -4094,6 +4069,7 @@ function GridImage(props) {
       backgroundSize: '' + imgFitting,
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
+      borderRadius: radius + 'px',
       cursor: 'pointer'
     }
   };
@@ -26010,7 +25986,7 @@ var App = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { style: { height: '100%', width: '100%' } },
+        { id: 'app' },
         _react2.default.createElement(_Menu2.default, null),
         _react2.default.createElement(_MobileNav2.default, null),
         _react2.default.createElement(
@@ -26804,7 +26780,7 @@ function mergeChildMappings(prev, next) {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -26823,238 +26799,235 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import {withRouter} from 'react-router-dom'
 __webpack_require__(106);
 
 var Menu = function (_Component) {
-	_inherits(Menu, _Component);
+  _inherits(Menu, _Component);
 
-	function Menu(props) {
-		_classCallCheck(this, Menu);
+  function Menu(props) {
+    _classCallCheck(this, Menu);
 
-		var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
 
-		_this.state = {
-			isProjectsClicked: false
-		};
-		_this.clicked = _this.clicked.bind(_this);
-		return _this;
-	}
+    _this.state = {
+      isProjectsClicked: false
+    };
+    _this.clicked = _this.clicked.bind(_this);
+    return _this;
+  }
 
-	_createClass(Menu, [{
-		key: 'clicked',
-		value: function clicked(e) {
-			this.setState({ isProjectsClicked: !this.state.isProjectsClicked });
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'menu' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'menu-container' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'main-menu' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'logo' },
-							_react2.default.createElement(
-								_reactRouterDom.Link,
-								{ to: '/' },
-								_react2.default.createElement(
-									'h1',
-									null,
-									'Alex W. Ballo'
-								),
-								_react2.default.createElement(
-									'h5',
-									null,
-									'3D Artist'
-								)
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'items' },
-							_react2.default.createElement(
-								'p',
-								{ onClick: this.clicked },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: '/' },
-									'portfolio'
-								)
-							),
-							this.state.isProjectsClicked ? _react2.default.createElement(
-								'div',
-								null,
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'knightfall' },
-										'knightfall'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'x-men', replace: true },
-										'x-men'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'aged_man', replace: true },
-										'aged man study'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'skanderbeg' },
-										'skanderbeg'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'skull_sermon' },
-										'skull sermon'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'pilot' },
-										'femme pilot'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'gun' },
-										'gun'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'mech_suit' },
-										'mech suit'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'knights_armor' },
-										'knight\'s armor'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'anime' },
-										'anime girl'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'bridge' },
-										'bridge'
-									)
-								),
-								_react2.default.createElement(
-									'p',
-									{ className: 'offsetItem' },
-									_react2.default.createElement(
-										_reactRouterDom.Link,
-										{ to: 'tunnel' },
-										'tunnnel level'
-									)
-								)
-							) : null,
-							_react2.default.createElement(
-								'p',
-								null,
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'contact' },
-									'contact'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								null,
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'about' },
-									'about'
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'social' },
-						_react2.default.createElement(
-							'a',
-							{ href: 'https://www.artstation.com/aballo' },
-							_react2.default.createElement('img', { width: '25', height: '50', className: 'fa', id: 'artstationIco', src: '../../public/artstation.svg' })
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: 'https://www.linkedin.com/in/aleksander-w-ballo-27467061/' },
-							_react2.default.createElement('i', { className: 'fa fa-linkedin' })
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: '../../public/AlexBalloCV.pdf', download: 'AlexBalloCV.pdf' },
-							_react2.default.createElement('img', { src: '../../public/cv.svg', className: 'fa', id: 'cvIco' })
-						),
-						_react2.default.createElement(
-							'a',
-							{ href: 'mailto:aleksander.ballo@gmail.com' },
-							_react2.default.createElement('i', { className: 'fa fa-envelope-o' })
-						)
-					)
-				)
-			);
-		}
-	}]);
+  _createClass(Menu, [{
+    key: 'clicked',
+    value: function clicked(e) {
+      this.setState({ isProjectsClicked: !this.state.isProjectsClicked });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'menu' },
+        _react2.default.createElement(
+          'div',
+          { className: 'menu-container' },
+          _react2.default.createElement(
+            'div',
+            { id: 'main-menu' },
+            _react2.default.createElement(
+              'div',
+              { className: 'title' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/' },
+                _react2.default.createElement(
+                  'p',
+                  { id: 'name' },
+                  ' Alex Ballo'
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                { id: 'job' },
+                '3D Artist'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'items' },
+              _react2.default.createElement(
+                'p',
+                { onClick: this.clicked },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/' },
+                  'portfolio'
+                )
+              ),
+              this.state.isProjectsClicked ? _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/knightfall' },
+                    'knightfall'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/x-men' },
+                    'x-men'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/aged_man' },
+                    'aged man study'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/skanderbeg' },
+                    'skanderbeg'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/skull_sermon' },
+                    'skull sermon'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/pilot' },
+                    'femme pilot'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/gun' },
+                    'gun'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/mech_suit' },
+                    'mech suit'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/knights_armor' },
+                    'knight\'s armor'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/anime' },
+                    'anime girl'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/bridge' },
+                    'bridge'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'offsetItem' },
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/tunnel' },
+                    'tunnnel level'
+                  )
+                )
+              ) : null,
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/contact' },
+                  'contact'
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/about' },
+                  'about'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'social' },
+            _react2.default.createElement(
+              'a',
+              { href: 'https://www.artstation.com/aballo' },
+              _react2.default.createElement('img', { width: '25', height: '50', className: 'fa', id: 'artstationIco', src: '../../public/artstation.svg' })
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: 'https://www.linkedin.com/in/aleksander-w-ballo-27467061/' },
+              _react2.default.createElement('i', { className: 'fa fa-linkedin' })
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '../../public/AlexBalloCV.pdf', download: 'AlexBalloCV.pdf' },
+              _react2.default.createElement('img', { src: '../../public/cv.svg', className: 'fa', id: 'cvIco' })
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: 'mailto:aleksander.ballo@gmail.com' },
+              _react2.default.createElement('i', { className: 'fa fa-envelope-o' })
+            )
+          )
+        )
+      );
+    }
+  }]);
 
-	return Menu;
+  return Menu;
 }(_react.Component);
 
 exports.default = (0, _reactRouterDom.withRouter)(Menu);
-
-// <p><Redirect to="project/knightfall" >knightfall</Redirect></p>
 
 /***/ }),
 /* 106 */
@@ -27115,7 +27088,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "body, html {\n\tmargin: 0;\n\tpadding: 0;\n\theight: 100%;\n\twidth: 100%;\n\tmargin-bottom: -18px;\n}\np {\n\tfont-family: 'Open Sans Condensed', sans-serif;\n}\n\na {\n\tcolor: black;\n\ttext-decoration: none;\n}\n.menu {\n\tdisplay: none;\n\t/*background-color: #ebedee;*/\n\tbackground-color: #DC851F;\n\t/*background-color: #5f6e78;*/\n}\n.menu a {\n\tcolor: 374047;\n\t/*color: white;*/\n}\n\n@media (min-width: 768px) {\n\t.menu {\n\t\tdisplay: block;\n\t\tposition: fixed;\n\t\twidth: 25%;\n\t\tmax-width: 350px;\n\t\theight: 100%;\n\t\tfont-weight: 300;\n\t\tfloat: left;\n\t\tz-index: 99;\n\t\t/*box-shadow: 8px -6px 6px -9px black;*/\n\t}\n}\n#app {\n\twidth: 100%;\n\theight: 100%;\n\tpadding: 0;\n\tmargin: 0;\n}\n.hide {\n   \tposition: absolute !important;\n   \ttop: -9999px !important;\n   \tleft: -9999px !important;\n}\n.menu-container {\n\theight: 100%;\n\twidth: 80%;\n\tmargin: 0 auto;\n}\n.main-menu {\n\tmin-height: 100%;\n\tmargin-bottom: -80px;\n\tcolor: #c6e1f3;\n\n}\n.main-menu:after {\n  content: \"\";\n  display: block;\n}\n.social, .main-menu:after {\n  height: 50px;\n}\n\n.logo {\n\tfont-family: Lato;\n\t/*font-family: 'Bitter', serif;/*/\n\t/*font-family: 'Rubik', sans-serif;*/\n\t/*font-family: 'Quicksand', sans-serif;*/\n\n\t/*font-family: 'Nanum Gothic Coding', monospace;*/\n\t/*font-family: 'Puritan', sans-serif;*/\n\t/*font-family: 'Allerta Stencil', sans-serif;*/\n\t/*font-family: 'Dosis', sans-serif;*/\n\t/*font-family: 'Marvel', sans-serif;*/\n\n\n\tpadding: 5vh 0px 0vh 0px;\n}\n\n.items {\n\ttext-transform: uppercase;\n\tpadding-left: 30px;\n}\n.offsetItem {\n\tfont-size: 8;\n\tpadding-left: 10px;\n\tmargin: 10px;\n}\n.items img {\n\theight: 15px;\n\tmargin-left: 10px;\n\topacity: 0;\n\t-webkit-transition: opacity .35s ease-in-out;\n    -moz-transition: opacity .35s ease-in-out;\n    -ms-transition: opacity .35s ease-in-out;\n    -o-transition: opacity .35s ease-in-out;\n    transition: opacity .35s ease-in-out;\n\n}\n.items a:hover {\n\topacity: 0.6;\n}\n.items a:hover > img {\n\topacity: 1;\n}\n.social {\n\twidth: 100%;\n\tmargin: 0 auto;\n\tfont-size: 18px;\n\tdisplay: flex;\n\tjustify-content: space-around;\n}\n\n#artstationIco {\n\tposition: relative;\n\ttop: -12px;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n}\n\n#cvIco {\n\twidth: 25px;\n\theight: 55px;\n\tpadding-bottom: 30px;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n}\n", ""]);
+exports.push([module.i, "\n/*-----------MENU CONTAINER--------------*/\n.menu {\n\tbackground-color: #303633;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n}\n\n.menu a {\n\tcolor: white;\n\ttext-decoration: none;\n}\n\n.menu-container {\n\theight: 100%;\n\twidth: 85%;\n\tmargin: 0 auto;\n}\n\n/*-----------for positioning ICONS--------------*/\n#main-menu {\n\tmin-height: 100%;\n\tmargin-bottom: -70px;\n}\n/*-----------Alex Name Section--------------*/\n.title {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: flex-start;\n\tmargin:0;\n}\n#name {\n\tcolor: #4F6D7A;\n\tfont-size: 2.5em;\n\ttext-shadow: 4px 0px 25px black;\n\tfont-family: 'Zilla Slab Highlight', sans-serif;\n}\n#job {\n\tposition: relative;\n\ttop: -.7em;\n\tcolor: #C0D6DF;\n\tfont-size: 1.5em;\n\tfont-family: 'Zilla Slab Highlight', sans-serif;\n\ttext-shadow: 2px 0px 20px black;\n\tmargin:0;\n}\n#name:hover{\n\tcolor:#dd6e42;\n\t -webkit-transition: color .35s ease-in-out;\n      -moz-transition: color .35s ease-in-out;\n       -ms-transition: color .35s ease-in-out;\n        -o-transition: color .35s ease-in-out;\n           transition: color .35s ease-in-out;\n}\n/*-----------Menu Items Section---------------*/\n.items p{\n\tfont-family: 'Open Sans Condensed', sans-serif;\n\ttext-transform: uppercase;\n\tpadding-left: 30px;\n}\n\n.items a:hover {\n\tcolor: #dd6e42;\n}\n\n.offsetItem {\n\tfont-size: 8;\n\tpadding-left: 10px;\n\tmargin: 10px;\n}\n\n/*-----------SOCIAL NAV AT BOTTOM---------------*/\n.social {\n\twidth: 100%;\n\tmax-width: 175px;\n\tmargin: 0 auto;\n\tfont-size: 18px;\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tfloat:left;\n}\n\n#artstationIco {\n\tposition: relative;\n\ttop: -12px;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n}\n\n#cvIco {\n\twidth: 25px;\n\theight: 55px;\n\tpadding-bottom: 30px;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n}\n\n\n/*----------DISSAPPEAR LARGE MENU FOR PHONE--------------*/\n\n@media (max-width: 768px) {\n  .menu {\n    display: none;\n  }\n}\n\n/*---------STYLING SMALL MENU for PHONE---------------*/\n\n@media (min-width: 768px) {\n\t.menu {\n\t\tdisplay: block;\n\t\tposition: fixed;\n\t\twidth: 25vw;\n\t\tmax-width: 250px;\n\t\theight: 100%;\n\t\tfont-weight: 300;\n\t\tfloat: left;\n\t\tz-index: 99;\n\t}\n}\n\n\n\n\n\n\t/*background-color: #545d82;\n\t/*background-color: #597889;*/\n\t/*background-color: #222222;*/\n\t/*#F7B267;*/\n\t /*#EAEAEA;*/\n/*\n\t#DD6E42;*/\n\t/*background-color: #545768;*/\n\t/*color: #4665C9;*/\n\t/*color: #F0A202;*/\n", ""]);
 
 // exports
 
@@ -27223,7 +27196,7 @@ module.exports = function (css) {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -27245,214 +27218,99 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 __webpack_require__(110);
 
 var MobileMenu = function (_Component) {
-	_inherits(MobileMenu, _Component);
+  _inherits(MobileMenu, _Component);
 
-	function MobileMenu(props) {
-		_classCallCheck(this, MobileMenu);
+  function MobileMenu(props) {
+    _classCallCheck(this, MobileMenu);
 
-		var _this = _possibleConstructorReturn(this, (MobileMenu.__proto__ || Object.getPrototypeOf(MobileMenu)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (MobileMenu.__proto__ || Object.getPrototypeOf(MobileMenu)).call(this, props));
 
-		_this.state = {
-			isProjectsClicked: false
-		};
-		_this.clicked = _this.clicked.bind(_this);
-		return _this;
-	}
+    _this.state = {
+      isBurgerClicked: false
+    };
+    _this.burgerClicked = _this.burgerClicked.bind(_this);
+    return _this;
+  }
 
-	_createClass(MobileMenu, [{
-		key: 'clicked',
-		value: function clicked(e) {
-			this.setState({ isProjectsClicked: !this.state.isProjectsClicked });
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'nav',
-				{ className: 'mobile-nav' },
-				_react2.default.createElement(
-					'div',
-					{ id: 'menuToggle' },
-					_react2.default.createElement('input', { type: 'checkbox' }),
-					_react2.default.createElement('span', null),
-					_react2.default.createElement('span', null),
-					_react2.default.createElement('span', null),
-					_react2.default.createElement(
-						'ul',
-						{ id: 'menu' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'mobile-logo' },
-							_react2.default.createElement(
-								_reactRouterDom.Link,
-								{ to: '/' },
-								_react2.default.createElement(
-									'h3',
-									null,
-									'Alex W. Ballo'
-								),
-								_react2.default.createElement(
-									'h5',
-									null,
-									'3D Artist'
-								)
-							)
-						),
-						_react2.default.createElement(
-							'p',
-							{ onClick: this.clicked },
-							_react2.default.createElement(
-								_reactRouterDom.Link,
-								{ to: '/' },
-								'portfolio'
-							)
-						),
-						this.state.isProjectsClicked ? _react2.default.createElement(
-							'div',
-							null,
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'knightfall' },
-									'knightfall'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'x-men', replace: true },
-									'x-men'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'aged_man', replace: true },
-									'aged man study'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'skanderbeg' },
-									'skanderbeg'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'skull_sermon' },
-									'skull sermon'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'pilot' },
-									'femme pilot'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'gun' },
-									'gun'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'mech_suit' },
-									'mech suit'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'knights_armor' },
-									'knight\'s armor'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'anime' },
-									'anime girl'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'bridge' },
-									'bridge'
-								)
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'offsetItem' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'tunnel' },
-									'tunnnel level'
-								)
-							)
-						) : null,
-						_react2.default.createElement(
-							'p',
-							null,
-							_react2.default.createElement(
-								_reactRouterDom.Link,
-								{ to: 'contact' },
-								'contact'
-							)
-						),
-						_react2.default.createElement(
-							'p',
-							null,
-							_react2.default.createElement(
-								_reactRouterDom.Link,
-								{ to: 'about' },
-								'about'
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
+  _createClass(MobileMenu, [{
+    key: 'burgerClicked',
+    value: function burgerClicked() {
+      this.setState({ isBurgerClicked: !this.state.isBurgerClicked });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var toggled = this.state.isBurgerClicked ? 'toggled' : '';
 
-	return MobileMenu;
+      return _react2.default.createElement(
+        'nav',
+        { id: 'mobile-nav-container', className: toggled },
+        _react2.default.createElement(
+          'div',
+          { id: 'menuToggle', className: toggled },
+          _react2.default.createElement(
+            'div',
+            { id: 'menuToggleSpans', onClick: this.burgerClicked, className: toggled },
+            _react2.default.createElement('span', { className: 'bar1' }),
+            _react2.default.createElement('span', { className: 'bar2' }),
+            _react2.default.createElement('span', { className: 'bar3' })
+          ),
+          _react2.default.createElement(
+            'ul',
+            { id: 'mobile-nav', className: toggled },
+            _react2.default.createElement(
+              'div',
+              { className: 'mobile-title' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/' },
+                _react2.default.createElement(
+                  'p',
+                  { onClick: this.burgerClicked, id: 'mobile-name' },
+                  ' Alex Ballo'
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                { id: 'mobile-job' },
+                '3D Artist'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'mobileItems', onClick: this.burgerClicked },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/' },
+                'portfolio'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              { onClick: this.burgerClicked, className: 'mobileItems' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/contact' },
+                'contact'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              { onClick: this.burgerClicked, className: 'mobileItems' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/about' },
+                'about'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return MobileMenu;
 }(_react.Component);
-
-// 	<div className="mobile-logo">
-// 	<Link to="/">
-// 	 	<img src="images/alexballoname.svg" />
-// 	</Link>
-// 	<h1 className="hide">Alex Ballo - 3D Artist</h1>
-// </div>
-
 
 exports.default = MobileMenu;
 
@@ -27480,8 +27338,8 @@ var update = __webpack_require__(3)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/index.js!./mobilemenu.css", function() {
-		var newContent = require("!!../../node_modules/css-loader/index.js!./mobilemenu.css");
+	module.hot.accept("!!../../node_modules/css-loader/index.js!./mobile-nav.css", function() {
+		var newContent = require("!!../../node_modules/css-loader/index.js!./mobile-nav.css");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
@@ -27515,7 +27373,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "@media (min-width: 768px) {\n  .mobile-nav {\n    display: none;\n  }\n}\n.mobile-nav {\n  margin-top: -27px;\n  max-width: 100%;\n  margin-left: 30px;\n}\n.mobile-logo {\n  font-family: Lato;\n  /*margin: 25px auto;*/\n  width: 100%;\n}\n\n.offsetItem {\n  font-size: 16px;\n  padding-left: 10px;\n}\n\n#menuToggle{\n  display: block;\n  position: relative;\n  top: 50px;\n  z-index: 1;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n#menuToggle p\n{\n  margin: 3px;\n}\n\n#menuToggle a:hover {\n  opacity: 0.6;\n}\n\n\n#menuToggle input\n{\n  display: block;\n  width: 40px;\n  height: 32px;\n  position: absolute;\n  top: -7px;\n  left: -5px;\n  cursor: pointer;\n  opacity: 0; /* hide this */\n  z-index: 2; /* and place it over the hamburger */\n  -webkit-touch-callout: none;\n}\n\n/*\n * Just a quick hamburger\n */\n#menuToggle span\n{\n  display: block;\n  width: 33px;\n  height: 4px;\n  margin-bottom: 5px;\n  position: relative;\n  background: #cdcdcd;\n  border-radius: 3px;\n  z-index: 1;\n  transform-origin: 4px 0px;\n  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),\n              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),\n              opacity 0.55s ease;\n}\n\n#menuToggle span:first-child\n{\n  transform-origin: 0% 0%;\n}\n\n#menuToggle span:nth-last-child(2)\n{\n  transform-origin: 0% 100%;\n}\n\n/*\n * Transform all the slices of hamburger\n * into a crossmark.\n */\n#menuToggle input:checked ~ span\n{\n  opacity: 1;\n  transform: rotate(45deg) translate(-2px, -1px);\n  background: #232323;\n}\n\n/*\n * But let's hide the middle one.\n */\n#menuToggle input:checked ~ span:nth-last-child(3)\n{\n  opacity: 0;\n  transform: rotate(0deg) scale(0.2, 0.2);\n}\n\n/*\n * Ohyeah and the last one should go the other direction\n */\n#menuToggle input:checked ~ span:nth-last-child(2)\n{\n  opacity: 1;\n  transform: rotate(-45deg) translate(0, -1px);\n}\n\n/*\n * Make this is absolute-positioned\n * at the top left of the screen\n */\n#menu\n{\n  position: absolute;\n  /*color: #dee1e3;*/\n  /*opacity: 50%;*/\n  width: 28vw;\n  max-width: 200px;\n  height:100vh;\n  margin: -50px 0 0 -50px;\n  padding: 30px;\n  padding-top: 50px;\n  background: #DC851F;\n\n  list-style-type: none;\n  -webkit-font-smoothing: antialiased;\n  /* to stop flickering of text in safari */\n  transform-origin: 0% 0%;\n  transform: translate(-100%, 0);\n  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);\n}\n\n#menu li\n{\n  /*padding: 5px 0;*/\n  font-size: 22px;\n}\n\n/*\n * And let's fade it in from the left\n */\n#menuToggle input:checked ~ ul\n{\n  transform: scale(1.0, 1.0);\n  opacity: 1;\n}\n", ""]);
+exports.push([module.i, "/*-----------MOBILE NAV CONTAINER---------------*/\n#mobile-nav-container {\n  max-width: 100%;\n  margin-left: 30px;\n}\n\n#mobile-nav-container a {\n  color: white;\n  text-decoration: none;\n}\n\np.mobileItems, .mobileItems > p {\n  font-family: 'Open Sans Condensed', sans-serif;\n  text-transform: uppercase;\n  margin-top: 20px;\n  color: white;\n  text-decoration: none;\n}\n\n#menuToggle {\n  position: relative;\n  top: 5em;\n}\n\n#menuToggle a:hover {\n  color: #dd6e42;\n}\n\n#menuToggleSpans {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  align-content: center;\n  width: 40px;\n  height: 40px;\n  position: absolute;\n  top: -4em;\n  cursor: pointer;\n  z-index: 1000;\n}\n\n#menuToggle span {\n  display: block;\n  width: 33px;\n  height: 4px;\n  margin-bottom: 5px;\n  position: relative;\n  background: #4F6D7A;\n  border-radius: 3px;\n  z-index: 1;\n  transform-origin: 2px 3px;\n  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),\n              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),\n              opacity 0.55s ease;\n}\n\n#menuToggleSpans .bar1 {\n  transform-origin: 0% 0%;\n}\n\n#menuToggleSpans .bar2 {\n  transform-origin: 0% 100%;\n}\n\n\n.toggled #menuToggleSpans span {\n  opacity: 1;\n  transform: rotate(45deg) translate(-2.5px, -2.5px);\n  background: #dd6e42;\n}\n\n\n.toggled #menuToggleSpans .bar2 {\n  opacity: 0;\n  transform: rotate(0deg) scale(0.2, 0.2);\n}\n\n.toggled #menuToggleSpans .bar3 {\n  opacity: 1;\n  transform: rotate(-45deg) translate(0px, -1px);\n}\n\n\n#mobile-nav{\n  position: fixed;\n  top:0px;\n  width: 25vw;\n  max-width: 150px;\n  height:100vh;\n  margin: 0 0 0 -30px;\n  /*padding: 30px;*/\n  padding-top: 60px;\n  background-color: #303633;\n  list-style-type: none;\n  -webkit-font-smoothing: antialiased;\n  transform-origin: 0% 0%;\n  transform: translate(-100%, 0);\n  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);\n}\n\n#mobile-nav.toggled{\n  transform: scale(1.0, 1.0);\n  opacity: 1;\n  z-index: 99;\n}\n\n.mobile-title{\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  margin:0;\n  text-decoration: none;\n}\n#mobile-name{\n  color: #4F6D7A;\n  font-size: 1.5em;\n  text-shadow: 4px 0px 25px black;\n  font-family: 'Zilla Slab Highlight', sans-serif;\n}\n#mobile-job{\n  position: relative;\n  top: -.5em;\n  color: #C0D6DF;\n  font-size: 1em;\n  font-family: 'Zilla Slab Highlight', sans-serif;\n  text-shadow: 2px 0px 20px black;\n  margin:0;\n}\n\n#mobile-name:hover{\n  color:#dd6e42;\n   -webkit-transition: color .35s ease-in-out;\n      -moz-transition: color .35s ease-in-out;\n       -ms-transition: color .35s ease-in-out;\n        -o-transition: color .35s ease-in-out;\n           transition: color .35s ease-in-out;\n}\n\n\n/*-----------PHONE---------------*/\n@media (min-width: 768px) {\n  #mobile-nav-container {\n    display: none;\n  }\n}\n\n\n\n", ""]);
 
 // exports
 
@@ -27530,6 +27388,7 @@ exports.push([module.i, "@media (min-width: 768px) {\n  .mobile-nav {\n    displ
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+exports.default = About;
 
 var _react = __webpack_require__(0);
 
@@ -27537,57 +27396,29 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+__webpack_require__(201);
 
-var styles = {
-	wrapper: {
-		width: '75%',
-		float: 'right'
-		// height: '100%'
-	},
-	text: {
-		fontFamily: 'Lato',
-		width: '60%',
-		float: 'left',
-		padding: '100px 50px'
-		// padding: '100px 5px 5px 5px '
-	},
-	pic: {
-		height: '40%',
-		width: '40%',
-		display: 'inline-block',
-		boxSizing: 'border-box',
-		padding: '0px 50px'
-	}
-};
-
-exports.default = function (_ref) {
-	_objectDestructuringEmpty(_ref);
+function About(props) {
 
 	return _react2.default.createElement(
 		'div',
-		{ style: styles.wrapper },
-		_react2.default.createElement(
-			'h1',
-			{ className: 'hide' },
-			'About'
-		),
+		{ id: 'about-container' },
 		_react2.default.createElement(
 			'div',
-			{ style: styles.text },
+			{ id: 'about-container-inner' },
 			_react2.default.createElement(
 				'p',
-				{ style: { fontFamily: 'Lato', color: 'rgba(0,0,0,0.8)' } },
+				null,
 				'Hi I\'m Alex, and I\'m a 3D Artist living and working in Culver City, LA.'
 			),
 			_react2.default.createElement(
 				'p',
-				{ style: { fontFamily: 'Lato', color: 'rgba(0,0,0,0.8)' } },
+				null,
 				'I use ZBrush, MAYA, Photoshop, NUKE, PFTrack, Unreal Engine, Unity, Keyshot, VRay, xNormal, Substance Painter, Quixel Suite, Topogun, KNald, 3DSMax, 3D Coat, Marmoset Toolbag, and Marvelous Designer.'
 			),
 			_react2.default.createElement(
 				'p',
-				{ style: { fontFamily: 'Lato', color: 'rgba(0,0,0,0.8)' } },
+				null,
 				'Please get in touch if you\'d like to work on something together \xA0',
 				_react2.default.createElement(
 					'a',
@@ -27597,9 +27428,7 @@ exports.default = function (_ref) {
 			)
 		)
 	);
-};
-
-// <img style={styles.pic} src="../../public/images/alexphoto.jpg" />
+}
 
 /***/ }),
 /* 113 */
@@ -27609,8 +27438,9 @@ exports.default = function (_ref) {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
+exports.default = Contact;
 
 var _react = __webpack_require__(0);
 
@@ -27618,161 +27448,71 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+__webpack_require__(203);
 
-__webpack_require__(114);
-
-var styles = {
-	wrapper: {
-		// display: 'inline-flex',
-		width: '70%',
-		float: 'right'
-		// height: '100%'
-	},
-	text: {
-		width: '80%',
-		// float: 'left',
-		padding: '100px 5px 5px 5px '
-	}
-};
-
-exports.default = function (_ref) {
-	_objectDestructuringEmpty(_ref);
-
-	return _react2.default.createElement(
-		'div',
-		{ style: styles.wrapper },
-		_react2.default.createElement(
-			'h1',
-			{ className: 'hide' },
-			'Contact'
-		),
-		_react2.default.createElement('div', { style: styles.pic, className: 'fade-bottom' }),
-		_react2.default.createElement(
-			'div',
-			{ style: styles.text },
-			_react2.default.createElement(
-				'p',
-				{ style: { fontFamily: 'Lato', color: 'rgba(0,0,0,0.8)' } },
-				'Available for contract work & commisions, please get in touch:'
-			),
-			_react2.default.createElement(
-				'div',
-				{ id: 'icons-container' },
-				_react2.default.createElement(
-					'a',
-					{ href: 'https://www.artstation.com/aballo' },
-					_react2.default.createElement('img', { width: '25', height: '50', src: '../../public/artstation.svg', className: 'fa', id: 'artstationIcon' }),
-					_react2.default.createElement(
-						'p',
-						{ id: 'artstationLink' },
-						'Artstation'
-					)
-				),
-				_react2.default.createElement(
-					'a',
-					{ href: 'https://www.linkedin.com/in/aleksander-w-ballo-27467061/' },
-					_react2.default.createElement('i', { className: 'fa fa-linkedin' }),
-					_react2.default.createElement(
-						'p',
-						null,
-						'LinkedIn'
-					)
-				),
-				_react2.default.createElement(
-					'a',
-					{ href: '../../public/AlexBalloCV.pdf', download: 'AlexBalloCV.pdf' },
-					_react2.default.createElement('img', { src: '../../public/cv.svg', className: 'fa', id: 'cvIco' }),
-					_react2.default.createElement(
-						'p',
-						{ id: 'cvlink' },
-						'CV Link'
-					)
-				),
-				_react2.default.createElement(
-					'a',
-					{ href: 'mailto:aleksander.ballo@gmail.com' },
-					_react2.default.createElement('i', { className: 'fa fa-envelope-o' }),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Send Email'
-					)
-				)
-			)
-		)
-	);
-};
-
-{/*
- <h1 style={{fontFamily: 'Lato', color: 'grey', paddingTop: 0}}><a href="mailto:aleksander.ballo@gmail.com">aleksander.ballo@gmail.com</a></h1>
- */}
-
-/***/ }),
-/* 114 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(115);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/index.js!./about-contact.css", function() {
-		var newContent = require("!!../../node_modules/css-loader/index.js!./about-contact.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
+function Contact(props) {
+  return _react2.default.createElement(
+    'div',
+    { id: 'contact-container' },
+    _react2.default.createElement(
+      'div',
+      { id: 'contact-container-inner' },
+      _react2.default.createElement(
+        'p',
+        null,
+        'Available for contract work & commisions, please get in touch:'
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'icons-container' },
+        _react2.default.createElement(
+          'a',
+          { href: 'https://www.artstation.com/aballo' },
+          _react2.default.createElement('img', { width: '25', height: '50', src: '../../public/artstationBlack.svg', className: 'fa', id: 'artstationIcon' }),
+          _react2.default.createElement(
+            'p',
+            { id: 'artstationLink' },
+            'Artstation'
+          )
+        ),
+        _react2.default.createElement(
+          'a',
+          { href: 'https://www.linkedin.com/in/aleksander-w-ballo-27467061/' },
+          _react2.default.createElement('i', { className: 'fa fa-linkedin' }),
+          _react2.default.createElement(
+            'p',
+            null,
+            'LinkedIn'
+          )
+        ),
+        _react2.default.createElement(
+          'a',
+          { href: '../../public/AlexBalloCV.pdf', download: 'AlexBalloCV.pdf' },
+          _react2.default.createElement('img', { src: '../../public/cvBlack.svg', className: 'fa', id: 'cvIco' }),
+          _react2.default.createElement(
+            'p',
+            { id: 'cvlink' },
+            'CV Link'
+          )
+        ),
+        _react2.default.createElement(
+          'a',
+          { href: 'mailto:aleksander.ballo@gmail.com' },
+          _react2.default.createElement('i', { className: 'fa fa-envelope-o' }),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Send Email'
+          )
+        )
+      )
+    )
+  );
 }
 
 /***/ }),
-/* 115 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "/*.contact-wrapper: {\n    display: inline-flex;\n    width: 75%;\n    float: right;\n    height: 100%;\n}\n*/\n#icons-container p{\n  font-family: Lato;\n}\n\n/*p {\n  font-family: 'Open Sans Condensed', sans-serif;\n}\n*/\n\n#icons-container{\n  display: flex;\n}\n\n#icons-container a{\n  justify-content: flex-start;\n  margin: 3em 3em 0em 0em;\n  cursor: pointer;\n}\n\n#cvlink {\n   top: -35px;\n   position: relative;\n}\n\n#artstationIcon {\n  position: relative;\n  top: -15px;\n  box-sizing: border-box;\n  display: flex;\n}\n\n#artstationLink {\n   position: relative;\n   top: -30px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 114 */,
+/* 115 */,
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27790,10 +27530,6 @@ var _react = __webpack_require__(0);
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(8);
-
-var _PreLoader = __webpack_require__(49);
-
-var _PreLoader2 = _interopRequireDefault(_PreLoader);
 
 var _history = __webpack_require__(50);
 
@@ -27846,18 +27582,21 @@ var AllProjects = function (_Component) {
 			}
 			return _react2.default.createElement(
 				'div',
-				{ className: 'gallery' },
+				{ className: 'gallery-container' },
 				_react2.default.createElement(
 					'div',
-					{ style: { width: '80%', margin: '6em auto 100px' } },
+					{ id: 'all-gallery' },
 					_react2.default.createElement(
 						'p',
 						null,
-						'text in gallery'
+						'Recent Work: Select a Project'
 					),
 					_react2.default.createElement(_Grid2.default, {
 						clickHandler: this.handleClick,
-						imagesArray: allProjectsThumbs
+						imagesArray: allProjectsThumbs,
+						padding: 5,
+						radius: 150
+
 					})
 				)
 			);
@@ -27870,1211 +27609,39 @@ var AllProjects = function (_Component) {
 exports.default = AllProjects;
 
 /***/ }),
-/* 117 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _classnames = __webpack_require__(118);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _objectAssign = __webpack_require__(11);
-
-var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-var _spinners = __webpack_require__(119);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // eslint-disable-line import/no-extraneous-dependencies
-
-
-if (!process.env.REACT_SPINKIT_NO_STYLES) {
-  /* eslint-disable global-require */
-  __webpack_require__(120);
-  __webpack_require__(122);
-  __webpack_require__(124);
-  __webpack_require__(126);
-  __webpack_require__(128);
-  __webpack_require__(130);
-  __webpack_require__(132);
-  __webpack_require__(134);
-  __webpack_require__(136);
-  __webpack_require__(138);
-  __webpack_require__(140);
-  __webpack_require__(142);
-  __webpack_require__(144);
-  __webpack_require__(146);
-  __webpack_require__(148);
-  /* eslint-enable global-require */
-}
-
-var noFadeInWarning = "Deprecation Warning (react-spinkit): noFadeIn prop should be replaced with fadeIn='none'";
-
-var Spinner = function (_React$Component) {
-  _inherits(Spinner, _React$Component);
-
-  function Spinner(props) {
-    _classCallCheck(this, Spinner);
-
-    if (props.noFadeIn) {
-      console.warn(noFadeInWarning); // eslint-disable-line no-console
-    }
-
-    var _this = _possibleConstructorReturn(this, (Spinner.__proto__ || Object.getPrototypeOf(Spinner)).call(this, props));
-
-    _this.displayName = 'SpinKit';
-    return _this;
-  }
-
-  _createClass(Spinner, [{
-    key: 'render',
-    value: function render() {
-      var _cx;
-
-      var spinnerInfo = _spinners.allSpinners[this.props.name] || _spinners.allSpinners['three-bounce'];
-      var classes = (0, _classnames2.default)((_cx = {
-        'sk-fade-in': this.props.fadeIn === 'full' && !this.props.noFadeIn,
-        'sk-fade-in-half-second': this.props.fadeIn === 'half' && !this.props.noFadeIn,
-        'sk-fade-in-quarter-second': this.props.fadeIn === 'quarter' && !this.props.noFadeIn,
-        'sk-spinner': !this.props.overrideSpinnerClassName
-      }, _defineProperty(_cx, this.props.overrideSpinnerClassName, !!this.props.overrideSpinnerClassName), _defineProperty(_cx, this.props.className, !!this.props.className), _defineProperty(_cx, spinnerInfo.className || this.props.name, true), _cx));
-
-      var props = (0, _objectAssign2.default)({}, this.props);
-      delete props.name;
-      delete props.fadeIn;
-      delete props.noFadeIn;
-      delete props.overrideSpinnerClassName;
-      delete props.className;
-
-      if (this.props.color) {
-        props.style = props.style ? _extends({}, props.style, { color: this.props.color }) : { color: this.props.color };
-      }
-
-      return _react2.default.createElement(
-        'div',
-        _extends({}, props, { className: classes }),
-        [].concat(_toConsumableArray(Array(spinnerInfo.divCount))).map(function (_, idx) {
-          return _react2.default.createElement('div', { key: idx });
-        })
-      );
-    }
-  }]);
-
-  return Spinner;
-}(_react2.default.Component);
-
-Spinner.propTypes = {
-  name: _propTypes2.default.string.isRequired,
-  noFadeIn: _propTypes2.default.bool,
-  fadeIn: _propTypes2.default.oneOf(['full', 'half', 'quarter', 'none']),
-  overrideSpinnerClassName: _propTypes2.default.string,
-  className: _propTypes2.default.string,
-  color: _propTypes2.default.string
-};
-
-Spinner.defaultProps = {
-  name: 'three-bounce',
-  noFadeIn: false,
-  fadeIn: 'full',
-  overrideSpinnerClassName: ''
-};
-
-module.exports = Spinner;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-  Copyright (c) 2016 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-	'use strict';
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames () {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				classes.push(classNames.apply(null, arg));
-			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (typeof module !== 'undefined' && module.exports) {
-		module.exports = classNames;
-	} else if (true) {
-		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {
-		window.classNames = classNames;
-	}
-}());
-
-
-/***/ }),
-/* 119 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var spinkitSpinners = {
-  circle: { className: 'sk-circle', divCount: 12 },
-  'cube-grid': { className: 'sk-cube-grid', divCount: 9 },
-  wave: { className: 'sk-wave', divCount: 5 },
-  'folding-cube': { className: 'sk-folding-cube', divCount: 4 },
-  'three-bounce': { className: 'sk-three-bounce', divCount: 3 },
-  'double-bounce': { className: 'sk-double-bounce', divCount: 2 },
-  'wandering-cubes': { className: 'sk-wandering-cubes', divCount: 2 },
-  'chasing-dots': { className: 'sk-chasing-dots', divCount: 2 },
-  'rotating-plane': { className: 'sk-rotating-plane', divCount: 1 },
-  pulse: { className: 'sk-pulse', divCount: 1 },
-  wordpress: { className: 'sk-wordpress', divCount: 1 }
-};
-
-var loadersCssSpinners = {
-  'ball-grid-beat': { divCount: 9 },
-  'ball-grid-pulse': { divCount: 9 },
-  'line-spin-fade-loader': { divCount: 8 },
-  'ball-spin-fade-loader': { divCount: 8 },
-  'ball-pulse-rise': { divCount: 5 },
-  'line-scale': { divCount: 5 },
-  'line-scale-pulse-out': { divCount: 5 },
-  'line-scale-pulse-out-rapid': { divCount: 5 },
-  pacman: { divCount: 5 },
-  'line-scale-party': { divCount: 4 },
-  'ball-triangle-path': { divCount: 3 },
-  'ball-scale-multiple': { divCount: 3 },
-  'ball-scale-ripple-multiple': { divCount: 3 },
-  'ball-pulse-sync': { divCount: 3 },
-  'ball-beat': { divCount: 3 },
-  'ball-zig-zag': { divCount: 2 },
-  'ball-zig-zag-deflect': { divCount: 2 },
-  'ball-clip-rotate-pulse': { divCount: 2 },
-  'ball-clip-rotate-multiple': { divCount: 2 },
-  'ball-clip-rotate': { divCount: 1 },
-  'ball-scale-ripple': { divCount: 1 },
-  'triangle-skew-spin': { divCount: 1 }
-};
-
-module.exports = {
-  spinkitSpinners: spinkitSpinners,
-  loadersCssSpinners: loadersCssSpinners,
-  allSpinners: _extends({}, spinkitSpinners, loadersCssSpinners)
-};
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(121);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../css-loader/index.js!./loaders.css", function() {
-		var newContent = require("!!../css-loader/index.js!./loaders.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 121 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "/**\n *\n * All animations must live in their own file\n * in the animations directory and be included\n * here.\n *\n */\n/**\n * Styles shared by multiple animations\n */\n/**\n * Dots\n */\n@-webkit-keyframes scale {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  45% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.7; }\n  80% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n@keyframes scale {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  45% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.7; }\n  80% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n\n.ball-pulse > div:nth-child(0) {\n  -webkit-animation: scale 0.75s -0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.ball-pulse > div:nth-child(1) {\n  -webkit-animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.ball-pulse > div:nth-child(2) {\n  -webkit-animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.ball-pulse > div:nth-child(3) {\n  -webkit-animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.ball-pulse > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block; }\n\n@-webkit-keyframes ball-pulse-sync {\n  33% {\n    -webkit-transform: translateY(10px);\n            transform: translateY(10px); }\n  66% {\n    -webkit-transform: translateY(-10px);\n            transform: translateY(-10px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0); } }\n\n@keyframes ball-pulse-sync {\n  33% {\n    -webkit-transform: translateY(10px);\n            transform: translateY(10px); }\n  66% {\n    -webkit-transform: translateY(-10px);\n            transform: translateY(-10px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0); } }\n\n.ball-pulse-sync > div:nth-child(0) {\n  -webkit-animation: ball-pulse-sync 0.6s -0.21s infinite ease-in-out;\n          animation: ball-pulse-sync 0.6s -0.21s infinite ease-in-out; }\n\n.ball-pulse-sync > div:nth-child(1) {\n  -webkit-animation: ball-pulse-sync 0.6s -0.14s infinite ease-in-out;\n          animation: ball-pulse-sync 0.6s -0.14s infinite ease-in-out; }\n\n.ball-pulse-sync > div:nth-child(2) {\n  -webkit-animation: ball-pulse-sync 0.6s -0.07s infinite ease-in-out;\n          animation: ball-pulse-sync 0.6s -0.07s infinite ease-in-out; }\n\n.ball-pulse-sync > div:nth-child(3) {\n  -webkit-animation: ball-pulse-sync 0.6s 0s infinite ease-in-out;\n          animation: ball-pulse-sync 0.6s 0s infinite ease-in-out; }\n\n.ball-pulse-sync > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block; }\n\n@-webkit-keyframes ball-scale {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n@keyframes ball-scale {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n.ball-scale > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  height: 60px;\n  width: 60px;\n  -webkit-animation: ball-scale 1s 0s ease-in-out infinite;\n          animation: ball-scale 1s 0s ease-in-out infinite; }\n\n@keyframes ball-scale {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n.ball-scale > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  height: 60px;\n  width: 60px;\n  -webkit-animation: ball-scale 1s 0s ease-in-out infinite;\n          animation: ball-scale 1s 0s ease-in-out infinite; }\n\n.ball-scale-random {\n  width: 37px;\n  height: 40px; }\n  .ball-scale-random > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    display: inline-block;\n    height: 30px;\n    width: 30px;\n    -webkit-animation: ball-scale 1s 0s ease-in-out infinite;\n            animation: ball-scale 1s 0s ease-in-out infinite; }\n    .ball-scale-random > div:nth-child(1) {\n      margin-left: -7px;\n      -webkit-animation: ball-scale 1s 0.2s ease-in-out infinite;\n              animation: ball-scale 1s 0.2s ease-in-out infinite; }\n    .ball-scale-random > div:nth-child(3) {\n      margin-left: -2px;\n      margin-top: 9px;\n      -webkit-animation: ball-scale 1s 0.5s ease-in-out infinite;\n              animation: ball-scale 1s 0.5s ease-in-out infinite; }\n\n@-webkit-keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n.ball-rotate {\n  position: relative; }\n  .ball-rotate > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: relative; }\n    .ball-rotate > div:first-child {\n      -webkit-animation: rotate 1s 0s cubic-bezier(0.7, -0.13, 0.22, 0.86) infinite;\n              animation: rotate 1s 0s cubic-bezier(0.7, -0.13, 0.22, 0.86) infinite; }\n    .ball-rotate > div:before, .ball-rotate > div:after {\n      background-color: #fff;\n      width: 15px;\n      height: 15px;\n      border-radius: 100%;\n      margin: 2px;\n      content: \"\";\n      position: absolute;\n      opacity: 0.8; }\n    .ball-rotate > div:before {\n      top: 0px;\n      left: -28px; }\n    .ball-rotate > div:after {\n      top: 0px;\n      left: 25px; }\n\n@keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg) scale(1);\n            transform: rotate(0deg) scale(1); }\n  50% {\n    -webkit-transform: rotate(180deg) scale(0.6);\n            transform: rotate(180deg) scale(0.6); }\n  100% {\n    -webkit-transform: rotate(360deg) scale(1);\n            transform: rotate(360deg) scale(1); } }\n\n.ball-clip-rotate > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  border: 2px solid #fff;\n  border-bottom-color: transparent;\n  height: 25px;\n  width: 25px;\n  background: transparent !important;\n  display: inline-block;\n  -webkit-animation: rotate 0.75s 0s linear infinite;\n          animation: rotate 0.75s 0s linear infinite; }\n\n@keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg) scale(1);\n            transform: rotate(0deg) scale(1); }\n  50% {\n    -webkit-transform: rotate(180deg) scale(0.6);\n            transform: rotate(180deg) scale(0.6); }\n  100% {\n    -webkit-transform: rotate(360deg) scale(1);\n            transform: rotate(360deg) scale(1); } }\n\n@keyframes scale {\n  30% {\n    -webkit-transform: scale(0.3);\n            transform: scale(0.3); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n.ball-clip-rotate-pulse {\n  position: relative;\n  -webkit-transform: translateY(-15px);\n      -ms-transform: translateY(-15px);\n          transform: translateY(-15px); }\n  .ball-clip-rotate-pulse > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    border-radius: 100%; }\n    .ball-clip-rotate-pulse > div:first-child {\n      background: #fff;\n      height: 16px;\n      width: 16px;\n      top: 7px;\n      left: -7px;\n      -webkit-animation: scale 1s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n              animation: scale 1s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; }\n    .ball-clip-rotate-pulse > div:last-child {\n      position: absolute;\n      border: 2px solid #fff;\n      width: 30px;\n      height: 30px;\n      left: -16px;\n      top: -2px;\n      background: transparent;\n      border: 2px solid;\n      border-color: #fff transparent #fff transparent;\n      -webkit-animation: rotate 1s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n              animation: rotate 1s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n      -webkit-animation-duration: 1s;\n              animation-duration: 1s; }\n\n@keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg) scale(1);\n            transform: rotate(0deg) scale(1); }\n  50% {\n    -webkit-transform: rotate(180deg) scale(0.6);\n            transform: rotate(180deg) scale(0.6); }\n  100% {\n    -webkit-transform: rotate(360deg) scale(1);\n            transform: rotate(360deg) scale(1); } }\n\n.ball-clip-rotate-multiple {\n  position: relative; }\n  .ball-clip-rotate-multiple > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    left: -20px;\n    top: -20px;\n    border: 2px solid #fff;\n    border-bottom-color: transparent;\n    border-top-color: transparent;\n    border-radius: 100%;\n    height: 35px;\n    width: 35px;\n    -webkit-animation: rotate 1s 0s ease-in-out infinite;\n            animation: rotate 1s 0s ease-in-out infinite; }\n    .ball-clip-rotate-multiple > div:last-child {\n      display: inline-block;\n      top: -10px;\n      left: -10px;\n      width: 15px;\n      height: 15px;\n      -webkit-animation-duration: 0.5s;\n              animation-duration: 0.5s;\n      border-color: #fff transparent #fff transparent;\n      -webkit-animation-direction: reverse;\n              animation-direction: reverse; }\n\n@-webkit-keyframes ball-scale-ripple {\n  0% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 1; }\n  70% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.7; }\n  100% {\n    opacity: 0.0; } }\n\n@keyframes ball-scale-ripple {\n  0% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 1; }\n  70% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.7; }\n  100% {\n    opacity: 0.0; } }\n\n.ball-scale-ripple > div {\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  height: 50px;\n  width: 50px;\n  border-radius: 100%;\n  border: 2px solid #fff;\n  -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);\n          animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8); }\n\n@-webkit-keyframes ball-scale-ripple-multiple {\n  0% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 1; }\n  70% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.7; }\n  100% {\n    opacity: 0.0; } }\n\n@keyframes ball-scale-ripple-multiple {\n  0% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 1; }\n  70% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.7; }\n  100% {\n    opacity: 0.0; } }\n\n.ball-scale-ripple-multiple {\n  position: relative;\n  -webkit-transform: translateY(-25px);\n      -ms-transform: translateY(-25px);\n          transform: translateY(-25px); }\n  .ball-scale-ripple-multiple > div:nth-child(0) {\n    -webkit-animation-delay: -0.8s;\n            animation-delay: -0.8s; }\n  .ball-scale-ripple-multiple > div:nth-child(1) {\n    -webkit-animation-delay: -0.6s;\n            animation-delay: -0.6s; }\n  .ball-scale-ripple-multiple > div:nth-child(2) {\n    -webkit-animation-delay: -0.4s;\n            animation-delay: -0.4s; }\n  .ball-scale-ripple-multiple > div:nth-child(3) {\n    -webkit-animation-delay: -0.2s;\n            animation-delay: -0.2s; }\n  .ball-scale-ripple-multiple > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    top: -2px;\n    left: -26px;\n    width: 50px;\n    height: 50px;\n    border-radius: 100%;\n    border: 2px solid #fff;\n    -webkit-animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);\n            animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8); }\n\n@-webkit-keyframes ball-beat {\n  50% {\n    opacity: 0.2;\n    -webkit-transform: scale(0.75);\n            transform: scale(0.75); }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@keyframes ball-beat {\n  50% {\n    opacity: 0.2;\n    -webkit-transform: scale(0.75);\n            transform: scale(0.75); }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n.ball-beat > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation: ball-beat 0.7s 0s infinite linear;\n          animation: ball-beat 0.7s 0s infinite linear; }\n  .ball-beat > div:nth-child(2n-1) {\n    -webkit-animation-delay: -0.35s !important;\n            animation-delay: -0.35s !important; }\n\n@-webkit-keyframes ball-scale-multiple {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0; }\n  5% {\n    opacity: 1; }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n@keyframes ball-scale-multiple {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0; }\n  5% {\n    opacity: 1; }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n.ball-scale-multiple {\n  position: relative;\n  -webkit-transform: translateY(-30px);\n      -ms-transform: translateY(-30px);\n          transform: translateY(-30px); }\n  .ball-scale-multiple > div:nth-child(2) {\n    -webkit-animation-delay: -0.4s;\n            animation-delay: -0.4s; }\n  .ball-scale-multiple > div:nth-child(3) {\n    -webkit-animation-delay: -0.2s;\n            animation-delay: -0.2s; }\n  .ball-scale-multiple > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    left: -30px;\n    top: 0px;\n    opacity: 0;\n    margin: 0;\n    width: 60px;\n    height: 60px;\n    -webkit-animation: ball-scale-multiple 1s 0s linear infinite;\n            animation: ball-scale-multiple 1s 0s linear infinite; }\n\n@-webkit-keyframes ball-triangle-path-1 {\n  33% {\n    -webkit-transform: translate(25px, -50px);\n            transform: translate(25px, -50px); }\n  66% {\n    -webkit-transform: translate(50px, 0px);\n            transform: translate(50px, 0px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@keyframes ball-triangle-path-1 {\n  33% {\n    -webkit-transform: translate(25px, -50px);\n            transform: translate(25px, -50px); }\n  66% {\n    -webkit-transform: translate(50px, 0px);\n            transform: translate(50px, 0px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@-webkit-keyframes ball-triangle-path-2 {\n  33% {\n    -webkit-transform: translate(25px, 50px);\n            transform: translate(25px, 50px); }\n  66% {\n    -webkit-transform: translate(-25px, 50px);\n            transform: translate(-25px, 50px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@keyframes ball-triangle-path-2 {\n  33% {\n    -webkit-transform: translate(25px, 50px);\n            transform: translate(25px, 50px); }\n  66% {\n    -webkit-transform: translate(-25px, 50px);\n            transform: translate(-25px, 50px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@-webkit-keyframes ball-triangle-path-3 {\n  33% {\n    -webkit-transform: translate(-50px, 0px);\n            transform: translate(-50px, 0px); }\n  66% {\n    -webkit-transform: translate(-25px, -50px);\n            transform: translate(-25px, -50px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@keyframes ball-triangle-path-3 {\n  33% {\n    -webkit-transform: translate(-50px, 0px);\n            transform: translate(-50px, 0px); }\n  66% {\n    -webkit-transform: translate(-25px, -50px);\n            transform: translate(-25px, -50px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n.ball-triangle-path {\n  position: relative;\n  -webkit-transform: translate(-29.994px, -37.50938px);\n      -ms-transform: translate(-29.994px, -37.50938px);\n          transform: translate(-29.994px, -37.50938px); }\n  .ball-triangle-path > div:nth-child(1) {\n    -webkit-animation-name: ball-triangle-path-1;\n            animation-name: ball-triangle-path-1;\n    -webkit-animation-delay: 0;\n            animation-delay: 0;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-timing-function: ease-in-out;\n            animation-timing-function: ease-in-out;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite; }\n  .ball-triangle-path > div:nth-child(2) {\n    -webkit-animation-name: ball-triangle-path-2;\n            animation-name: ball-triangle-path-2;\n    -webkit-animation-delay: 0;\n            animation-delay: 0;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-timing-function: ease-in-out;\n            animation-timing-function: ease-in-out;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite; }\n  .ball-triangle-path > div:nth-child(3) {\n    -webkit-animation-name: ball-triangle-path-3;\n            animation-name: ball-triangle-path-3;\n    -webkit-animation-delay: 0;\n            animation-delay: 0;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-timing-function: ease-in-out;\n            animation-timing-function: ease-in-out;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite; }\n  .ball-triangle-path > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 100%;\n    border: 1px solid #fff; }\n    .ball-triangle-path > div:nth-of-type(1) {\n      top: 50px; }\n    .ball-triangle-path > div:nth-of-type(2) {\n      left: 25px; }\n    .ball-triangle-path > div:nth-of-type(3) {\n      top: 50px;\n      left: 50px; }\n\n@-webkit-keyframes ball-pulse-rise-even {\n  0% {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1); }\n  25% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px); }\n  50% {\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  75% {\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@keyframes ball-pulse-rise-even {\n  0% {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1); }\n  25% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px); }\n  50% {\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  75% {\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@-webkit-keyframes ball-pulse-rise-odd {\n  0% {\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  25% {\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  50% {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1); }\n  75% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    -webkit-transform: scale(0.75);\n            transform: scale(0.75); } }\n\n@keyframes ball-pulse-rise-odd {\n  0% {\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  25% {\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  50% {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1); }\n  75% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    -webkit-transform: scale(0.75);\n            transform: scale(0.75); } }\n\n.ball-pulse-rise > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation-duration: 1s;\n          animation-duration: 1s;\n  -webkit-animation-timing-function: cubic-bezier(0.15, 0.46, 0.9, 0.6);\n          animation-timing-function: cubic-bezier(0.15, 0.46, 0.9, 0.6);\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-delay: 0;\n          animation-delay: 0; }\n  .ball-pulse-rise > div:nth-child(2n) {\n    -webkit-animation-name: ball-pulse-rise-even;\n            animation-name: ball-pulse-rise-even; }\n  .ball-pulse-rise > div:nth-child(2n-1) {\n    -webkit-animation-name: ball-pulse-rise-odd;\n            animation-name: ball-pulse-rise-odd; }\n\n@-webkit-keyframes ball-grid-beat {\n  50% {\n    opacity: 0.7; }\n  100% {\n    opacity: 1; } }\n\n@keyframes ball-grid-beat {\n  50% {\n    opacity: 0.7; }\n  100% {\n    opacity: 1; } }\n\n.ball-grid-beat {\n  width: 57px; }\n  .ball-grid-beat > div:nth-child(1) {\n    -webkit-animation-delay: 0.44s;\n            animation-delay: 0.44s;\n    -webkit-animation-duration: 1.27s;\n            animation-duration: 1.27s; }\n  .ball-grid-beat > div:nth-child(2) {\n    -webkit-animation-delay: 0.2s;\n            animation-delay: 0.2s;\n    -webkit-animation-duration: 1.52s;\n            animation-duration: 1.52s; }\n  .ball-grid-beat > div:nth-child(3) {\n    -webkit-animation-delay: 0.14s;\n            animation-delay: 0.14s;\n    -webkit-animation-duration: 0.61s;\n            animation-duration: 0.61s; }\n  .ball-grid-beat > div:nth-child(4) {\n    -webkit-animation-delay: 0.15s;\n            animation-delay: 0.15s;\n    -webkit-animation-duration: 0.82s;\n            animation-duration: 0.82s; }\n  .ball-grid-beat > div:nth-child(5) {\n    -webkit-animation-delay: -0.01s;\n            animation-delay: -0.01s;\n    -webkit-animation-duration: 1.24s;\n            animation-duration: 1.24s; }\n  .ball-grid-beat > div:nth-child(6) {\n    -webkit-animation-delay: -0.07s;\n            animation-delay: -0.07s;\n    -webkit-animation-duration: 1.35s;\n            animation-duration: 1.35s; }\n  .ball-grid-beat > div:nth-child(7) {\n    -webkit-animation-delay: 0.29s;\n            animation-delay: 0.29s;\n    -webkit-animation-duration: 1.44s;\n            animation-duration: 1.44s; }\n  .ball-grid-beat > div:nth-child(8) {\n    -webkit-animation-delay: 0.63s;\n            animation-delay: 0.63s;\n    -webkit-animation-duration: 1.19s;\n            animation-duration: 1.19s; }\n  .ball-grid-beat > div:nth-child(9) {\n    -webkit-animation-delay: -0.18s;\n            animation-delay: -0.18s;\n    -webkit-animation-duration: 1.48s;\n            animation-duration: 1.48s; }\n  .ball-grid-beat > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    float: left;\n    -webkit-animation-name: ball-grid-beat;\n            animation-name: ball-grid-beat;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite;\n    -webkit-animation-delay: 0;\n            animation-delay: 0; }\n\n@-webkit-keyframes ball-grid-pulse {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1); }\n  50% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n\n@keyframes ball-grid-pulse {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1); }\n  50% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n\n.ball-grid-pulse {\n  width: 57px; }\n  .ball-grid-pulse > div:nth-child(1) {\n    -webkit-animation-delay: 0.58s;\n            animation-delay: 0.58s;\n    -webkit-animation-duration: 0.9s;\n            animation-duration: 0.9s; }\n  .ball-grid-pulse > div:nth-child(2) {\n    -webkit-animation-delay: 0.01s;\n            animation-delay: 0.01s;\n    -webkit-animation-duration: 0.94s;\n            animation-duration: 0.94s; }\n  .ball-grid-pulse > div:nth-child(3) {\n    -webkit-animation-delay: 0.25s;\n            animation-delay: 0.25s;\n    -webkit-animation-duration: 1.43s;\n            animation-duration: 1.43s; }\n  .ball-grid-pulse > div:nth-child(4) {\n    -webkit-animation-delay: -0.03s;\n            animation-delay: -0.03s;\n    -webkit-animation-duration: 0.74s;\n            animation-duration: 0.74s; }\n  .ball-grid-pulse > div:nth-child(5) {\n    -webkit-animation-delay: 0.21s;\n            animation-delay: 0.21s;\n    -webkit-animation-duration: 0.68s;\n            animation-duration: 0.68s; }\n  .ball-grid-pulse > div:nth-child(6) {\n    -webkit-animation-delay: 0.25s;\n            animation-delay: 0.25s;\n    -webkit-animation-duration: 1.17s;\n            animation-duration: 1.17s; }\n  .ball-grid-pulse > div:nth-child(7) {\n    -webkit-animation-delay: 0.46s;\n            animation-delay: 0.46s;\n    -webkit-animation-duration: 1.41s;\n            animation-duration: 1.41s; }\n  .ball-grid-pulse > div:nth-child(8) {\n    -webkit-animation-delay: 0.02s;\n            animation-delay: 0.02s;\n    -webkit-animation-duration: 1.56s;\n            animation-duration: 1.56s; }\n  .ball-grid-pulse > div:nth-child(9) {\n    -webkit-animation-delay: 0.13s;\n            animation-delay: 0.13s;\n    -webkit-animation-duration: 0.78s;\n            animation-duration: 0.78s; }\n  .ball-grid-pulse > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    float: left;\n    -webkit-animation-name: ball-grid-pulse;\n            animation-name: ball-grid-pulse;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite;\n    -webkit-animation-delay: 0;\n            animation-delay: 0; }\n\n@-webkit-keyframes ball-spin-fade-loader {\n  50% {\n    opacity: 0.3;\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@keyframes ball-spin-fade-loader {\n  50% {\n    opacity: 0.3;\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n.ball-spin-fade-loader {\n  position: relative;\n  top: -10px;\n  left: -10px; }\n  .ball-spin-fade-loader > div:nth-child(1) {\n    top: 25px;\n    left: 0;\n    -webkit-animation: ball-spin-fade-loader 1s -0.96s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.96s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(2) {\n    top: 17.04545px;\n    left: 17.04545px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.84s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.84s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(3) {\n    top: 0;\n    left: 25px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.72s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.72s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(4) {\n    top: -17.04545px;\n    left: 17.04545px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.6s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.6s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(5) {\n    top: -25px;\n    left: 0;\n    -webkit-animation: ball-spin-fade-loader 1s -0.48s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.48s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(6) {\n    top: -17.04545px;\n    left: -17.04545px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.36s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.36s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(7) {\n    top: 0;\n    left: -25px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.24s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.24s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(8) {\n    top: 17.04545px;\n    left: -17.04545px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.12s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.12s infinite linear; }\n  .ball-spin-fade-loader > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute; }\n\n@-webkit-keyframes ball-spin-loader {\n  75% {\n    opacity: 0.2; }\n  100% {\n    opacity: 1; } }\n\n@keyframes ball-spin-loader {\n  75% {\n    opacity: 0.2; }\n  100% {\n    opacity: 1; } }\n\n.ball-spin-loader {\n  position: relative; }\n  .ball-spin-loader > span:nth-child(1) {\n    top: 45px;\n    left: 0;\n    -webkit-animation: ball-spin-loader 2s 0.9s infinite linear;\n            animation: ball-spin-loader 2s 0.9s infinite linear; }\n  .ball-spin-loader > span:nth-child(2) {\n    top: 30.68182px;\n    left: 30.68182px;\n    -webkit-animation: ball-spin-loader 2s 1.8s infinite linear;\n            animation: ball-spin-loader 2s 1.8s infinite linear; }\n  .ball-spin-loader > span:nth-child(3) {\n    top: 0;\n    left: 45px;\n    -webkit-animation: ball-spin-loader 2s 2.7s infinite linear;\n            animation: ball-spin-loader 2s 2.7s infinite linear; }\n  .ball-spin-loader > span:nth-child(4) {\n    top: -30.68182px;\n    left: 30.68182px;\n    -webkit-animation: ball-spin-loader 2s 3.6s infinite linear;\n            animation: ball-spin-loader 2s 3.6s infinite linear; }\n  .ball-spin-loader > span:nth-child(5) {\n    top: -45px;\n    left: 0;\n    -webkit-animation: ball-spin-loader 2s 4.5s infinite linear;\n            animation: ball-spin-loader 2s 4.5s infinite linear; }\n  .ball-spin-loader > span:nth-child(6) {\n    top: -30.68182px;\n    left: -30.68182px;\n    -webkit-animation: ball-spin-loader 2s 5.4s infinite linear;\n            animation: ball-spin-loader 2s 5.4s infinite linear; }\n  .ball-spin-loader > span:nth-child(7) {\n    top: 0;\n    left: -45px;\n    -webkit-animation: ball-spin-loader 2s 6.3s infinite linear;\n            animation: ball-spin-loader 2s 6.3s infinite linear; }\n  .ball-spin-loader > span:nth-child(8) {\n    top: 30.68182px;\n    left: -30.68182px;\n    -webkit-animation: ball-spin-loader 2s 7.2s infinite linear;\n            animation: ball-spin-loader 2s 7.2s infinite linear; }\n  .ball-spin-loader > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    background: green; }\n\n@-webkit-keyframes ball-zig {\n  33% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  66% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@keyframes ball-zig {\n  33% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  66% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@-webkit-keyframes ball-zag {\n  33% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  66% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@keyframes ball-zag {\n  33% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  66% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n.ball-zig-zag {\n  position: relative;\n  -webkit-transform: translate(-15px, -15px);\n      -ms-transform: translate(-15px, -15px);\n          transform: translate(-15px, -15px); }\n  .ball-zig-zag > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    margin-left: 15px;\n    top: 4px;\n    left: -7px; }\n    .ball-zig-zag > div:first-child {\n      -webkit-animation: ball-zig 0.7s 0s infinite linear;\n              animation: ball-zig 0.7s 0s infinite linear; }\n    .ball-zig-zag > div:last-child {\n      -webkit-animation: ball-zag 0.7s 0s infinite linear;\n              animation: ball-zag 0.7s 0s infinite linear; }\n\n@-webkit-keyframes ball-zig-deflect {\n  17% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  34% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  50% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); }\n  67% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  84% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@keyframes ball-zig-deflect {\n  17% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  34% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  50% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); }\n  67% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  84% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@-webkit-keyframes ball-zag-deflect {\n  17% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  34% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  50% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); }\n  67% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  84% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@keyframes ball-zag-deflect {\n  17% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  34% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  50% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); }\n  67% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  84% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n.ball-zig-zag-deflect {\n  position: relative;\n  -webkit-transform: translate(-15px, -15px);\n      -ms-transform: translate(-15px, -15px);\n          transform: translate(-15px, -15px); }\n  .ball-zig-zag-deflect > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    margin-left: 15px;\n    top: 4px;\n    left: -7px; }\n    .ball-zig-zag-deflect > div:first-child {\n      -webkit-animation: ball-zig-deflect 1.5s 0s infinite linear;\n              animation: ball-zig-deflect 1.5s 0s infinite linear; }\n    .ball-zig-zag-deflect > div:last-child {\n      -webkit-animation: ball-zag-deflect 1.5s 0s infinite linear;\n              animation: ball-zag-deflect 1.5s 0s infinite linear; }\n\n/**\n * Lines\n */\n@-webkit-keyframes line-scale {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  50% {\n    -webkit-transform: scaley(0.4);\n            transform: scaley(0.4); }\n  100% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n@keyframes line-scale {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  50% {\n    -webkit-transform: scaley(0.4);\n            transform: scaley(0.4); }\n  100% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n.line-scale > div:nth-child(1) {\n  -webkit-animation: line-scale 1s -0.4s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s -0.4s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div:nth-child(2) {\n  -webkit-animation: line-scale 1s -0.3s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s -0.3s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div:nth-child(3) {\n  -webkit-animation: line-scale 1s -0.2s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s -0.2s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div:nth-child(4) {\n  -webkit-animation: line-scale 1s -0.1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s -0.1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div:nth-child(5) {\n  -webkit-animation: line-scale 1s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div {\n  background-color: #fff;\n  width: 4px;\n  height: 35px;\n  border-radius: 2px;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block; }\n\n@-webkit-keyframes line-scale-party {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1); }\n  50% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@keyframes line-scale-party {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1); }\n  50% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n.line-scale-party > div:nth-child(1) {\n  -webkit-animation-delay: -0.09s;\n          animation-delay: -0.09s;\n  -webkit-animation-duration: 0.83s;\n          animation-duration: 0.83s; }\n\n.line-scale-party > div:nth-child(2) {\n  -webkit-animation-delay: 0.33s;\n          animation-delay: 0.33s;\n  -webkit-animation-duration: 0.64s;\n          animation-duration: 0.64s; }\n\n.line-scale-party > div:nth-child(3) {\n  -webkit-animation-delay: 0.32s;\n          animation-delay: 0.32s;\n  -webkit-animation-duration: 0.39s;\n          animation-duration: 0.39s; }\n\n.line-scale-party > div:nth-child(4) {\n  -webkit-animation-delay: 0.47s;\n          animation-delay: 0.47s;\n  -webkit-animation-duration: 0.52s;\n          animation-duration: 0.52s; }\n\n.line-scale-party > div {\n  background-color: #fff;\n  width: 4px;\n  height: 35px;\n  border-radius: 2px;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation-name: line-scale-party;\n          animation-name: line-scale-party;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-delay: 0;\n          animation-delay: 0; }\n\n@-webkit-keyframes line-scale-pulse-out {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  50% {\n    -webkit-transform: scaley(0.4);\n            transform: scaley(0.4); }\n  100% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n@keyframes line-scale-pulse-out {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  50% {\n    -webkit-transform: scaley(0.4);\n            transform: scaley(0.4); }\n  100% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n.line-scale-pulse-out > div {\n  background-color: #fff;\n  width: 4px;\n  height: 35px;\n  border-radius: 2px;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation: line-scale-pulse-out 0.9s -0.6s infinite cubic-bezier(0.85, 0.25, 0.37, 0.85);\n          animation: line-scale-pulse-out 0.9s -0.6s infinite cubic-bezier(0.85, 0.25, 0.37, 0.85); }\n  .line-scale-pulse-out > div:nth-child(2), .line-scale-pulse-out > div:nth-child(4) {\n    -webkit-animation-delay: -0.4s !important;\n            animation-delay: -0.4s !important; }\n  .line-scale-pulse-out > div:nth-child(1), .line-scale-pulse-out > div:nth-child(5) {\n    -webkit-animation-delay: -0.2s !important;\n            animation-delay: -0.2s !important; }\n\n@-webkit-keyframes line-scale-pulse-out-rapid {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  80% {\n    -webkit-transform: scaley(0.3);\n            transform: scaley(0.3); }\n  90% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n@keyframes line-scale-pulse-out-rapid {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  80% {\n    -webkit-transform: scaley(0.3);\n            transform: scaley(0.3); }\n  90% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n.line-scale-pulse-out-rapid > div {\n  background-color: #fff;\n  width: 4px;\n  height: 35px;\n  border-radius: 2px;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation: line-scale-pulse-out-rapid 0.9s -0.5s infinite cubic-bezier(0.11, 0.49, 0.38, 0.78);\n          animation: line-scale-pulse-out-rapid 0.9s -0.5s infinite cubic-bezier(0.11, 0.49, 0.38, 0.78); }\n  .line-scale-pulse-out-rapid > div:nth-child(2), .line-scale-pulse-out-rapid > div:nth-child(4) {\n    -webkit-animation-delay: -0.25s !important;\n            animation-delay: -0.25s !important; }\n  .line-scale-pulse-out-rapid > div:nth-child(1), .line-scale-pulse-out-rapid > div:nth-child(5) {\n    -webkit-animation-delay: 0s !important;\n            animation-delay: 0s !important; }\n\n@-webkit-keyframes line-spin-fade-loader {\n  50% {\n    opacity: 0.3; }\n  100% {\n    opacity: 1; } }\n\n@keyframes line-spin-fade-loader {\n  50% {\n    opacity: 0.3; }\n  100% {\n    opacity: 1; } }\n\n.line-spin-fade-loader {\n  position: relative;\n  top: -10px;\n  left: -4px; }\n  .line-spin-fade-loader > div:nth-child(1) {\n    top: 20px;\n    left: 0;\n    -webkit-animation: line-spin-fade-loader 1.2s -0.84s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.84s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(2) {\n    top: 13.63636px;\n    left: 13.63636px;\n    -webkit-transform: rotate(-45deg);\n        -ms-transform: rotate(-45deg);\n            transform: rotate(-45deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.72s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.72s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(3) {\n    top: 0;\n    left: 20px;\n    -webkit-transform: rotate(90deg);\n        -ms-transform: rotate(90deg);\n            transform: rotate(90deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.6s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.6s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(4) {\n    top: -13.63636px;\n    left: 13.63636px;\n    -webkit-transform: rotate(45deg);\n        -ms-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.48s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.48s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(5) {\n    top: -20px;\n    left: 0;\n    -webkit-animation: line-spin-fade-loader 1.2s -0.36s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.36s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(6) {\n    top: -13.63636px;\n    left: -13.63636px;\n    -webkit-transform: rotate(-45deg);\n        -ms-transform: rotate(-45deg);\n            transform: rotate(-45deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.24s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.24s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(7) {\n    top: 0;\n    left: -20px;\n    -webkit-transform: rotate(90deg);\n        -ms-transform: rotate(90deg);\n            transform: rotate(90deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.12s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.12s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(8) {\n    top: 13.63636px;\n    left: -13.63636px;\n    -webkit-transform: rotate(45deg);\n        -ms-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-animation: line-spin-fade-loader 1.2s 0s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s 0s infinite ease-in-out; }\n  .line-spin-fade-loader > div {\n    background-color: #fff;\n    width: 4px;\n    height: 35px;\n    border-radius: 2px;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    width: 5px;\n    height: 15px; }\n\n/**\n * Misc\n */\n@-webkit-keyframes triangle-skew-spin {\n  25% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n            transform: perspective(100px) rotateX(180deg) rotateY(0); }\n  50% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n            transform: perspective(100px) rotateX(180deg) rotateY(180deg); }\n  75% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n            transform: perspective(100px) rotateX(0) rotateY(180deg); }\n  100% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n            transform: perspective(100px) rotateX(0) rotateY(0); } }\n@keyframes triangle-skew-spin {\n  25% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n            transform: perspective(100px) rotateX(180deg) rotateY(0); }\n  50% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n            transform: perspective(100px) rotateX(180deg) rotateY(180deg); }\n  75% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n            transform: perspective(100px) rotateX(0) rotateY(180deg); }\n  100% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n            transform: perspective(100px) rotateX(0) rotateY(0); } }\n\n.triangle-skew-spin > div {\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  width: 0;\n  height: 0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n  border-bottom: 20px solid #fff;\n  -webkit-animation: triangle-skew-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n          animation: triangle-skew-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; }\n\n@-webkit-keyframes square-spin {\n  25% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n            transform: perspective(100px) rotateX(180deg) rotateY(0); }\n  50% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n            transform: perspective(100px) rotateX(180deg) rotateY(180deg); }\n  75% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n            transform: perspective(100px) rotateX(0) rotateY(180deg); }\n  100% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n            transform: perspective(100px) rotateX(0) rotateY(0); } }\n\n@keyframes square-spin {\n  25% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n            transform: perspective(100px) rotateX(180deg) rotateY(0); }\n  50% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n            transform: perspective(100px) rotateX(180deg) rotateY(180deg); }\n  75% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n            transform: perspective(100px) rotateX(0) rotateY(180deg); }\n  100% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n            transform: perspective(100px) rotateX(0) rotateY(0); } }\n\n.square-spin > div {\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  width: 50px;\n  height: 50px;\n  background: #fff;\n  border: 1px solid red;\n  -webkit-animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n          animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; }\n\n@-webkit-keyframes rotate_pacman_half_up {\n  0% {\n    -webkit-transform: rotate(270deg);\n            transform: rotate(270deg); }\n  50% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); }\n  100% {\n    -webkit-transform: rotate(270deg);\n            transform: rotate(270deg); } }\n\n@keyframes rotate_pacman_half_up {\n  0% {\n    -webkit-transform: rotate(270deg);\n            transform: rotate(270deg); }\n  50% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); }\n  100% {\n    -webkit-transform: rotate(270deg);\n            transform: rotate(270deg); } }\n\n@-webkit-keyframes rotate_pacman_half_down {\n  0% {\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg); }\n  50% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg); } }\n\n@keyframes rotate_pacman_half_down {\n  0% {\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg); }\n  50% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg); } }\n\n@-webkit-keyframes pacman-balls {\n  75% {\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: translate(-100px, -6.25px);\n            transform: translate(-100px, -6.25px); } }\n\n@keyframes pacman-balls {\n  75% {\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: translate(-100px, -6.25px);\n            transform: translate(-100px, -6.25px); } }\n\n.pacman {\n  position: relative; }\n  .pacman > div:nth-child(2) {\n    -webkit-animation: pacman-balls 1s -0.99s infinite linear;\n            animation: pacman-balls 1s -0.99s infinite linear; }\n  .pacman > div:nth-child(3) {\n    -webkit-animation: pacman-balls 1s -0.66s infinite linear;\n            animation: pacman-balls 1s -0.66s infinite linear; }\n  .pacman > div:nth-child(4) {\n    -webkit-animation: pacman-balls 1s -0.33s infinite linear;\n            animation: pacman-balls 1s -0.33s infinite linear; }\n  .pacman > div:nth-child(5) {\n    -webkit-animation: pacman-balls 1s 0s infinite linear;\n            animation: pacman-balls 1s 0s infinite linear; }\n  .pacman > div:first-of-type {\n    width: 0px;\n    height: 0px;\n    border-right: 25px solid transparent;\n    border-top: 25px solid #fff;\n    border-left: 25px solid #fff;\n    border-bottom: 25px solid #fff;\n    border-radius: 25px;\n    -webkit-animation: rotate_pacman_half_up 0.5s 0s infinite;\n            animation: rotate_pacman_half_up 0.5s 0s infinite;\n    position: relative;\n    left: -30px; }\n  .pacman > div:nth-child(2) {\n    width: 0px;\n    height: 0px;\n    border-right: 25px solid transparent;\n    border-top: 25px solid #fff;\n    border-left: 25px solid #fff;\n    border-bottom: 25px solid #fff;\n    border-radius: 25px;\n    -webkit-animation: rotate_pacman_half_down 0.5s 0s infinite;\n            animation: rotate_pacman_half_down 0.5s 0s infinite;\n    margin-top: -50px;\n    position: relative;\n    left: -30px; }\n  .pacman > div:nth-child(3),\n  .pacman > div:nth-child(4),\n  .pacman > div:nth-child(5),\n  .pacman > div:nth-child(6) {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    width: 10px;\n    height: 10px;\n    position: absolute;\n    -webkit-transform: translate(0, -6.25px);\n        -ms-transform: translate(0, -6.25px);\n            transform: translate(0, -6.25px);\n    top: 25px;\n    left: 70px; }\n\n@-webkit-keyframes cube-transition {\n  25% {\n    -webkit-transform: translateX(50px) scale(0.5) rotate(-90deg);\n            transform: translateX(50px) scale(0.5) rotate(-90deg); }\n  50% {\n    -webkit-transform: translate(50px, 50px) rotate(-180deg);\n            transform: translate(50px, 50px) rotate(-180deg); }\n  75% {\n    -webkit-transform: translateY(50px) scale(0.5) rotate(-270deg);\n            transform: translateY(50px) scale(0.5) rotate(-270deg); }\n  100% {\n    -webkit-transform: rotate(-360deg);\n            transform: rotate(-360deg); } }\n\n@keyframes cube-transition {\n  25% {\n    -webkit-transform: translateX(50px) scale(0.5) rotate(-90deg);\n            transform: translateX(50px) scale(0.5) rotate(-90deg); }\n  50% {\n    -webkit-transform: translate(50px, 50px) rotate(-180deg);\n            transform: translate(50px, 50px) rotate(-180deg); }\n  75% {\n    -webkit-transform: translateY(50px) scale(0.5) rotate(-270deg);\n            transform: translateY(50px) scale(0.5) rotate(-270deg); }\n  100% {\n    -webkit-transform: rotate(-360deg);\n            transform: rotate(-360deg); } }\n\n.cube-transition {\n  position: relative;\n  -webkit-transform: translate(-25px, -25px);\n      -ms-transform: translate(-25px, -25px);\n          transform: translate(-25px, -25px); }\n  .cube-transition > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    width: 10px;\n    height: 10px;\n    position: absolute;\n    top: -5px;\n    left: -5px;\n    background-color: #fff;\n    -webkit-animation: cube-transition 1.6s 0s infinite ease-in-out;\n            animation: cube-transition 1.6s 0s infinite ease-in-out; }\n    .cube-transition > div:last-child {\n      -webkit-animation-delay: -0.8s;\n              animation-delay: -0.8s; }\n\n@-webkit-keyframes spin-rotate {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes spin-rotate {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n.semi-circle-spin {\n  position: relative;\n  width: 35px;\n  height: 35px;\n  overflow: hidden; }\n  .semi-circle-spin > div {\n    position: absolute;\n    border-width: 0px;\n    border-radius: 100%;\n    -webkit-animation: spin-rotate 0.6s 0s infinite linear;\n            animation: spin-rotate 0.6s 0s infinite linear;\n    background-image: -webkit-linear-gradient(transparent 0%, transparent 70%, #fff 30%, #fff 100%);\n    background-image: linear-gradient(transparent 0%, transparent 70%, #fff 30%, #fff 100%);\n    width: 100%;\n    height: 100%; }\n\n@-webkit-keyframes bar-progress {\n  0% {\n    -webkit-transform: scaleY(20%);\n            transform: scaleY(20%);\n    opacity: 1; }\n  25% {\n    -webkit-transform: translateX(6%) scaleY(10%);\n            transform: translateX(6%) scaleY(10%);\n    opacity: 0.7; }\n  50% {\n    -webkit-transform: translateX(20%) scaleY(20%);\n            transform: translateX(20%) scaleY(20%);\n    opacity: 1; }\n  75% {\n    -webkit-transform: translateX(6%) scaleY(10%);\n            transform: translateX(6%) scaleY(10%);\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: scaleY(20%);\n            transform: scaleY(20%);\n    opacity: 1; } }\n\n@keyframes bar-progress {\n  0% {\n    -webkit-transform: scaleY(20%);\n            transform: scaleY(20%);\n    opacity: 1; }\n  25% {\n    -webkit-transform: translateX(6%) scaleY(10%);\n            transform: translateX(6%) scaleY(10%);\n    opacity: 0.7; }\n  50% {\n    -webkit-transform: translateX(20%) scaleY(20%);\n            transform: translateX(20%) scaleY(20%);\n    opacity: 1; }\n  75% {\n    -webkit-transform: translateX(6%) scaleY(10%);\n            transform: translateX(6%) scaleY(10%);\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: scaleY(20%);\n            transform: scaleY(20%);\n    opacity: 1; } }\n\n.bar-progress {\n  width: 30%;\n  height: 12px; }\n  .bar-progress > div {\n    position: relative;\n    width: 20%;\n    height: 12px;\n    border-radius: 10px;\n    background-color: #fff;\n    -webkit-animation: bar-progress 3s cubic-bezier(0.57, 0.1, 0.44, 0.93) infinite;\n            animation: bar-progress 3s cubic-bezier(0.57, 0.1, 0.44, 0.93) infinite;\n    opacity: 1; }\n\n@-webkit-keyframes bar-swing {\n  0% {\n    left: 0; }\n  50% {\n    left: 70%; }\n  100% {\n    left: 0; } }\n\n@keyframes bar-swing {\n  0% {\n    left: 0; }\n  50% {\n    left: 70%; }\n  100% {\n    left: 0; } }\n\n.bar-swing {\n  width: 30%;\n  height: 8px; }\n  .bar-swing > div {\n    position: relative;\n    width: 30%;\n    height: 8px;\n    border-radius: 10px;\n    background-color: #fff;\n    -webkit-animation: bar-swing 1.5s infinite;\n            animation: bar-swing 1.5s infinite; }\n\n@-webkit-keyframes bar-swing-container {\n  0% {\n    left: 0;\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  50% {\n    left: 70%;\n    -webkit-transform: translateX(-4px);\n            transform: translateX(-4px); }\n  100% {\n    left: 0;\n    -webkit-transform: translateX(0);\n            transform: translateX(0); } }\n\n@keyframes bar-swing-container {\n  0% {\n    left: 0;\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  50% {\n    left: 70%;\n    -webkit-transform: translateX(-4px);\n            transform: translateX(-4px); }\n  100% {\n    left: 0;\n    -webkit-transform: translateX(0);\n            transform: translateX(0); } }\n\n.bar-swing-container {\n  width: 20%;\n  height: 8px;\n  position: relative; }\n  .bar-swing-container div:nth-child(1) {\n    position: absolute;\n    width: 100%;\n    background-color: rgba(255, 255, 255, 0.2);\n    height: 12px;\n    border-radius: 10px; }\n  .bar-swing-container div:nth-child(2) {\n    position: absolute;\n    width: 30%;\n    height: 8px;\n    border-radius: 10px;\n    background-color: #fff;\n    -webkit-animation: bar-swing-container 2s cubic-bezier(0.91, 0.35, 0.12, 0.6) infinite;\n            animation: bar-swing-container 2s cubic-bezier(0.91, 0.35, 0.12, 0.6) infinite;\n    margin: 2px 2px 0; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 122 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(123);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./base.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./base.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-spinner {\n  color: #333;\n}\n\n.sk-spinner > div {\n  background-color: currentColor;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 124 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(125);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./loaders-css.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./loaders-css.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".ball-triangle-path > div,\n.ball-scale-ripple-multiple > div,\n.ball-scale-ripple > div {\n  background-color: initial;\n  border-color: currentColor;\n}\n\n.ball-clip-rotate > div {\n  background-color: initial;\n  border-top-color: currentColor;\n  border-right-color: currentColor;\n  border-left-color: currentColor;\n}\n\n.ball-clip-rotate-pulse > div:first-child {\n  background-color: currentColor;\n}\n.ball-clip-rotate-pulse > div:last-child {\n  background-color: initial;\n  border-top-color: currentColor;\n  border-bottom-color: currentColor;\n}\n\n.ball-clip-rotate-multiple > div:first-child {\n  background-color: initial;\n  border-right-color: currentColor;\n  border-left-color: currentColor;\n}\n.ball-clip-rotate-multiple > div:last-child {\n  background-color: initial;\n  border-top-color: currentColor;\n  border-bottom-color: currentColor;\n}\n\n.triangle-skew-spin > div {\n  background-color: initial;\n  border-bottom-color: currentColor;\n}\n\n.pacman > div:nth-child(1),\n.pacman > div:nth-child(2) {\n  background-color: initial;\n  border-top-color: currentColor;\n  border-left-color: currentColor;\n  border-bottom-color: currentColor;\n}\n\n.pacman > div:nth-child(3),\n.pacman > div:nth-child(4),\n.pacman > div:nth-child(5) {\n  background-color: currentColor;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(127);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./fade-in.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./fade-in.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "@-webkit-keyframes sk-fade-in {\n  0% {\n      opacity: 0;\n  }\n  50% {\n      opacity: 0;\n  }\n  100% {\n      opacity: 1;\n  }\n}\n\n@-moz-keyframes sk-fade-in {\n  0% {\n      opacity: 0;\n  }\n  50% {\n      opacity: 0;\n  }\n  100% {\n      opacity: 1;\n  }\n}\n\n@-ms-keyframes sk-fade-in {\n  0% {\n      opacity: 0;\n  }\n  50% {\n      opacity: 0;\n  }\n  100% {\n      opacity: 1;\n  }\n}\n\n@keyframes sk-fade-in {\n  0% {\n      opacity: 0;\n  }\n  50% {\n      opacity: 0;\n  }\n  100% {\n      opacity: 1;\n  }\n}\n\n.sk-fade-in {\n  -webkit-animation: sk-fade-in 2s;\n  -moz-animation: sk-fade-in 2s;\n  -o-animation: sk-fade-in 2s;\n  -ms-animation: sk-fade-in 2s;\n  animation: sk-fade-in 2s;\n}\n\n.sk-fade-in-half-second {\n  -webkit-animation: sk-fade-in 1s;\n  -moz-animation: sk-fade-in 1s;\n  -o-animation: sk-fade-in 1s;\n  -ms-animation: sk-fade-in 1s;\n  animation: sk-fade-in 1s;\n}\n\n.sk-fade-in-quarter-second {\n  -webkit-animation: sk-fade-in 0.5s;\n  -moz-animation: sk-fade-in 0.5s;\n  -o-animation: sk-fade-in 0.5s;\n  -ms-animation: sk-fade-in 0.5s;\n  animation: sk-fade-in 0.5s;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(129);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./chasing-dots.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./chasing-dots.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-chasing-dots {\n  width: 27px;\n  height: 27px;\n  position: relative;\n\n  -webkit-animation: sk-rotate 2.0s infinite linear;\n  animation: sk-rotate 2.0s infinite linear;\n}\n\n.sk-chasing-dots > div {\n  width: 60%;\n  height: 60%;\n  display: inline-block;\n  position: absolute;\n  top: 0;\n  background-color: currentColor;\n  border-radius: 100%;\n\n  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;\n  animation: sk-bounce 2.0s infinite ease-in-out;\n}\n\n.sk-chasing-dots > div:last-child {\n  top: auto;\n  bottom: 0;\n\n  -webkit-animation-delay: -1.0s;\n  animation-delay: -1.0s;\n}\n\n@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}\n@keyframes sk-rotate {\n  100% {\n    transform: rotate(360deg);\n    -webkit-transform: rotate(360deg);\n  }\n}\n\n@-webkit-keyframes sk-bounce {\n  0%, 100% { -webkit-transform: scale(0.0) }\n  50% { -webkit-transform: scale(1.0) }\n}\n\n@keyframes sk-bounce {\n  0%, 100% {\n    transform: scale(0.0);\n    -webkit-transform: scale(0.0);\n  } 50% {\n    transform: scale(1.0);\n    -webkit-transform: scale(1.0);\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 130 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(131);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./circle.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./circle.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-circle {\n  width: 22px;\n  height: 22px;\n  position: relative;\n}\n\n.sk-circle > div {\n  background-color: initial;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n.sk-circle > div::before {\n  content: '';\n  display: block;\n  margin: 0 auto;\n  width: 20%;\n  height: 20%;\n  background-color: currentColor;\n  border-radius: 100%;\n\n  -webkit-animation: sk-bouncedelay 1.2s infinite ease-in-out;\n  animation: sk-bouncedelay 1.2s infinite ease-in-out;\n  /* Prevent first frame from flickering when animation starts */\n  -webkit-animation-fill-mode: both;\n  animation-fill-mode: both;\n}\n\n.sk-circle > div:nth-child(2)  { -webkit-transform: rotate(30deg);  transform: rotate(30deg)  }\n.sk-circle > div:nth-child(3)  { -webkit-transform: rotate(60deg);  transform: rotate(60deg)  }\n.sk-circle > div:nth-child(4)  { -webkit-transform: rotate(90deg);  transform: rotate(90deg)  }\n.sk-circle > div:nth-child(5)  { -webkit-transform: rotate(120deg); transform: rotate(120deg) }\n.sk-circle > div:nth-child(6)  { -webkit-transform: rotate(150deg); transform: rotate(150deg) }\n.sk-circle > div:nth-child(7)  { -webkit-transform: rotate(180deg); transform: rotate(180deg) }\n.sk-circle > div:nth-child(8)  { -webkit-transform: rotate(210deg); transform: rotate(210deg) }\n.sk-circle > div:nth-child(9)  { -webkit-transform: rotate(240deg); transform: rotate(240deg) }\n.sk-circle > div:nth-child(10) { -webkit-transform: rotate(270deg); transform: rotate(270deg) }\n.sk-circle > div:nth-child(11) { -webkit-transform: rotate(300deg); transform: rotate(300deg) }\n.sk-circle > div:nth-child(12) { -webkit-transform: rotate(330deg); transform: rotate(330deg) }\n\n.sk-circle > div:nth-child(2)::before  { -webkit-animation-delay: -1.1s; animation-delay: -1.1s }\n.sk-circle > div:nth-child(3)::before  { -webkit-animation-delay: -1.0s; animation-delay: -1.0s }\n.sk-circle > div:nth-child(4)::before  { -webkit-animation-delay: -0.9s; animation-delay: -0.9s }\n.sk-circle > div:nth-child(5)::before  { -webkit-animation-delay: -0.8s; animation-delay: -0.8s }\n.sk-circle > div:nth-child(6)::before  { -webkit-animation-delay: -0.7s; animation-delay: -0.7s }\n.sk-circle > div:nth-child(7)::before  { -webkit-animation-delay: -0.6s; animation-delay: -0.6s }\n.sk-circle > div:nth-child(8)::before  { -webkit-animation-delay: -0.5s; animation-delay: -0.5s }\n.sk-circle > div:nth-child(9)::before  { -webkit-animation-delay: -0.4s; animation-delay: -0.4s }\n.sk-circle > div:nth-child(10)::before { -webkit-animation-delay: -0.3s; animation-delay: -0.3s }\n.sk-circle > div:nth-child(11)::before { -webkit-animation-delay: -0.2s; animation-delay: -0.2s }\n.sk-circle > div:nth-child(12)::before { -webkit-animation-delay: -0.1s; animation-delay: -0.1s }\n\n@-webkit-keyframes sk-bouncedelay {\n  0%, 80%, 100% { -webkit-transform: scale(0.0) }\n  40% { -webkit-transform: scale(1.0) }\n}\n\n@keyframes sk-bouncedelay {\n  0%, 80%, 100% {\n    -webkit-transform: scale(0.0);\n    transform: scale(0.0);\n  } 40% {\n    -webkit-transform: scale(1.0);\n    transform: scale(1.0);\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(133);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./cube-grid.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./cube-grid.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-cube-grid {\n  width: 27px;\n  height: 27px;\n}\n\n.sk-cube-grid > div {\n  width: 33%;\n  height: 33%;\n  background-color: currentColor;\n  float: left;\n\n  -webkit-animation: sk-scaleDelay 1.3s infinite ease-in-out;\n  animation: sk-scaleDelay 1.3s infinite ease-in-out;\n}\n\n/*\n * Spinner positions\n * 1 2 3\n * 4 5 6\n * 7 8 9\n */\n\n.sk-cube-grid > div:nth-child(1) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s  }\n.sk-cube-grid > div:nth-child(2) { -webkit-animation-delay: 0.3s; animation-delay: 0.3s  }\n.sk-cube-grid > div:nth-child(3) { -webkit-animation-delay: 0.4s; animation-delay: 0.4s  }\n.sk-cube-grid > div:nth-child(4) { -webkit-animation-delay: 0.1s; animation-delay: 0.1s  }\n.sk-cube-grid > div:nth-child(5) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s  }\n.sk-cube-grid > div:nth-child(6) { -webkit-animation-delay: 0.3s; animation-delay: 0.3s  }\n.sk-cube-grid > div:nth-child(7) { -webkit-animation-delay: 0.0s; animation-delay: 0.0s  }\n.sk-cube-grid > div:nth-child(8) { -webkit-animation-delay: 0.1s; animation-delay: 0.1s  }\n.sk-cube-grid > div:nth-child(9) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s  }\n\n@-webkit-keyframes sk-scaleDelay {\n  0%, 70%, 100% { -webkit-transform:scale3D(1.0, 1.0, 1.0) }\n  35%           { -webkit-transform:scale3D(0.0, 0.0, 1.0) }\n}\n\n@keyframes sk-scaleDelay {\n  0%, 70%, 100% { -webkit-transform:scale3D(1.0, 1.0, 1.0); transform:scale3D(1.0, 1.0, 1.0) }\n  35%           { -webkit-transform:scale3D(1.0, 1.0, 1.0); transform:scale3D(0.0, 0.0, 1.0) }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(135);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./double-bounce.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./double-bounce.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-double-bounce {\n  width: 27px;\n  height: 27px;\n  position: relative;\n}\n\n.sk-double-bounce > div {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  background-color: currentColor;\n  opacity: 0.6;\n  position: absolute;\n  top: 0;\n  left: 0;\n\n  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;\n  animation: sk-bounce 2.0s infinite ease-in-out;\n}\n\n.sk-double-bounce > div:last-child {\n  -webkit-animation-delay: -1.0s;\n  animation-delay: -1.0s;\n}\n\n@-webkit-keyframes sk-bounce {\n  0%, 100% { -webkit-transform: scale(0.0) }\n  50% { -webkit-transform: scale(1.0) }\n}\n\n@keyframes sk-bounce {\n  0%, 100% {\n    transform: scale(0.0);\n    -webkit-transform: scale(0.0);\n  } 50% {\n    transform: scale(1.0);\n    -webkit-transform: scale(1.0);\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(137);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./folding-cube.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./folding-cube.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-folding-cube {\n  width: 27px;\n  height: 27px;\n  position: relative;\n\n  -webkit-transform: rotateZ(45deg);\n          transform: rotateZ(45deg);\n}\n\n.sk-folding-cube > div {\n  background-color: initial;\n  float: left;\n  width: 50%;\n  height: 50%;\n  position: relative;\n\n  -webkit-transform: scale(1.1);\n      -ms-transform: scale(1.1);\n          transform: scale(1.1);\n}\n.sk-folding-cube > div::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: currentColor;\n\n  -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;\n          animation: sk-foldCubeAngle 2.4s infinite linear both;\n  -webkit-transform-origin: 100% 100%;\n      -ms-transform-origin: 100% 100%;\n          transform-origin: 100% 100%;\n}\n.sk-folding-cube > div:nth-child(2) {\n  -webkit-transform: scale(1.1) rotateZ(90deg);\n          transform: scale(1.1) rotateZ(90deg);\n}\n.sk-folding-cube > div:nth-child(4) {\n  -webkit-transform: scale(1.1) rotateZ(180deg);\n          transform: scale(1.1) rotateZ(180deg);\n}\n.sk-folding-cube > div:nth-child(3) {\n  -webkit-transform: scale(1.1) rotateZ(270deg);\n          transform: scale(1.1) rotateZ(270deg);\n}\n.sk-folding-cube > div:nth-child(2)::before {\n  -webkit-animation-delay: 0.3s;\n          animation-delay: 0.3s;\n}\n.sk-folding-cube > div:nth-child(4)::before {\n  -webkit-animation-delay: 0.6s;\n          animation-delay: 0.6s;\n}\n.sk-folding-cube > div:nth-child(3)::before {\n  -webkit-animation-delay: 0.9s;\n          animation-delay: 0.9s;\n}\n@-webkit-keyframes sk-foldCubeAngle {\n  0%, 10% {\n    -webkit-transform: perspective(140px) rotateX(-180deg);\n            transform: perspective(140px) rotateX(-180deg);\n    opacity: 0;\n  } 25%, 75% {\n    -webkit-transform: perspective(140px) rotateX(0deg);\n            transform: perspective(140px) rotateX(0deg);\n    opacity: 1;\n  } 90%, 100% {\n    -webkit-transform: perspective(140px) rotateY(180deg);\n            transform: perspective(140px) rotateY(180deg);\n    opacity: 0;\n  }\n}\n\n@keyframes sk-foldCubeAngle {\n  0%, 10% {\n    -webkit-transform: perspective(140px) rotateX(-180deg);\n            transform: perspective(140px) rotateX(-180deg);\n    opacity: 0;\n  } 25%, 75% {\n    -webkit-transform: perspective(140px) rotateX(0deg);\n            transform: perspective(140px) rotateX(0deg);\n    opacity: 1;\n  } 90%, 100% {\n    -webkit-transform: perspective(140px) rotateY(180deg);\n            transform: perspective(140px) rotateY(180deg);\n    opacity: 0;\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(139);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./pulse.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./pulse.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-pulse > div {\n  width: 27px;\n  height: 27px;\n  background-color: currentColor;\n  border-radius: 100%;\n\n  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;\n  animation: sk-scaleout 1.0s infinite ease-in-out;\n}\n\n@-webkit-keyframes sk-scaleout {\n  0% { -webkit-transform: scale(0.0) }\n  100% {\n    -webkit-transform: scale(1.0);\n    opacity: 0;\n  }\n}\n\n@keyframes sk-scaleout {\n  0% {\n    transform: scale(0.0);\n    -webkit-transform: scale(0.0);\n  } 100% {\n    transform: scale(1.0);\n    -webkit-transform: scale(1.0);\n    opacity: 0;\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(141);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./rotating-plane.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./rotating-plane.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 141 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-rotating-plane > div {\n  width: 27px;\n  height: 27px;\n  background-color: currentColor;\n\n  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;\n  animation: sk-rotateplane 1.2s infinite ease-in-out;\n}\n\n@-webkit-keyframes sk-rotateplane {\n  0% { -webkit-transform: perspective(120px) }\n  50% { -webkit-transform: perspective(120px) rotateY(180deg) }\n  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }\n}\n\n@keyframes sk-rotateplane {\n  0% {\n    transform: perspective(120px) rotateX(0deg) rotateY(0deg);\n    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);\n  } 50% {\n    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\n    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);\n  } 100% {\n    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 142 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(143);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./three-bounce.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./three-bounce.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 143 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-three-bounce {\n  height: 18px;\n}\n\n.sk-three-bounce > div {\n  width: 18px;\n  height: 18px;\n  background-color: currentColor;\n  border-radius: 100%;\n  display: inline-block;\n\n  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out;\n  animation: sk-bouncedelay 1.4s infinite ease-in-out;\n  /* Prevent first frame from flickering when animation starts */\n  -webkit-animation-fill-mode: both;\n  animation-fill-mode: both;\n}\n\n.sk-three-bounce > div:first-child {\n  -webkit-animation-delay: -0.32s;\n  animation-delay: -0.32s;\n}\n\n.sk-three-bounce > div:nth-child(2) {\n  -webkit-animation-delay: -0.16s;\n  animation-delay: -0.16s;\n}\n\n@-webkit-keyframes sk-bouncedelay {\n  0%, 80%, 100% { -webkit-transform: scale(0.0) }\n  40% { -webkit-transform: scale(1.0) }\n}\n\n@keyframes sk-bouncedelay {\n  0%, 80%, 100% {\n    transform: scale(0.0);\n    -webkit-transform: scale(0.0);\n  } 40% {\n    transform: scale(1.0);\n    -webkit-transform: scale(1.0);\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 144 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(145);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./wandering-cubes.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./wandering-cubes.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 145 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-wandering-cubes {\n  width: 52px;\n  height: 52px;\n  position: relative;\n}\n\n.sk-wandering-cubes > div {\n  background-color: currentColor;\n  width: 10px;\n  height: 10px;\n  position: absolute;\n  top: 0;\n  left: 0;\n\n  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;\n  animation: sk-cubemove 1.8s infinite ease-in-out;\n}\n\n.sk-wandering-cubes > div:last-child {\n  -webkit-animation-delay: -0.9s;\n  animation-delay: -0.9s;\n}\n\n@-webkit-keyframes sk-cubemove {\n  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }\n  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }\n  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }\n  100% { -webkit-transform: rotate(-360deg) }\n}\n\n@keyframes sk-cubemove {\n  25% {\n    transform: translateX(42px) rotate(-90deg) scale(0.5);\n    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);\n  } 50% {\n    /* Hack to make FF rotate in the right direction */\n    transform: translateX(42px) translateY(42px) rotate(-179deg);\n    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);\n  } 50.1% {\n    transform: translateX(42px) translateY(42px) rotate(-180deg);\n    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);\n  } 75% {\n    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);\n    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);\n  } 100% {\n    transform: rotate(-360deg);\n    -webkit-transform: rotate(-360deg);\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 146 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(147);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./wave.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./wave.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 147 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-wave {\n  width: 30px;\n  height: 27px;\n}\n\n.sk-wave > div {\n  background-color: currentColor;\n  height: 100%;\n  width: 6px;\n  display: inline-block;\n\n  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;\n  animation: sk-stretchdelay 1.2s infinite ease-in-out;\n}\n\n.sk-wave > div:nth-child(2) {\n  -webkit-animation-delay: -1.1s;\n  animation-delay: -1.1s;\n}\n\n.sk-wave > div:nth-child(3) {\n  -webkit-animation-delay: -1.0s;\n  animation-delay: -1.0s;\n}\n\n.sk-wave > div:nth-child(4) {\n  -webkit-animation-delay: -0.9s;\n  animation-delay: -0.9s;\n}\n\n.sk-wave > div:nth-child(5) {\n  -webkit-animation-delay: -0.8s;\n  animation-delay: -0.8s;\n}\n\n@-webkit-keyframes sk-stretchdelay {\n  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }\n  20% { -webkit-transform: scaleY(1.0) }\n}\n\n@keyframes sk-stretchdelay {\n  0%, 40%, 100% {\n    transform: scaleY(0.4);\n    -webkit-transform: scaleY(0.4);\n  } 20% {\n    transform: scaleY(1.0);\n    -webkit-transform: scaleY(1.0);\n  }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 148 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(149);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../css-loader/index.js!./wordpress.css", function() {
-		var newContent = require("!!../../css-loader/index.js!./wordpress.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 149 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sk-wordpress > div {\n  width: 27px;\n  height: 27px;\n  background-color: currentColor;\n  display: inline-block;\n  border-radius: 27px;\n  position: relative;\n\n  -webkit-animation: sk-inner-circle 1s linear infinite;\n  animation: sk-inner-circle 1s linear infinite;\n}\n\n.sk-wordpress > div::after {\n  content: '';\n  display: block;\n  background-color: #fff;\n  width: 8px;\n  height: 8px;\n  position: absolute;\n  border-radius: 8px;\n  top: 5px;\n  left: 5px;\n}\n\n@-webkit-keyframes sk-inner-circle {\n  0% { -webkit-transform: rotate(0); }\n  100% { -webkit-transform: rotate(360deg); }\n}\n\n@keyframes sk-inner-circle {\n  0% { transform: rotate(0); -webkit-transform:rotate(0); }\n  100% { transform: rotate(360deg); -webkit-transform:rotate(360deg); }\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
 /* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29133,7 +27700,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, ".gallery {\n\twidth: 100%;\n  /*background-color: #3C3B37;*/\n\n  /*#7f8a93 - grey bluish*/\n\n}\n@media (min-width: 768px) {\n\t.gallery {\n\t\twidth: 100%;\n\t\theight: 100%;\n\t\tfloat: right;\n    /*background-color: #3C3B37;*/\n\t}\n}\n/*.b-lazy {\n    -webkit-transition: opacity 500ms ease-in-out;\n       -moz-transition: opacity 500ms ease-in-out;\n         -o-transition: opacity 500ms ease-in-out;\n            transition: opacity 500ms ease-in-out;\n             max-width: 100%;\n               opacity: 0;\n}\n.b-lazy.b-loaded {\n               opacity: 1;\n}\n*/\n", ""]);
+exports.push([module.i, ".gallery-container{\n  display:block;\n  height:100%;\n  width: 72vw;\n  float:right;\n  margin-top: 2em;\n  padding: .5em;\n  padding-right: 1em;\n  text-align: center;\n}\n\n@media (max-width: 768px) {\n\t.gallery-container {\n\n  display:block;\n  height:100%;\n  width: 90vw;\n  float:right;\n  margin-top: 2em;\n  padding: .5em;\n  padding-right: 0em;\n  text-align: center;\n\n\t}\n  #all-gallery, #single-gallery {\n      margin-right: 2em;\n  }\n}\n\ndiv.imageGridItem:hover{\n  opacity: .8;\n   -webkit-transition: opacity .35s ease-in-out;\n      -moz-transition: opacity .35s ease-in-out;\n       -ms-transition: opacity .35s ease-in-out;\n        -o-transition: opacity .35s ease-in-out;\n           transition: opacity .35s ease-in-out;\n}\n", ""]);
 
 // exports
 
@@ -29157,10 +27724,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(8);
 
-var _PreLoader = __webpack_require__(49);
-
-var _PreLoader2 = _interopRequireDefault(_PreLoader);
-
 var _Grid = __webpack_require__(51);
 
 var _Grid2 = _interopRequireDefault(_Grid);
@@ -29177,7 +27740,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-__webpack_require__(197);
+__webpack_require__(150);
 
 var SingleProject = function (_Component) {
 	_inherits(SingleProject, _Component);
@@ -29250,21 +27813,22 @@ var SingleProject = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: 'gallery' },
+				{ className: 'gallery-container' },
 				_react2.default.createElement(
 					'div',
-					{ style: { width: '80%', margin: '6em auto 100px' } },
+					{ id: 'single-gallery' },
 					_react2.default.createElement(
 						'p',
 						null,
-						'gallery under construction! '
+						' '
 					),
 					_react2.default.createElement(_Grid2.default, {
 						clickHandler: this.openLightbox,
 						paddingBottom: '40%',
 						imgFitting: 'cover',
 						columns: [1, 1, 1],
-						imagesArray: projectThumbs
+						imagesArray: projectThumbs,
+						radius: 5
 					})
 				),
 				_react2.default.createElement(_reactImages2.default, {
@@ -29276,7 +27840,7 @@ var SingleProject = function (_Component) {
 					currentImage: this.state.currentImage,
 					backdropClosesModal: true,
 					showImageCount: false,
-					width: '5000'
+					width: 5000
 				})
 			);
 		}
@@ -32832,70 +31396,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 /***/ }),
-/* 197 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(198);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(3)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/index.js!./singleproject.css", function() {
-		var newContent = require("!!../../node_modules/css-loader/index.js!./singleproject.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 198 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".gallery {\n\twidth: 100%;\n}\n\n.imageWrapper {\n  background-clip: border-box;\n}\n\n@media (min-width: 768px) {\n\t.gallery {\n\t\twidth: 75%;\n\t\theight: 100%;\n\t\tfloat: right;\n\t}\n}\n\n.b-lazy {\n    -webkit-transition: opacity 500ms ease-in-out;\n       -moz-transition: opacity 500ms ease-in-out;\n         -o-transition: opacity 500ms ease-in-out;\n            transition: opacity 500ms ease-in-out;\n             max-width: 100%;\n               opacity: 0;\n}\n\n.b-lazy.b-loaded {\n               opacity: 1;\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 197 */,
+/* 198 */,
 /* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32954,7 +31456,135 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, ".fade-enter.fade-enter-active {\n    opacity: 1;\n    transition: opacity 3000ms ease-out;\n}\n\n.fade-enter {\n    opacity: 0.01;\n}\n\n.fade-enter.fade-enter-active {\n    opacity: 1;\n    transition: opacity 3000ms ease-out;\n}\n\n.fade-exit {\n    opacity: 1;\n}\n\n.fade-exit.fade-exit-active {\n    opacity: 0.01;\n    transition: opacity 800ms ease-out;\n}\n\n/*#root{\n    background-color: #DC851F;\n}\n*/\n", ""]);
+exports.push([module.i, "\nbody, html {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  width: 100%;\n}\n\np {\n  font-family: 'Padauk', sans-serif;\n}\n\na {\n  color: black;\n  text-decoration: none;\n}\n\n#app {\n/*  display: flex;\n  flex-direction: row;\n  justify-content: space-between;*/\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\n\n.hide {\n    position: absolute !important;\n    top: -9999px !important;\n    left: -9999px !important;\n}\n\n.fade-enter.fade-enter-active {\n    opacity: 1;\n    transition: opacity 3000ms ease-out;\n}\n\n.fade-enter {\n    opacity: 0.01;\n}\n\n.fade-enter.fade-enter-active {\n    opacity: 1;\n    transition: opacity 3000ms ease-out;\n}\n\n.fade-exit {\n    opacity: 1;\n}\n\n.fade-exit.fade-exit-active {\n    opacity: 0.01;\n    transition: opacity 800ms ease-out;\n}\n\n\n  /*ROUNDS*/\n  /*font-family: 'Quicksand', sans-serif;*/\n  /*CODES*/\n  /*font-family: 'Nanum Gothic Coding', monospace;*/\n  /*BOXY*/\n  /*font-family: 'Puritan', sans-serif;*/\n  /*font-family: 'Rubik', sans-serif;*/\n  /*font-family: 'Dosis', sans-serif;*/\n  /*font-family: 'Allerta Stencil', sans-serif;*/\n  /*font-family: 'Marvel', sans-serif;*/\n  /*font-family: 'Lato', sans-serif;*/\n  /*font-family: 'Open Sans Condensed', sans-serif;*/\n  /*font-family: 'Nosifer', sans-serif;*/\n  /*font-family: 'Sirin Stencil', sans-serif;*/\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(202);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(3)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../node_modules/css-loader/index.js!./about.css", function() {
+		var newContent = require("!!../../node_modules/css-loader/index.js!./about.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#about-container{\n  display:block;\n  height:100%;\n  width: 75vw;\n  float:right;\n}\n\n#about-container-inner{\n  width: 80%;\n  margin: 2em;\n  margin-top: 4em;\n}\n\n@media (max-width: 768px) {\n  #aboout-container {\n    width: 100%;\n    height: 100%;\n  }\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(204);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(3)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../node_modules/css-loader/index.js!./contact.css", function() {
+		var newContent = require("!!../../node_modules/css-loader/index.js!./contact.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#contact-container{\n  display:block;\n  height:100%;\n  width: 75vw;\n  float:right;\n}\n\n#contact-container-inner{\n  width: 80%;\n  margin: 2em;\n  margin-top: 4em;\n}\n\n@media (max-width: 768px) {\n  #contact-container {\n    width: 100%;\n    height: 100%;\n  }\n}\n\n#icons-container p{\n text-align: justify;\n}\n\n#icons-container{\n  display: flex;\n}\n\n#icons-container a{\n  justify-content: flex-start;\n  margin: 3em 3em 0em 0em;\n  cursor: pointer;\n}\n\n#cvlink {\n   top: -35px;\n   position: relative;\n}\n\n#artstationIcon {\n  position: relative;\n  top: -15px;\n  box-sizing: border-box;\n  display: flex;\n}\n\n#artstationLink {\n   position: relative;\n   top: -30px;\n}\n", ""]);
 
 // exports
 

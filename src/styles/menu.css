@@ -1,120 +1,84 @@
-body, html {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100%;
-	margin-bottom: -18px;
-}
-p {
-	font-family: 'Open Sans Condensed', sans-serif;
+
+/*-----------MENU CONTAINER--------------*/
+.menu {
+	background-color: #303633;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-a {
-	color: black;
+.menu a {
+	color: white;
 	text-decoration: none;
 }
-.menu {
-	display: none;
-	/*background-color: #ebedee;*/
-	background-color: #DC851F;
-	/*background-color: #5f6e78;*/
-}
-.menu a {
-	color: 374047;
-	/*color: white;*/
-}
 
-@media (min-width: 768px) {
-	.menu {
-		display: block;
-		position: fixed;
-		width: 25%;
-		max-width: 350px;
-		height: 100%;
-		font-weight: 300;
-		float: left;
-		z-index: 99;
-		/*box-shadow: 8px -6px 6px -9px black;*/
-	}
-}
-#app {
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	margin: 0;
-}
-.hide {
-   	position: absolute !important;
-   	top: -9999px !important;
-   	left: -9999px !important;
-}
 .menu-container {
 	height: 100%;
-	width: 80%;
+	width: 85%;
 	margin: 0 auto;
 }
-.main-menu {
+
+/*-----------for positioning ICONS--------------*/
+#main-menu {
 	min-height: 100%;
-	margin-bottom: -80px;
-	color: #c6e1f3;
-
+	margin-bottom: -70px;
 }
-.main-menu:after {
-  content: "";
-  display: block;
+/*-----------Alex Name Section--------------*/
+.title {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin:0;
 }
-.social, .main-menu:after {
-  height: 50px;
+#name {
+	color: #4F6D7A;
+	font-size: 2.5em;
+	text-shadow: 4px 0px 25px black;
+	font-family: 'Zilla Slab Highlight', sans-serif;
 }
-
-.logo {
-	font-family: Lato;
-	/*font-family: 'Bitter', serif;/*/
-	/*font-family: 'Rubik', sans-serif;*/
-	/*font-family: 'Quicksand', sans-serif;*/
-
-	/*font-family: 'Nanum Gothic Coding', monospace;*/
-	/*font-family: 'Puritan', sans-serif;*/
-	/*font-family: 'Allerta Stencil', sans-serif;*/
-	/*font-family: 'Dosis', sans-serif;*/
-	/*font-family: 'Marvel', sans-serif;*/
-
-
-	padding: 5vh 0px 0vh 0px;
+#job {
+	position: relative;
+	top: -.7em;
+	color: #C0D6DF;
+	font-size: 1.5em;
+	font-family: 'Zilla Slab Highlight', sans-serif;
+	text-shadow: 2px 0px 20px black;
+	margin:0;
 }
-
-.items {
+#name:hover{
+	color:#dd6e42;
+	 -webkit-transition: color .35s ease-in-out;
+      -moz-transition: color .35s ease-in-out;
+       -ms-transition: color .35s ease-in-out;
+        -o-transition: color .35s ease-in-out;
+           transition: color .35s ease-in-out;
+}
+/*-----------Menu Items Section---------------*/
+.items p{
+	font-family: 'Open Sans Condensed', sans-serif;
 	text-transform: uppercase;
 	padding-left: 30px;
 }
+
+.items a:hover {
+	color: #dd6e42;
+}
+
 .offsetItem {
 	font-size: 8;
 	padding-left: 10px;
 	margin: 10px;
 }
-.items img {
-	height: 15px;
-	margin-left: 10px;
-	opacity: 0;
-	-webkit-transition: opacity .35s ease-in-out;
-    -moz-transition: opacity .35s ease-in-out;
-    -ms-transition: opacity .35s ease-in-out;
-    -o-transition: opacity .35s ease-in-out;
-    transition: opacity .35s ease-in-out;
 
-}
-.items a:hover {
-	opacity: 0.6;
-}
-.items a:hover > img {
-	opacity: 1;
-}
+/*-----------SOCIAL NAV AT BOTTOM---------------*/
 .social {
 	width: 100%;
+	max-width: 175px;
 	margin: 0 auto;
 	font-size: 18px;
 	display: flex;
 	justify-content: space-around;
+	float:left;
 }
 
 #artstationIco {
@@ -131,3 +95,42 @@ a {
 	box-sizing: border-box;
 	display: flex;
 }
+
+
+/*----------DISSAPPEAR LARGE MENU FOR PHONE--------------*/
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
+
+/*---------STYLING SMALL MENU for PHONE---------------*/
+
+@media (min-width: 768px) {
+	.menu {
+		display: block;
+		position: fixed;
+		width: 25vw;
+		max-width: 250px;
+		height: 100%;
+		font-weight: 300;
+		float: left;
+		z-index: 99;
+	}
+}
+
+
+
+
+
+	/*background-color: #545d82;
+	/*background-color: #597889;*/
+	/*background-color: #222222;*/
+	/*#F7B267;*/
+	 /*#EAEAEA;*/
+/*
+	#DD6E42;*/
+	/*background-color: #545768;*/
+	/*color: #4665C9;*/
+	/*color: #F0A202;*/

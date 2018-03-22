@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import PreLoader from '../components/PreLoader'
 import history from '../history'
 
 require('../styles/gallery.css')
@@ -31,15 +30,18 @@ class AllProjects extends Component {
 				})
 		}
 		return (
-					<div className="gallery">
-						<div style={{width: '80%', margin: '6em auto 100px'}}>
-							<p>text in gallery</p>
+					<div className="gallery-container">
+					<div id="all-gallery">
+							<p>Recent Work: Select a Project</p>
 							 <Grid
 							 clickHandler={this.handleClick}
 							 imagesArray={allProjectsThumbs}
+							 padding={5}
+							 radius={150}
+
 							 />
-						</div>
 					</div>
+				</div>
 		)
 	}
 }
