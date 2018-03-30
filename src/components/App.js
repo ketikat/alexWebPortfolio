@@ -11,6 +11,7 @@ import About from '../views/About'
 import Contact from '../views/Contact'
 import AllProjects from '../views/AllProjects'
 import SingleProject from '../views/SingleProject'
+import CV from '../views/CV'
 
 function RenderFadeInComponent (Component, props) {
   const title = props.match.params.title
@@ -40,7 +41,6 @@ class App extends Component {
               <Route exact path="/about" component={(props) => RenderFadeInComponent(About, props)} />
               <Route exact path="/contact" component={(props) => RenderFadeInComponent(Contact, props)} />
               <Route exact path="/:title" component={(props) => RenderFadeInComponent(SingleProject, props )} />
-              <Route exact path="/cv" component={ Contact } />
             </Switch>
           </TransitionGroup>
       </div>

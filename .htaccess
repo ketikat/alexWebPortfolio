@@ -1,9 +1,0 @@
-# Begin Muse Generated redirects
-#<IfModule mod_rewrite.c>
-#	RewriteEngine on
-#	RewriteRule ^index.html$ index.php [L]
-#	RewriteRule ^tablet/index.html$ tablet/index.php [L]
-#	RewriteRule ^phone/index.html$ phone/index.php [L]
-#</IfModule>
-# End Muse Generated redirects
-                                                

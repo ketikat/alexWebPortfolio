@@ -1,4 +1,5 @@
 import React from 'react'
+import CV from './CV'
 require('../styles/contact.css')
 
 export default function Contact (props) {
@@ -10,23 +11,25 @@ export default function Contact (props) {
       			</p>
 
       			<div id="icons-container">
-                <a href="https://www.artstation.com/aballo">
-                  <img width="25" height="50" src="../../public/artstationBlack.svg" className="fa" id="artstationIcon"></img>
+                <a href="https://www.artstation.com/aballo" target="_blank">
+                  <img width="25" height="50" src="../../public/artstation.svg" className="fa" id="artstationIcon"></img>
                   <p id="artstationLink">Artstation</p>
                 </a>
-                <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/">
+                <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/" target="_blank">
                   <i className="fa fa-linkedin"></i>
                   <p>LinkedIn</p>
                 </a>
                 <a href="../../public/AlexBalloCV.pdf" download="AlexBalloCV.pdf" >
-                  <img src="../../public/cvBlack.svg" className="fa" id="cvIco"></img>
+                  <img src="../../public/cv.svg" className="fa" id="cvIco"></img>
                   <p id="cvlink">CV Link</p>
                 </a>
                 <a href="mailto:aleksander.ballo@gmail.com">
                   <i className="fa fa-envelope-o"></i>
                 <p>Send Email</p>
                 </a>
+
             </div>
+            {/*<CV />*/}
       	</div>
       </div>
   )

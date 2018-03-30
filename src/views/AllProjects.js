@@ -21,7 +21,7 @@ class AllProjects extends Component {
 	render(){
 		let allProjectsThumbs = []
 
-		let names = ["aged_man", "anime", "bridge", "vulcan_gun", "knightfall", "knights_armor", "mech_suit", "pilot", "skanderbeg", "skull_sermon", "tunnel", "x-men"]
+		let names = ["jack_the_ripper", "underground_tunnel", "pilot_and_mech", "outworld_statue", "medieval_armour", "old_man", "batman_knightfall", "x-men", "skanderbeg_statue" ]
 
 		for(let i = 0; i < names.length; i++) {
 				allProjectsThumbs.push({
@@ -32,12 +32,13 @@ class AllProjects extends Component {
 		return (
 					<div className="gallery-container">
 					<div id="all-gallery">
-							<p>Recent Work: Select a Project</p>
+							<p className="gallery-title">Recent Work</p>
 							 <Grid
 							 clickHandler={this.handleClick}
 							 imagesArray={allProjectsThumbs}
 							 padding={5}
-							 radius={150}
+							 // radius={150}
+							 radius={3}
 
 							 />
 					</div>

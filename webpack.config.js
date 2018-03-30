@@ -44,6 +44,10 @@ module.exports = {
         }, {
           test: /\.(ico)$/,
           loader: 'static-loader'
+        },
+        {test: /\.pdf$/,
+          loader: 'file-loader',
+          include: path.join(__dirname, 'public')
         }
     ]
   }

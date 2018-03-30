@@ -36,9 +36,17 @@ export default class MobileMenu extends Component {
                   <p id="mobile-job">3D Artist</p>
                 </div>
 
-								<p className="mobileItems" onClick={this.burgerClicked}><Link to="/">portfolio</Link></p>
-								<p onClick={this.burgerClicked} className="mobileItems"><Link to="/contact">contact</Link></p>
-								<p onClick={this.burgerClicked} className="mobileItems"><Link to="/about">about</Link></p>
+								<p className="mobileItems" onClick={this.burgerClicked}>
+                  <Link to="/">portfolio</Link>
+                </p>
+
+								<p onClick={this.burgerClicked} className="mobileItems">
+                  <Link to="/contact">contact</Link>
+                </p>
+
+								<p onClick={this.burgerClicked} className="mobileItems">
+                  <Link to="/about">about</Link>
+                </p>
 				    </ul>
 				  </div>
 				</nav>

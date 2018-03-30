@@ -35,18 +35,41 @@ class Menu extends Component {
 											this.state.isProjectsClicked
 											?
 											(<div>
-													<p className="offsetItem"><Link to="/knightfall" >knightfall</Link></p>
-													<p className="offsetItem"><Link to="/x-men">x-men</Link></p>
-													<p className="offsetItem"><Link to="/aged_man">aged man study</Link></p>
-													<p className="offsetItem"><Link to="/skanderbeg">skanderbeg</Link></p>
-													<p className="offsetItem"><Link to="/skull_sermon">skull sermon</Link></p>
-													<p className="offsetItem"><Link to="/pilot">femme pilot</Link></p>
-													<p className="offsetItem"><Link to="/gun">gun</Link></p>
-													<p className="offsetItem"><Link to="/mech_suit">mech suit</Link></p>
-													<p className="offsetItem"><Link to="/knights_armor">knight's armor</Link></p>
-													<p className="offsetItem"><Link to="/anime">anime girl</Link></p>
-													<p className="offsetItem"><Link to="/bridge">bridge</Link></p>
-													<p className="offsetItem"><Link to="/tunnel">tunnnel level</Link></p>
+                          <p className="offsetItem">
+                            <Link to="/jack_the_ripper">jack the ripper</Link>
+                          </p>
+
+                          <p className="offsetItem">
+                            <Link to="/underground_tunnel">underground tunnel</Link>
+                          </p>
+
+                          <p className="offsetItem">
+                            <Link to="/pilot_and_mech">pilot and mech</Link>
+                          </p>
+
+                          <p className="offsetItem">
+                            <Link to="/outworld_statue">outworld statue</Link>
+                          </p>
+
+                          <p className="offsetItem">
+                            <Link to="/medieval_armour">medieval armour</Link>
+                          </p>
+
+                          <p className="offsetItem">
+                            <Link to="/old_man">old man</Link>
+                          </p>
+
+                          <p className="offsetItem">
+                            <Link to="/batman_knightfall"> batman: knightfall</Link>
+                          </p>
+
+                          <p className="offsetItem">
+                            <Link to="/x-men">x-men: fatal attractions</Link>
+                          </p>
+
+                          <p className="offsetItem">
+                            <Link to="/skanderbeg_statue">skanderbeg statue</Link>
+                          </p>
 							        </div>)
 											:
 											null
@@ -57,13 +80,13 @@ class Menu extends Component {
 								</div>
 
                   <div className="social">
-                      <a href="https://www.artstation.com/aballo">
+                      <a href="https://www.artstation.com/aballo" target="_blank">
                        <img width="25" height="50" className="fa" id="artstationIco" src="../../public/artstation.svg" ></img>
                       </a>
-                      <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/">
+                      <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/" target="_blank">
                         <i className="fa fa-linkedin"></i>
                       </a>
-                      <a href="../../public/AlexBalloCV.pdf" download="AlexBalloCV.pdf" >
+                      <a href="../../public/AlexBalloCV.pdf" download="AlexBalloCV.pdf">
                         <img src="../../public/cv.svg" className="fa" id="cvIco"></img>
                       </a>
                       <a href="mailto:aleksander.ballo@gmail.com">

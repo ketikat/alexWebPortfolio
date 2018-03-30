@@ -5,7 +5,8 @@
 }
 
 #mobile-nav-container a {
-  color: white;
+  /*color: white;*/
+  color: black;
   text-decoration: none;
 }
 
@@ -13,7 +14,8 @@ p.mobileItems, .mobileItems > p {
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
   margin-top: 20px;
-  color: white;
+  /*color: white;*/
+  color: black;
   text-decoration: none;
 }
 
@@ -23,7 +25,8 @@ p.mobileItems, .mobileItems > p {
 }
 
 #menuToggle a:hover {
-  color: #dd6e42;
+  /*color: #dd6e42;*/
+  opacity: .8;
 }
 
 #menuToggleSpans {
@@ -67,7 +70,10 @@ p.mobileItems, .mobileItems > p {
 .toggled #menuToggleSpans span {
   opacity: 1;
   transform: rotate(45deg) translate(-2.5px, -2.5px);
-  background: #dd6e42;
+  /*background: #dd6e42;*/
+  /*color: #4F6D7A;*/
+  /*color: black;*/
+  background: black;
 }
 
 
@@ -85,13 +91,15 @@ p.mobileItems, .mobileItems > p {
 #mobile-nav{
   position: fixed;
   top:0px;
+  left: 0px;
   width: 25vw;
   max-width: 150px;
   height:100vh;
   margin: 0 0 0 -30px;
-  /*padding: 30px;*/
+  padding-right: 35px;
   padding-top: 60px;
-  background-color: #303633;
+/*  background-color: #303633;*/
+  background-color: #D1862B;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
@@ -113,28 +121,33 @@ p.mobileItems, .mobileItems > p {
   text-decoration: none;
 }
 #mobile-name{
-  color: #4F6D7A;
+  /*color: #4F6D7A;*/
+  white-space: nowrap;
+  color: white;
   font-size: 1.5em;
   text-shadow: 4px 0px 25px black;
-  font-family: 'Zilla Slab Highlight', sans-serif;
+  font-family: 'Miriam Libre', sans-serif;
+  /*font-family: 'Zilla Slab Highlight', sans-serif;*/
 }
 #mobile-job{
   position: relative;
   top: -.5em;
-  color: #C0D6DF;
+  /*color: #C0D6DF;*/
+  color: white;
   font-size: 1em;
-  font-family: 'Zilla Slab Highlight', sans-serif;
+  /*font-family: 'Zilla Slab Highlight', sans-serif;*/
   text-shadow: 2px 0px 20px black;
+  font-family: 'Miriam Libre', sans-serif;
   margin:0;
 }
 
 #mobile-name:hover{
-  color:#dd6e42;
-   -webkit-transition: color .35s ease-in-out;
-      -moz-transition: color .35s ease-in-out;
-       -ms-transition: color .35s ease-in-out;
-        -o-transition: color .35s ease-in-out;
-           transition: color .35s ease-in-out;
+ opacity: .8;
+   -webkit-transition: opacity .35s ease-in-out;
+      -moz-transition: opacity .35s ease-in-out;
+       -ms-transition: opacity .35s ease-in-out;
+        -o-transition: opacity .35s ease-in-out;
+           transition: opacity .35s ease-in-out;
 }
 
 
