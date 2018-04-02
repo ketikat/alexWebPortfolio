@@ -8,6 +8,10 @@ export default function Contact (props) {
         <div id="contact-container-inner">
       			<p>
       			Available for contract work & commisions, please get in touch:
+            <br/>
+            aleksander.ballo@gmail.com
+            <br/>
+            (617) 699-9754
       			</p>
 
       			<div id="icons-container">
@@ -23,10 +27,8 @@ export default function Contact (props) {
                   <img src="../../public/cv.svg" className="fa" id="cvIco"></img>
                   <p id="cvlink">CV Link</p>
                 </a>
-                <a href="mailto:aleksander.ballo@gmail.com">
-                  <i className="fa fa-envelope-o"></i>
-                <p>Send Email</p>
-                </a>
+
+
 
             </div>
             {/*<CV />*/}
@@ -34,3 +36,12 @@ export default function Contact (props) {
       </div>
   )
 }
+
+
+
+
+
+// <a href="mailto:aleksander.ballo@gmail.com">
+// <i className="fa fa-envelope-o"></i>
+// <p>Send Email</p>
+// </a>

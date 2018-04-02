@@ -42,10 +42,12 @@
 	/*font-family: 'Martel Sans', sans-serif;*/
 	/*font-family: 'Jaldi', sans-serif;*/
 	/*font-family: 'Jomhuria', cursive;*/
-	font-family: 'Miriam Libre', sans-serif;
+	/*font-family: 'Miriam Libre', sans-serif;*/
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-transform: uppercase;
 	/*font-family: 'Kavivanar', cursive;*/
 	margin-right: -10px;
-/*	margin-left: -15px;*/
+	margin-left: 10px;
 	color: white;
 	text-shadow: 2px 0px 20px #4C3110;
 	white-space: nowrap;
@@ -59,11 +61,16 @@
 	/*color: #C0D6DF;*/
 	color: white;
 	font-size: 1.5em;
+	margin-right: -10px;
+	margin-left: 15px;
 	/*font-family: 'Zilla Slab Highlight', sans-serif;*/
-	font-family: 'Miriam Libre', sans-serif;
+	/*font-family: 'Miriam Libre', sans-serif;*/
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-transform: uppercase;
 	/*text-shadow: 2px 0px 20px black;*/
 	text-shadow: 2px 0px 20px #4C3110;
-	margin:0;
+	margin-top: -.5em;
+	/*margin:0;*/
 }
 #name:hover{
 	/*color:#dd6e42;*/
@@ -134,8 +141,8 @@
 		display: block;
 		position: fixed;
 		overflow: scroll;
-		width: 25vw;
-		max-width: 250px;
+		width: 200px;
+		/*max-width: 250px;*/
 		/*min-width: 200px;*/
 		height: 100%;
 		min-height: 100vh;

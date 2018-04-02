@@ -44028,7 +44028,7 @@ exports = module.exports = __webpack_require__(38)(false);
 
 
 // module
-exports.push([module.i, "\n/*-----------MENU CONTAINER--------------*/\n.menu {\n\t/*background-color: #303633;*/\n\tbackground-color: #D1862B;\n\tdisplay: flex;\n\t/*flex-direction: row;*/\n\t/*justify-content: space-between;*/\n}\n\n.menu a {\n\t/*color: white;*/\n\tcolor: black;\n\ttext-decoration: none;\n}\n\n.menu-container {\n\theight: 90%;\n\twidth: 85%;\n\tmargin: 0 auto;\n}\n\n/*-----------for positioning ICONS--------------*/\n#main-menu {\n\theight: 80%;\n\tmin-height: 90vh;\n\t/*margin-bottom: -70px;*/\n}\n/*-----------Alex Name Section--------------*/\n.title {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: flex-start;\n\tmargin:0;\n}\n#name {\n\t/*color: #4F6D7A;*/\n\tfont-size: 2.2em;\n\t/*text-shadow: 4px 0px 25px black;*/\n\t/*font-family: 'Zilla Slab Highlight', sans-serif;*/\n\t/*font-family: 'Paduk', sans-serif;*/\n\t/*font-family: 'Martel Sans', sans-serif;*/\n\t/*font-family: 'Jaldi', sans-serif;*/\n\t/*font-family: 'Jomhuria', cursive;*/\n\tfont-family: 'Miriam Libre', sans-serif;\n\t/*font-family: 'Kavivanar', cursive;*/\n\tmargin-right: -10px;\n/*\tmargin-left: -15px;*/\n\tcolor: white;\n\ttext-shadow: 2px 0px 20px #4C3110;\n\twhite-space: nowrap;\n\n\n\n}\n#job {\n\tposition: relative;\n\ttop: -.7em;\n\t/*color: #C0D6DF;*/\n\tcolor: white;\n\tfont-size: 1.5em;\n\t/*font-family: 'Zilla Slab Highlight', sans-serif;*/\n\tfont-family: 'Miriam Libre', sans-serif;\n\t/*text-shadow: 2px 0px 20px black;*/\n\ttext-shadow: 2px 0px 20px #4C3110;\n\tmargin:0;\n}\n#name:hover{\n\t/*color:#dd6e42;*/\n\tcolor: lightgrey;\n\t -webkit-transition: color .35s ease-in-out;\n      -moz-transition: color .35s ease-in-out;\n       -ms-transition: color .35s ease-in-out;\n        -o-transition: color .35s ease-in-out;\n           transition: color .35s ease-in-out;\n}\n/*-----------Menu Items Section---------------*/\n.items p{\n\tfont-family: 'Open Sans Condensed', sans-serif;\n\ttext-transform: uppercase;\n\tpadding-left: 30px;\n}\n\n.items a:hover {\n\t/*color: #dd6e42;*/\n\topacity: .8;\n}\n\n.offsetItem {\n\tfont-size: 8;\n\tpadding-left: 10px;\n\tmargin: 10px;\n}\n\n/*-----------SOCIAL NAV AT BOTTOM---------------*/\n.social {\n\twidth: 100%;\n\tmax-width: 175px;\n\tmargin: 0 auto;\n\tfont-size: 18px;\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tfloat:left;\n}\n\n#artstationIco {\n\tposition: relative;\n\ttop: -12px;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n}\n\n#cvIco {\n\twidth: 25px;\n\theight: 55px;\n\tpadding-bottom: 30px;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n}\n\n\n/*----------DISSAPPEAR LARGE MENU FOR PHONE--------------*/\n\n@media (max-width: 768px) {\n  .menu {\n    display: none;\n  }\n}\n\n/*---------STYLING MENU FOR LARGE---------------*/\n\n@media (min-width: 768px) {\n\t.menu {\n\t\tdisplay: block;\n\t\tposition: fixed;\n\t\toverflow: scroll;\n\t\twidth: 25vw;\n\t\tmax-width: 250px;\n\t\t/*min-width: 200px;*/\n\t\theight: 100%;\n\t\tmin-height: 100vh;\n\t\tfont-weight: 300;\n\t\tfloat: left;\n\t\tz-index: 99;\n\t}\n}\n\n\n\n\n\n\t/*background-color: #545d82;\n\t/*background-color: #597889;*/\n\t/*background-color: #222222;*/\n\t/*#F7B267;*/\n\t /*#EAEAEA;*/\n/*\n\t#DD6E42;*/\n\t/*background-color: #545768;*/\n\t/*color: #4665C9;*/\n\t/*color: #F0A202;*/\n", ""]);
+exports.push([module.i, "\n/*-----------MENU CONTAINER--------------*/\n.menu {\n\t/*background-color: #303633;*/\n\tbackground-color: #D1862B;\n\tdisplay: flex;\n\t/*flex-direction: row;*/\n\t/*justify-content: space-between;*/\n}\n\n.menu a {\n\t/*color: white;*/\n\tcolor: black;\n\ttext-decoration: none;\n}\n\n.menu-container {\n\theight: 90%;\n\twidth: 85%;\n\tmargin: 0 auto;\n}\n\n/*-----------for positioning ICONS--------------*/\n#main-menu {\n\theight: 80%;\n\tmin-height: 90vh;\n\t/*margin-bottom: -70px;*/\n}\n/*-----------Alex Name Section--------------*/\n.title {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: flex-start;\n\tmargin:0;\n}\n#name {\n\t/*color: #4F6D7A;*/\n\tfont-size: 2.2em;\n\t/*text-shadow: 4px 0px 25px black;*/\n\t/*font-family: 'Zilla Slab Highlight', sans-serif;*/\n\t/*font-family: 'Paduk', sans-serif;*/\n\t/*font-family: 'Martel Sans', sans-serif;*/\n\t/*font-family: 'Jaldi', sans-serif;*/\n\t/*font-family: 'Jomhuria', cursive;*/\n\t/*font-family: 'Miriam Libre', sans-serif;*/\n\tfont-family: 'Open Sans Condensed', sans-serif;\n\ttext-transform: uppercase;\n\t/*font-family: 'Kavivanar', cursive;*/\n\tmargin-right: -10px;\n\tmargin-left: 10px;\n\tcolor: white;\n\ttext-shadow: 2px 0px 20px #4C3110;\n\twhite-space: nowrap;\n\n\n\n}\n#job {\n\tposition: relative;\n\ttop: -.7em;\n\t/*color: #C0D6DF;*/\n\tcolor: white;\n\tfont-size: 1.5em;\n\tmargin-right: -10px;\n\tmargin-left: 15px;\n\t/*font-family: 'Zilla Slab Highlight', sans-serif;*/\n\t/*font-family: 'Miriam Libre', sans-serif;*/\n\tfont-family: 'Open Sans Condensed', sans-serif;\n\ttext-transform: uppercase;\n\t/*text-shadow: 2px 0px 20px black;*/\n\ttext-shadow: 2px 0px 20px #4C3110;\n\tmargin-top: -.5em;\n\t/*margin:0;*/\n}\n#name:hover{\n\t/*color:#dd6e42;*/\n\tcolor: lightgrey;\n\t -webkit-transition: color .35s ease-in-out;\n      -moz-transition: color .35s ease-in-out;\n       -ms-transition: color .35s ease-in-out;\n        -o-transition: color .35s ease-in-out;\n           transition: color .35s ease-in-out;\n}\n/*-----------Menu Items Section---------------*/\n.items p{\n\tfont-family: 'Open Sans Condensed', sans-serif;\n\ttext-transform: uppercase;\n\tpadding-left: 30px;\n}\n\n.items a:hover {\n\t/*color: #dd6e42;*/\n\topacity: .8;\n}\n\n.offsetItem {\n\tfont-size: 8;\n\tpadding-left: 10px;\n\tmargin: 10px;\n}\n\n/*-----------SOCIAL NAV AT BOTTOM---------------*/\n.social {\n\twidth: 100%;\n\tmax-width: 175px;\n\tmargin: 0 auto;\n\tfont-size: 18px;\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tfloat:left;\n}\n\n#artstationIco {\n\tposition: relative;\n\ttop: -12px;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n}\n\n#cvIco {\n\twidth: 25px;\n\theight: 55px;\n\tpadding-bottom: 30px;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n}\n\n\n/*----------DISSAPPEAR LARGE MENU FOR PHONE--------------*/\n\n@media (max-width: 768px) {\n  .menu {\n    display: none;\n  }\n}\n\n/*---------STYLING MENU FOR LARGE---------------*/\n\n@media (min-width: 768px) {\n\t.menu {\n\t\tdisplay: block;\n\t\tposition: fixed;\n\t\toverflow: scroll;\n\t\twidth: 200px;\n\t\t/*max-width: 250px;*/\n\t\t/*min-width: 200px;*/\n\t\theight: 100%;\n\t\tmin-height: 100vh;\n\t\tfont-weight: 300;\n\t\tfloat: left;\n\t\tz-index: 99;\n\t}\n}\n\n\n\n\n\n\t/*background-color: #545d82;\n\t/*background-color: #597889;*/\n\t/*background-color: #222222;*/\n\t/*#F7B267;*/\n\t /*#EAEAEA;*/\n/*\n\t#DD6E42;*/\n\t/*background-color: #545768;*/\n\t/*color: #4665C9;*/\n\t/*color: #F0A202;*/\n", ""]);
 
 // exports
 
@@ -44313,7 +44313,7 @@ exports = module.exports = __webpack_require__(38)(false);
 
 
 // module
-exports.push([module.i, "/*-----------MOBILE NAV CONTAINER---------------*/\n#mobile-nav-container {\n  max-width: 100%;\n  margin-left: 30px;\n}\n\n#mobile-nav-container a {\n  /*color: white;*/\n  color: black;\n  text-decoration: none;\n}\n\np.mobileItems, .mobileItems > p {\n  font-family: 'Open Sans Condensed', sans-serif;\n  text-transform: uppercase;\n  margin-top: 20px;\n  /*color: white;*/\n  color: black;\n  text-decoration: none;\n}\n\n#menuToggle {\n  position: relative;\n  top: 5em;\n}\n\n#menuToggle a:hover {\n  /*color: #dd6e42;*/\n  opacity: .8;\n}\n\n#menuToggleSpans {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  align-content: center;\n  width: 40px;\n  height: 40px;\n  position: absolute;\n  top: -4em;\n  cursor: pointer;\n  z-index: 1000;\n}\n\n#menuToggle span {\n  display: block;\n  width: 33px;\n  height: 4px;\n  margin-bottom: 5px;\n  position: relative;\n  background: #4F6D7A;\n  border-radius: 3px;\n  z-index: 1;\n  transform-origin: 2px 3px;\n  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),\n              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),\n              opacity 0.55s ease;\n}\n\n#menuToggleSpans .bar1 {\n  transform-origin: 0% 0%;\n}\n\n#menuToggleSpans .bar2 {\n  transform-origin: 0% 100%;\n}\n\n\n.toggled #menuToggleSpans span {\n  opacity: 1;\n  transform: rotate(45deg) translate(-2.5px, -2.5px);\n  /*background: #dd6e42;*/\n  /*color: #4F6D7A;*/\n  /*color: black;*/\n  background: black;\n}\n\n\n.toggled #menuToggleSpans .bar2 {\n  opacity: 0;\n  transform: rotate(0deg) scale(0.2, 0.2);\n}\n\n.toggled #menuToggleSpans .bar3 {\n  opacity: 1;\n  transform: rotate(-45deg) translate(0px, -1px);\n}\n\n\n#mobile-nav{\n  position: fixed;\n  top:0px;\n  left: 0px;\n  width: 25vw;\n  max-width: 150px;\n  height:100vh;\n  margin: 0 0 0 -30px;\n  padding-right: 35px;\n  padding-top: 60px;\n/*  background-color: #303633;*/\n  background-color: #D1862B;\n  list-style-type: none;\n  -webkit-font-smoothing: antialiased;\n  transform-origin: 0% 0%;\n  transform: translate(-100%, 0);\n  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);\n}\n\n#mobile-nav.toggled{\n  transform: scale(1.0, 1.0);\n  opacity: 1;\n  z-index: 99;\n}\n\n.mobile-title{\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  margin:0;\n  text-decoration: none;\n}\n#mobile-name{\n  /*color: #4F6D7A;*/\n  white-space: nowrap;\n  color: white;\n  font-size: 1.5em;\n  text-shadow: 4px 0px 25px black;\n  font-family: 'Miriam Libre', sans-serif;\n  /*font-family: 'Zilla Slab Highlight', sans-serif;*/\n}\n#mobile-job{\n  position: relative;\n  top: -.5em;\n  /*color: #C0D6DF;*/\n  color: white;\n  font-size: 1em;\n  /*font-family: 'Zilla Slab Highlight', sans-serif;*/\n  text-shadow: 2px 0px 20px black;\n  font-family: 'Miriam Libre', sans-serif;\n  margin:0;\n}\n\n#mobile-name:hover{\n opacity: .8;\n   -webkit-transition: opacity .35s ease-in-out;\n      -moz-transition: opacity .35s ease-in-out;\n       -ms-transition: opacity .35s ease-in-out;\n        -o-transition: opacity .35s ease-in-out;\n           transition: opacity .35s ease-in-out;\n}\n\n\n/*-----------PHONE---------------*/\n@media (min-width: 768px) {\n  #mobile-nav-container {\n    display: none;\n  }\n}\n\n\n\n", ""]);
+exports.push([module.i, "/*-----------MOBILE NAV CONTAINER---------------*/\n#mobile-nav-container {\n  max-width: 100%;\n  margin-left: 30px;\n}\n\n#mobile-nav-container a {\n  /*color: white;*/\n  color: black;\n  text-decoration: none;\n}\n\np.mobileItems, .mobileItems > p {\n  font-family: 'Open Sans Condensed', sans-serif;\n  text-transform: uppercase;\n  margin-top: 20px;\n  /*color: white;*/\n  color: black;\n  text-decoration: none;\n}\n\n#menuToggle {\n  position: relative;\n  top: 5em;\n}\n\n#menuToggle a:hover {\n  /*color: #dd6e42;*/\n  opacity: .8;\n}\n\n#menuToggleSpans {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  align-content: center;\n  width: 40px;\n  height: 40px;\n  position: fixed;\n  /*top: -4em;*/\n  cursor: pointer;\n  z-index: 1000;\n}\n\n#menuToggle span {\n  display: block;\n  width: 33px;\n  height: 4px;\n  margin-top: 5px;\n  position: fixed;\n  background: #4F6D7A;\n  border-radius: 3px;\n  z-index: 1;\n  transform-origin: 2px 3px;\n  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),\n              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),\n              opacity 0.55s ease;\n}\n\n#menuToggleSpans .bar1 {\n  transform-origin: 0% 0%;\n  position: fixed;\n  top: 30px;\n}\n\n#menuToggleSpans .bar2 {\n  transform-origin: 0% 100%;\n  position: fixed;\n    top: 39px;\n\n}\n\n#menuToggleSpans .bar3 {\n  transform-origin: 0% 100%;\n  position: fixed;\n  top: 48px;\n}\n\n\n\n.toggled #menuToggleSpans span {\n  opacity: 1;\n  transform: rotate(45deg) translate(-2.5px, -2.5px);\n  /*background: #dd6e42;*/\n  /*color: #4F6D7A;*/\n  /*color: black;*/\n  background: black;\n  position: fixed;\n}\n\n\n.toggled #menuToggleSpans .bar2 {\n  opacity: 0;\n  transform: rotate(0deg) scale(0.2, 0.2);\n    position: fixed;\n}\n\n.toggled #menuToggleSpans .bar3 {\n  opacity: 1;\n  transform: rotate(-45deg) translate(0px, -1px);\n    position: fixed;\n}\n\n\n#mobile-nav{\n  position: fixed;\n  top:0px;\n  left: 0px;\n  width: 25vw;\n  max-width: 150px;\n  height:100vh;\n  margin: 0 0 0 -30px;\n  padding-right: 35px;\n  padding-top: 60px;\n/*  background-color: #303633;*/\n  background-color: #D1862B;\n  list-style-type: none;\n  -webkit-font-smoothing: antialiased;\n  transform-origin: 0% 0%;\n  transform: translate(-100%, 0);\n  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);\n}\n\n#mobile-nav.toggled{\n  transform: scale(1.0, 1.0);\n  opacity: 1;\n  z-index: 99;\n}\n\n.mobile-title{\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  margin:0;\n  text-decoration: none;\n}\n#mobile-name{\n  /*color: #4F6D7A;*/\n  white-space: nowrap;\n  color: white;\n  font-size: 1.5em;\n  text-shadow: 4px 0px 25px black;\n  /*font-family: 'Miriam Libre', sans-serif;*/\n  font-family: 'Open Sans Condensed', sans-serif;\n  text-transform: uppercase;\n  /*font-family: 'Zilla Slab Highlight', sans-serif;*/\n}\n#mobile-job{\n  position: relative;\n  top: -.5em;\n  /*color: #C0D6DF;*/\n  color: white;\n  font-size: 1em;\n  /*font-family: 'Zilla Slab Highlight', sans-serif;*/\n  text-shadow: 2px 0px 20px black;\n  /*font-family: 'Miriam Libre', sans-serif;*/\n  font-family: 'Open Sans Condensed', sans-serif;\n  text-transform: uppercase;\n  margin:0;\n}\n\n#mobile-name:hover{\n opacity: .8;\n   -webkit-transition: opacity .35s ease-in-out;\n      -moz-transition: opacity .35s ease-in-out;\n       -ms-transition: opacity .35s ease-in-out;\n        -o-transition: opacity .35s ease-in-out;\n           transition: opacity .35s ease-in-out;\n}\n\n\n/*-----------PHONE---------------*/\n@media (min-width: 768px) {\n  #mobile-nav-container {\n    display: none;\n  }\n}\n\n\n\n", ""]);
 
 // exports
 
@@ -44468,7 +44468,11 @@ function Contact(props) {
       _react2.default.createElement(
         'p',
         null,
-        'Available for contract work & commisions, please get in touch:'
+        'Available for contract work & commisions, please get in touch:',
+        _react2.default.createElement('br', null),
+        'aleksander.ballo@gmail.com',
+        _react2.default.createElement('br', null),
+        '(617) 699-9754'
       ),
       _react2.default.createElement(
         'div',
@@ -44502,21 +44506,16 @@ function Contact(props) {
             { id: 'cvlink' },
             'CV Link'
           )
-        ),
-        _react2.default.createElement(
-          'a',
-          { href: 'mailto:aleksander.ballo@gmail.com' },
-          _react2.default.createElement('i', { className: 'fa fa-envelope-o' }),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Send Email'
-          )
         )
       )
     )
   );
 }
+
+// <a href="mailto:aleksander.ballo@gmail.com">
+// <i className="fa fa-envelope-o"></i>
+// <p>Send Email</p>
+// </a>
 
 /***/ }),
 /* 256 */
@@ -86135,7 +86134,7 @@ exports = module.exports = __webpack_require__(38)(false);
 
 
 // module
-exports.push([module.i, ".gallery-container{\n  display:block;\n  height:100%;\n  width: 72vw;\n  float:right;\n  margin-top: 2em;\n  padding: .5em;\n  /*padding-right: 1em;*/\n    padding-left: .6em;\n  text-align: center;\n}\n\n.gallery-title{\n  font-size: 1.5em;\n  /*font-family: 'Paduk', sans-serif;*/\n  font-family: 'Open Sans Condensed', sans-serif;\n  /*text-transform: uppercase;*/\n  color: #232A3F;\n}\n\n@media (max-width: 768px) {\n\t.gallery-container {\n  display:block;\n  height:100%;\n  width: 90vw;\n  float:right;\n  margin-top: 2em;\n  padding: .5em;\n  padding-right: 0em;\n  text-align: center;\n\t}\n  #all-gallery, #single-gallery {\n      margin-right: 2em;\n  }\n}\n\ndiv.imageGridItem:hover{\n  opacity: .8;\n   -webkit-transition: opacity .35s ease-in-out;\n      -moz-transition: opacity .35s ease-in-out;\n       -ms-transition: opacity .35s ease-in-out;\n        -o-transition: opacity .35s ease-in-out;\n           transition: opacity .35s ease-in-out;\n}\n", ""]);
+exports.push([module.i, ".gallery-container{\n  display:block;\n  height:100%;\n  width: calc(100vw - 220px);\n  float:right;\n  margin-top: 2em;\n  /*padding: .5em;*/\n  /*margin-left: 210px;*/\n  padding-right: 10px;\n  /*padding-left: 210px;*/\n  text-align: center;\n}\n\n.gallery-title{\n  font-size: 1.5em;\n  /*font-family: 'Paduk', sans-serif;*/\n  font-family: 'Open Sans Condensed', sans-serif;\n  /*text-transform: uppercase;*/\n  color: #232A3F;\n}\n\n@media (max-width: 768px) {\n\t.gallery-container {\n  display:block;\n  height:100%;\n  width: 90vw;\n  float:right;\n  margin-top: 2em;\n  padding: .5em;\n  padding-right: 0em;\n  text-align: center;\n\t}\n  #all-gallery, #single-gallery {\n      margin-right: 2em;\n  }\n}\n\ndiv.imageGridItem:hover{\n  opacity: .8;\n   -webkit-transition: opacity .35s ease-in-out;\n      -moz-transition: opacity .35s ease-in-out;\n       -ms-transition: opacity .35s ease-in-out;\n        -o-transition: opacity .35s ease-in-out;\n           transition: opacity .35s ease-in-out;\n}\n", ""]);
 
 // exports
 
@@ -86189,6 +86188,7 @@ var SingleProject = function (_Component) {
 			ligthboxIsOpen: false,
 			currentImage: 1,
 			projectName: "",
+			projectDescription: "",
 			folderName: "",
 			imgNum: 8
 		};
@@ -86205,56 +86205,67 @@ var SingleProject = function (_Component) {
 			var folderName = this.props.title;
 			var imgNum = void 0;
 			var projectName = void 0;
+			var projectDescription = void 0;
 
 			switch (folderName) {
 				case 'batman_knightfall':
 					imgNum = 8;
 					projectName = 'Batman: Knightfall';
+					projectDescription = 'Knightfall Volume One';
 					break;
 
 				case 'jack_the_ripper':
 					imgNum = 15;
-					projectName = 'Jack the Ripper';
+					projectName = 'Jack the Ripper - Assassin of Black';
+					projectDescription = ' From the comic book and TV Show "Fate/Apocrypha"';
 					break;
 
 				case 'pilot_and_mech':
 					imgNum = 17;
-					projectName = 'Pilot, Mech, and Gun';
+					projectName = 'Pilot and Mech';
+					projectDescription = '';
 					break;
 
 				case 'medieval_armour':
 					imgNum = 10;
 					projectName = 'Medieval Armour';
+					projectDescription = '';
 					break;
 
 				case 'skanderbeg_statue':
 					imgNum = 8;
 					projectName = 'Skanderbeg Statue';
+					projectDescription = '';
 					break;
 
 				case 'outworld_statue':
 					imgNum = 8;
 					projectName = 'Outworld Statue';
+					projectDescription = 'Statue from Mortal Kombat';
 					break;
 
 				case 'underground_tunnel':
 					imgNum = 8;
 					projectName = 'Underground Tunnel';
+					projectDescription = '';
 					break;
 
 				case 'x-men':
 					imgNum = 9;
 					projectName = 'X-MEN: Fatal Attractions';
+					projectDescription = 'X-MEN #25 - Fatal Attractions (page 42)';
 					break;
 
 				case 'old_man':
 					imgNum = 7;
 					projectName = 'Study of an old man';
+					projectDescription = '';
 					break;
 			}
 
 			this.setState({
 				projectName: projectName,
+				projectDescription: projectDescription,
 				folderName: folderName,
 				imgNum: imgNum
 			});
@@ -86312,6 +86323,13 @@ var SingleProject = function (_Component) {
 					{ className: 'gallery-title' },
 					' ',
 					this.state.projectName
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					{ className: 'gallery-description' },
+					' ',
+					this.state.projectDescription
 				),
 				_react2.default.createElement(
 					'div',

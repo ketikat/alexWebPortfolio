@@ -11,6 +11,7 @@ export default class SingleProject extends Component {
 			ligthboxIsOpen: false,
 			currentImage: 1,
 			projectName: "",
+			projectDescription: "",
 			folderName:"",
 			imgNum:8
 		}
@@ -24,56 +25,67 @@ export default class SingleProject extends Component {
 			const folderName = this.props.title
 			let imgNum
 			let projectName
+			let projectDescription
 
 			switch (folderName) {
 							case 'batman_knightfall':
 							  	imgNum=8
 							 		projectName='Batman: Knightfall'
+							 		projectDescription='Knightfall Volume One'
 							break
 
 							case 'jack_the_ripper':
 							  	imgNum=15
-							 		projectName='Jack the Ripper'
+							 		projectName='Jack the Ripper - Assassin of Black'
+							 		projectDescription=' From the comic book and TV Show "Fate/Apocrypha"'
 							break
 
 							case 'pilot_and_mech':
 							  	imgNum=17
-							 		projectName='Pilot, Mech, and Gun'
+							 		projectName='Pilot and Mech'
+							 		projectDescription=''
 							break
 
 							case 'medieval_armour':
 							  	imgNum=10
 							 		projectName='Medieval Armour'
+							 		projectDescription=''
 							break
 
 							case 'skanderbeg_statue':
 							  	imgNum=8
 							 		projectName='Skanderbeg Statue'
+							 		projectDescription=''
 							break
 
 							case 'outworld_statue':
 							  	imgNum=8
 							 		projectName='Outworld Statue'
+							 		projectDescription='Statue from Mortal Kombat'
 							break
 
 							case 'underground_tunnel':
 							  	imgNum=8
 							 		projectName='Underground Tunnel'
+							 		projectDescription=''
 							break
 
 							case 'x-men':
 							  	imgNum=9
 							 		projectName='X-MEN: Fatal Attractions'
+							 		projectDescription='X-MEN #25 - Fatal Attractions (page 42)'
 							break
 
 							case 'old_man':
 							  	imgNum=7
 							 		projectName='Study of an old man'
+							 		projectDescription=''
 							break
 			}
 
 				this.setState({
 					projectName: projectName,
+					projectDescription: projectDescription,
 					folderName: folderName,
 					imgNum: imgNum
 				})
@@ -122,6 +134,8 @@ export default class SingleProject extends Component {
 
 			<div className="gallery-container">
 				<p className="gallery-title"> {this.state.projectName}</p>
+				<br/>
+				<p className="gallery-description"> {this.state.projectDescription}</p>
 				<div id="single-gallery">
 					<Grid
 						clickHandler={this.openLightbox}
