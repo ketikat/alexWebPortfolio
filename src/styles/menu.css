@@ -95,23 +95,23 @@
 
 @media (min-height: 559px) {
   /*-----------SOCIAL NAV AT BOTTOM---------------*/
-.social {
-	width: 100%;
-	max-width: 175px;
-	margin: 0 auto;
-	font-size: 18px;
-	display: flex;
-	justify-content: space-around;
-	float:left;
-}
+	.social {
+		width: 100%;
+		max-width: 175px;
+		margin: 0 auto;
+		font-size: 18px;
+		display: flex;
+		justify-content: space-around;
+		float:left;
+	}
 
-#artstationIco {
-	position: relative;
-	top: -12px;
-	box-sizing: border-box;
-	display: flex;
+	#artstationIco {
+		position: relative;
+		top: -12px;
+		box-sizing: border-box;
+		display: flex;
+	}
 }
-
 
 /*---------STYLING MENU FOR LARGE---------------*/
 
