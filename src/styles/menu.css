@@ -103,7 +103,6 @@
 	display: flex;
 	justify-content: space-around;
 	float:left;
-	/*background-color: blue;*/
 }
 
 #artstationIco {
@@ -111,15 +110,6 @@
 	top: -12px;
 	box-sizing: border-box;
 	display: flex;
-}
-
-#cvIco {
-	width: 25px;
-	height: 55px;
-	padding-bottom: 30px;
-	box-sizing: border-box;
-	display: flex;
-	}
 }
 
 
@@ -152,19 +142,3 @@
 		z-index: 99;
 	}
 }
-
-
-
-
-
-
-	/*background-color: #545d82;
-	/*background-color: #597889;*/
-	/*background-color: #222222;*/
-	/*#F7B267;*/
-	 /*#EAEAEA;*/
-/*
-	#DD6E42;*/
-	/*background-color: #545768;*/
-	/*color: #4665C9;*/
-	/*color: #F0A202;*/

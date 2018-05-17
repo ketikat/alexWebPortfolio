@@ -24,24 +24,12 @@ export default function Contact (props) {
                   <p>LinkedIn</p>
                 </a>
                 <a href="../../public/AlexBalloCV.pdf" download="AlexBalloCV.pdf" >
-                  <img src="../../public/cv.svg" className="fa" id="cvIco"></img>
+                  <i className="fa fa-file-pdf-o" />
                   <p id="cvlink">CV Link</p>
                 </a>
 
-
-
             </div>
-            {/*<CV />*/}
       	</div>
       </div>
   )
 }
-
-
-
-
-
-// <a href="mailto:aleksander.ballo@gmail.com">
-// <i className="fa fa-envelope-o"></i>
-// <p>Send Email</p>
-// </a>

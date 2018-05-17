@@ -86,8 +86,8 @@ class Menu extends Component {
                       <a href="https://www.linkedin.com/in/aleksander-w-ballo-27467061/" target="_blank">
                         <i className="fa fa-linkedin" />
                       </a>
-                      <a href="../../public/Alex_Ballo_Resume.pdf" download="AlexBalloCV.pdf">
-                        <img src="../../public/cv.svg" className="fa" id="cvIco" />
+                      <a href="../../public/Alex_Ballo_Resume.pdf" download="Alex_Ballo_Resume.pdf">
+                        <i className="fa fa-file-pdf-o" />
                       </a>
                       <a href="mailto:aleksander.ballo@gmail.com">
                         <i className="fa fa-envelope-o" />
