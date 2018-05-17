@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname)))
 
 
 // Send index.html for any other requests
-app.use('*', (req, res) => {
+app.use('/about', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'))
 })
 

@@ -32,9 +32,10 @@
   cursor: pointer;
 }
 
-#cvlink {
-   top: -35px;
-   position: relative;
+/*a#cvIco {*/
+  img#cvIco.fa {
+   max-height: 25px;
+  margin-bottom: 22px;
 }
 
 #artstationIcon {

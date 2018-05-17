@@ -1,0 +1,5 @@
+RewriteRule ^(.*)$ index.html
+
+ErrorDocument 404 /index.html
+
+DirectoryIndex index.html

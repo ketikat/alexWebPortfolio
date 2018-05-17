@@ -1,7 +1,6 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import history from '../history'
-
 require('../styles/gallery.css')
 
 import Grid from '../components/Grid'
@@ -37,9 +36,7 @@ class AllProjects extends Component {
 							 clickHandler={this.handleClick}
 							 imagesArray={allProjectsThumbs}
 							 padding={5}
-							 // radius={150}
 							 radius={3}
-
 							 />
 					</div>
 				</div>

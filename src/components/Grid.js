@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 
-// couldn't find suitable npm library to use as a grid component... so had to used 'reactrpg' npm module as template & modified it...
+// based of npm library 'reactrpg'
 function Grid(props) {
     const imagesArray = props.imagesArray
     const padding = props.padding || 3
@@ -38,7 +38,7 @@ function Grid(props) {
     })
 
   return (
-          <div className='imageGrid'>
+          <div className="imageGrid">
             {imageNodes}
             <style dangerouslySetInnerHTML={{__html: `
                 .imageGridItem {
@@ -60,7 +60,7 @@ function Grid(props) {
 
 function GridImage (props) {
 
-  const { radius, link, url, index, padding, imgFitting, paddingBottom, clickHandler, clickParam } = props
+  const { radius, link, url, index, padding, imgFitting, paddingBottom, clickHandler} = props
 
 // styles
   const styles = {
@@ -82,18 +82,15 @@ function GridImage (props) {
       cursor: 'pointer'
     }
   }
-  const clickType = link? link : index
+  const clickType = link ? link : index
 
-  return(
-        <div className='imageGridItem' style={styles.imageGridItem}>
-          <a  onClick={()=>clickHandler(clickType)}>
-            <div  className='imageWrapper' style={styles.imageWrapper}>
-            </div>
+  return (
+        <div className="imageGridItem" style={styles.imageGridItem}>
+          <a  onClick={() => clickHandler(clickType)}>
+            <div className="imageWrapper" style={styles.imageWrapper} />
           </a>
         </div>
   )
 
 }
-
-// export default Grid
 export default withRouter(Grid)

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import {Route, Link, browserHistory, Redirect, withRouter, Switch } from 'react-router-dom'
-import ReactDOM from 'react-dom'
+import {Route, withRouter, Switch } from 'react-router-dom'
+
 require('../styles/app.css')
 
 import {TransitionGroup, CSSTransition} from 'react-transition-group'
@@ -11,7 +11,6 @@ import About from '../views/About'
 import Contact from '../views/Contact'
 import AllProjects from '../views/AllProjects'
 import SingleProject from '../views/SingleProject'
-import CV from '../views/CV'
 
 function RenderFadeInComponent (Component, props) {
   const title = props.match.params.title
@@ -23,11 +22,10 @@ function RenderFadeInComponent (Component, props) {
   )
 }
 
-
 class App extends Component {
   componentDidMount() {
-      document.getElementById("root").className = "show"
-      document.getElementById("loader").className = "delete"
+      document.getElementById('root').className = 'show'
+      document.getElementById('loader').className = 'delete'
   }
 
   render() {
@@ -49,6 +47,3 @@ class App extends Component {
 }
 
 export default withRouter(App)
-
-
-

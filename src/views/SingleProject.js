@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import Grid from '../components/Grid.js'
 import Lightbox from 'react-images'
 require('../styles/gallery.css')
@@ -61,7 +60,7 @@ export default class SingleProject extends Component {
 							case 'outworld_statue':
 							  	imgNum=8
 							 		projectName='Outworld Statue'
-							 		projectDescription='Statue from Mortal Kombat'
+							 		projectDescription=''
 							break
 
 							case 'underground_tunnel':
