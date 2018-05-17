@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 require('../styles/about.css')
 
 export default function About(props) {
