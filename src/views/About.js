@@ -17,14 +17,14 @@ export default function About(props) {
 				</p>
 
 				<p>
-					My primary skills lie in 3D modeling (characters and environments, high and low poly), texturing, lighting, rendering and compositing.
+					My strenghts include 3D modeling (characters and environments, high and low poly), texturing, lighting, rendering and compositing.
 				</p>
 
 				<p>
 					Some of the software I use includes ZBrush, MAYA, Photoshop, NUKE, After Effects, Unreal Engine, Unity, Substance Painter, Marvelous Designer and VRay.
 				</p>
 
-				<p>Please <Link to='/contact'><u>get in touch</u></Link> if you'd like to work on something together
+				<p>Please <Link to='/contact'><u>get in touch</u></Link> if you'd like to work on something together!
         </p>
 			</div>
 		</div>
